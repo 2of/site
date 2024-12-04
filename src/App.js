@@ -12,7 +12,7 @@ function App() {
 
 <h1>this is a short test, ignore :) </h1>
 
-    <Router>
+<Router basename="/2of_site">
       <Routes>
         {/* Wrap all routes in LayoutMain */}
         {routes.map((route) => (
