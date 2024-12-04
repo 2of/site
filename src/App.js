@@ -7,7 +7,11 @@ import "./styles/main.scss";
 
 function App() {
   return (
-    hello world little test here 
+    <div className="Test">
+
+
+<h1>this is a short test, ignore :) </h1>
+
     <Router>
       <Routes>
         {/* Wrap all routes in LayoutMain */}
@@ -20,6 +24,7 @@ function App() {
         ))}
       </Routes>
     </Router>
+    </div>
   );
 }
 
