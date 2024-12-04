@@ -1,14 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import '@fortawesome/fontawesome-free/css/all.min.css';  
+import routes from "./routes";
+import LayoutMain from "./layouts/layout_main"; // Import the layout component
+import "./styles/main.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1> HELLO WORLD  !</h1>
-        <h1> HELLO WORLD again !</h1>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* Wrap all routes in LayoutMain */}
+        {routes.map((route) => (
+          <Route 
+            key={route.path}
+            path={route.path}
+            element={<LayoutMain>{route.element}</LayoutMain>} // Wrap route element with LayoutMain
+          />
+        ))}
+      </Routes>
+    </Router>
   );
 }
 
