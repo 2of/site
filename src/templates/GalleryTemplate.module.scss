@@ -1,0 +1,31 @@
+/* GalleryTemplate.module.scss */
+
+/* General layout styling for the header */
+.header {
+    /* Styles for the header */
+  }
+  
+  /* Styling for the main content section */
+  .mainContent {
+    background-color: red;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Blog posts container */
+  .blogPosts {
+    background-color: blue;
+    max-width: 1200px;
+  }
+  
+  /* Wrapper for each blog post */
+  .blogPostWrapper {
+    background-color: green;
+  
+    /* Targeting post card inside the wrapper */
+    .post-card {
+      width: 30px; /* This will apply only to post cards inside blogPostWrapper */
+    }
+  }

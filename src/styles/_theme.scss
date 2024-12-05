@@ -1,0 +1,37 @@
+/* CSS Custom Properties (Light Mode by default) */
+:root {
+    --primary-color: #ff7043; // Soft Orange
+    --secondary-color: #37474f; // Dark Gray
+    --background-color: #ffffff; // White
+    --text-color: #212121; // Darker Gray
+    --font-family-base: "Arial", sans-serif;
+    --font-family-heading: "Montserrat", sans-serif;
+    --border-radius: 8px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Glass Card specific */
+    --glass-card-background: rgba(255, 255, 255, 0.758); // Light background
+    --glass-card-border: rgba(255, 255, 255, 0.3); // Light border
+    --glass-card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Light shadow
+    --glass-card-text-color: var(--text-color); // Text color for glass card
+}
+
+/* Dark Mode Custom Properties */
+/* Dark Mode Custom Properties */
+[data-theme="dark"] {
+    --primary-color: #f63b02; // Purple
+    --secondary-color: #444444; // Dark Gray
+    --background-color: #333333; // Dark Background
+    --text-color: #ffffff; // White Text
+    --font-family-base: "Arial", sans-serif; // Same font family
+    --font-family-heading: "Montserrat", sans-serif; // Same heading font
+    --border-radius: 8px; // Same border radius
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Same shadow for dark mode
+  
+    /* Glass Card specific for dark mode */
+    --glass-card-background: rgba(0, 0, 0, 0.709); // Darker background
+    --glass-card-border: rgba(255, 255, 255, 0.1); // Lighter border for contrast
+    --glass-card-shadow: 0 4px 6px rgba(0, 0, 0, 0.25); // Darker shadow
+    --glass-card-text-color: var(--text-color); // Text color for glass card
+
+}
