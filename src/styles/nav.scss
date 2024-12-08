@@ -11,7 +11,56 @@
   position: sticky; /* Make the navbar sticky */
   top: 20px; /* Stick the navbar to the top of the page */
   z-index: 1000; /* Ensure the navbar is above other content */
-  background-color: var(--background-color); /* Optional: to maintain background when scrolling */
+  background-color: var(--background-color); 
+  transition: all 0.3s ease;
+}
+
+/* Apply the 'mini' class to hide items except the logo and theme toggle */
+.nav-container.mini {
+  position: fixed;
+  top: 20px; /* Keep it positioned at the top */
+  left: 20px; /* Adjust the position as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  transform: translateX(-10%);
+  width: 64px; /* Make the
+   container smaller */
+  height: auto; /* Allow for flexible height */
+  padding: 1rem; /* Optional padding for spacing */
+  background-color: var(--background-color); /* Maintain background color */
+  box-shadow: 0 24px 24px rgba(0, 0, 0, 0.4); /* Optional: add subtle shadow */
+  
+  .nav-links { 
+    display: none; /* Hide both the links and social icons */
+  }
+
+  .nav-socials { 
+  display: none;
+  }
+
+  .nav-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Add gap between logo and title */
+    margin-bottom: 16px; /* Add some space below logo */
+    
+    .logo {
+      width: 40px; /* Adjust logo size */
+      height: auto;
+    }
+
+    .nav-title {
+      display: none; /* Hide the title in mini mode */
+    }
+  }
+
+  
+  
 }
 
 /* Navigation logo and title container */
@@ -30,13 +79,6 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
-}
-
-/* Debugging info (optional) */
-.debug-info {
-  display: none; /* Hidden by default */
-  font-size: 1rem;
-  font-style: italic;
 }
 
 /* Navigation links container */

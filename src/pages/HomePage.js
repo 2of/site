@@ -1,92 +1,34 @@
 import React from "react";
-import { useGlobalContext } from "../contexts/globalcontext"; // Import the useGlobalContext hook
-import "./homepage.scss"; // Import the SCSS file for styling
+import { useGlobalContext } from "../contexts/globalcontext";
+import projects from "../dummy_data/dummy_projects.json";
+import writings from "../dummy_data/dummy_writings.json";
+import { HeroCell, LinksCell, ProjectCard, WritingCard, FunCell } from "./HomePageCells";
+import "./homepage.scss";
 
 const HomePage = () => {
-  const { isDarkMode } = useGlobalContext(); // Access dark mode state from context
+  const { isDarkMode } = useGlobalContext();
 
   return (
-    <div className={isDarkMode ? "dark-mode" : "light-mode"}>
-      {/* Hero Section */}
-      <section className="hero">
-        <h1 className="hero-title">
-          Welcome to 2of.io
-          <br />
-          Placeholder Site Under Consutrction 
-        </h1>
-        <p className="hero-blurb">
-          You're not suppoed to be here....   yet
-        </p>
-      </section>
+    <div className={isDarkMode ? "homepage dark-mode" : "homepage light-mode"}>
+      <div className="grid-container">
+        {/* Double-wide hero section */}
+        <HeroCell />
 
-      {/* Projects Section */}
-      <section className="projects">
-        <h2 className="section-title">My Projects</h2>
-        <div className="projects-container">
-          <div className="project glassCard">
-            <img src="https://picsum.photos/300/200" alt="Project 1" />
-            <h3>Project 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <div className="project glassCard">
-            <img src="https://picsum.photos/300/200" alt="Project 2" />
-            <h3>Project 2</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <div className="project glassCard">
-            <img src="https://picsum.photos/300/200" alt="Project 3" />
-            <h3>Project 3</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        </div>
-      </section>
+        <LinksCell />
 
-      {/* Blogs Section */}
-      <section className="blogs">
-        <h2 className="section-title">My Blogs</h2>
-        <div className="blogs-container">
-          <div className="blog glassCard">
-            <h3>Blog Title 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <div className="blog glassCard">
-            <h3>Blog Title 2</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        </div>
-      </section>
+        {/* Dynamic Project Cards */}
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
 
-      {/* Photos Section */}
-      <section className="photos">
-        <h2 className="section-title">My Photos</h2>
-        <div className="photos-container">
-          <div className="photo glassCard">
-            <img src="https://picsum.photos/400/300" alt="Photo 1" />
-          </div>
-          <div className="photo glassCard">
-            <img src="https://picsum.photos/400/300" alt="Photo 2" />
-          </div>
-          <div className="photo glassCard">
-            <img src="https://picsum.photos/400/300" alt="Photo 3" />
-          </div>
-        </div>
-      </section>
+        {/* Dynamic Writing Cards */}
+        {writings.map((writing) => (
+          <WritingCard key={writing.id} writing={writing} />
+        ))}
 
-      {/* Social Media Links */}
-      <section className="socials">
-        <h2 className="section-title">Connect With Me</h2>
-        <div className="social-links">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            Twitter
-          </a>
-        </div>
-      </section>
+        {/* Placeholder Fun Section */}
+        <FunCell />
+      </div>
     </div>
   );
 };

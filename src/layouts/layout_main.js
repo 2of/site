@@ -2,10 +2,11 @@ import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group"; // Import Transition Components
 import Nav from "../nav/nav";
-
+import routes from "../routes";
 const LayoutMain = () => {
   const location = useLocation(); // Get the current location (route) from React Router
-
+  const currentRoute = routes.find((route) => route.path === location.pathname);
+  const showLinks = currentRoute?.showlinks || false; // Use 'false' as a fallback
   return (
     <>
       <Nav />
@@ -23,7 +24,7 @@ const LayoutMain = () => {
       </TransitionGroup>
 
       {/* Footer */}
-      <footer className="footer">
+      {/* <footer className="footer">
         <div className="footer-content">
           <p>&copy; 2024 2of.io. All Rights Reserved.</p>
           <div className="social-links">
@@ -38,7 +39,7 @@ const LayoutMain = () => {
             </a>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </>
   );
 };

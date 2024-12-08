@@ -1,6 +1,7 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
+  margin: 0;
   font-family: var(--font-family-base);
   transition: background-color 0.3s, color 0.3s; /* Smooth transition between themes */
 }
@@ -47,14 +48,8 @@ button {
   color: var(--text-color);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
-  padding: 1.5rem;
-  margin: 1rem 0;
-  transition: transform 0.3s, box-shadow 0.3s ease;
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-  }
+
 }
 
 footer {
@@ -79,14 +74,15 @@ footer {
 /* Glass Card Styles */
 .glassCard {
   background: var(--glass-card-background);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px); /* Increase the blur effect for a more "glassy" look */
   border: 1px solid var(--glass-card-border);
   box-shadow: var(--glass-card-shadow);
-  padding: 1.5rem;
+
   color: var(--glass-card-text-color); /* Dynamic text color */
   border-radius: var(--border-radius);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 
   h2 {
     margin-bottom: 1rem;

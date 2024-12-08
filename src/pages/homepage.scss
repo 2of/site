@@ -1,174 +1,91 @@
-/* Homepage Styles */
-.hero {
-    text-align: center;
-    padding: 6rem 2rem;
-    background-color: var(--background-color);
-    color: var(--text-color);
+.homepage {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  overflow: visible; /* Allow scrolling if needed */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Default to one column on small screens */
+  grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+  grid-template-columns: repeat(5, 1fr); /* Five columns on larger screens */
+  grid-auto-rows: minmax(250px, 350px); /* Larger cells */
+  gap: 16px;
+
+  width: 100%;
+  max-width: 1200px;
+
+  padding: 16px; /* Add padding to the grid container */
+  box-sizing: border-box; /* Include padding in the width and height calculation */
+
+  /* Media Queries for Responsive Grid */
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for medium screens */
   }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(5, 1fr); /* Five columns for larger screens */
+  }
+
+  /* Allow scrolling if content overflows vertically */
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 100vh; /* Prevent it from exceeding the height of the viewport */
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  opacity: 0; /* Start with the item hidden */
+  transform: translateY(20px); /* Start with a small downward position for a smooth animation */
+  animation: fadeIn 0.8s forwards; /* Apply fade-in animation */
+  animation-delay: 0.2s; /* Delay for a staggered effect */
+
+  /* No hover effects */
   
-  .hero-title {
-    font-size: 4rem;
-    font-weight: 700;
-    margin: 0;
-    line-height: 1.2;
+  &.double-wide {
+    grid-column: span 3;
+    grid-row: span 2;
   }
-  
-  .hero-blurb {
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    color: var(--secondary-text-color);
+
+  /* Stagger animation delay for each grid item */
+  &:nth-child(1) {
+    animation-delay: 0.1s;
   }
-  
-  /* Section Titles */
-  .section-title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
-    text-align: center;
+
+  &:nth-child(2) {
+    animation-delay: 0.2s;
   }
-  
-  /* Projects Section */
-  .projects {
-    padding: 4rem 2rem;
-    background-color: var(--secondary-background-color);
+
+  &:nth-child(3) {
+    animation-delay: 0.3s;
   }
-  
-  .projects-container {
-    display: flex;
-    justify-content: space-around;
-    gap: 2rem;
-    flex-wrap: wrap;
+
+  &:nth-child(4) {
+    animation-delay: 0.4s;
   }
-  
-  .project {
-    width: 300px;
-    text-align: center;
-    padding: 1.5rem;
-    background-color: var(--background-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  &:nth-child(5) {
+    animation-delay: 0.5s;
   }
-  
-  .project img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+
+  &:nth-child(6) {
+    animation-delay: 0.6s;
   }
-  
-  .project h3 {
-    font-size: 1.5rem;
-    margin: 1rem 0;
+
+  /* Add more nth-child selectors as needed for additional items */
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .project p {
-    font-size: 1rem;
-    color: var(--secondary-text-color);
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Blogs Section */
-  .blogs {
-    padding: 4rem 2rem;
-    background-color: var(--background-color);
-  }
-  
-  .blogs-container {
-    display: flex;
-    justify-content: space-around;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  
-  .blog {
-    width: 300px;
-    padding: 1.5rem;
-    background-color: var(--secondary-background-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .blog h3 {
-    font-size: 1.5rem;
-    margin: 1rem 0;
-  }
-  
-  .blog p {
-    font-size: 1rem;
-    color: var(--secondary-text-color);
-  }
-  
-  /* Photos Section */
-  .photos {
-    padding: 4rem 2rem;
-    background-color: var(--secondary-background-color);
-  }
-  
-  .photos-container {
-    display: flex;
-    justify-content: space-around;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  
-  .photo {
-    width: 300px;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  /* Social Media Links */
-  .socials {
-    padding: 4rem 2rem;
-    background-color: var(--background-color);
-  }
-  
-  .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-  }
-  
-  .social-links a {
-    font-size: 1.5rem;
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .social-links a:hover {
-    color: var(--primary-color);
-  }
-  
-  /* GlassCard Styling */
-  .glassCard {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .dark-mode .glassCard {
-    background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-  }
-  
-  /* Mobile Responsiveness */
-  @media (max-width: 768px) {
-    .projects-container, .blogs-container, .photos-container {
-      flex-direction: column;
-      align-items: center;
-    }
-    .social-links {
-      flex-direction: column;
-      gap: 1rem;
-    }
-  }
+}
