@@ -5,46 +5,51 @@ import routes from "../routes"; // Import routes.js
 import "./HomePageCells.scss";
 import { useState, useEffect } from "react";
 // Hero Cell
-import "../styles/card.scss";
+// import "../styles/card.scss";
+import { ArrowCta } from "../res/arrowcta";
 export const HeroCell = () => {
-  return (
-    <div className="grid-item hero double-wide card">
-      <div className="hero-image">
-        {/* <img src="https://picsum.photos/1200/600" alt="Hero" /> */}
+    return (
+      <div className="grid-item hero double-wide card">
+        <div className="hero-image">
+          {/* Background gradient instead of an image */}
+        </div>
+        <h1>Hey there! I'm Noah 👋 this is my website</h1>
+        <p className="hero-paragraph">
+            the css is a work in progress
+         </p>
+        <h2>This page is mostly for fun... but check out my writeups below</h2>
+        <div className="social-icons">
+          <a
+            href="https://github.com/noah"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-github"></i>
+          </a>
+          <a
+            href="https://twitter.com/noah"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-twitter"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/noah"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-linkedin"></i>
+          </a>
+        </div>
+        <p className="hero-paragraph">
+          Just messing around with React here, trying to learn and build some cool stuff. Feel free to poke around and see what I've been working on!
+        </p>
+        <h3 className="cta-text">Check out the links below to get started.</h3>
+  
+       
       </div>
-      <h1>2of.io</h1>
-      <h2>This is my 'mess around with react' site. Thanks for finding it?</h2>
-
-      <h3>click on stuff in the 'links' cell</h3>
-      <p className="hero-paragraph">
-        Most of the long text on this site was generated to just fill in dummy data :)
-      </p>
-      <div className="social-icons">
-        <a
-          href="https://github.com/noah"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-github"></i>
-        </a>
-        <a
-          href="https://twitter.com/noah"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-twitter"></i>
-        </a>
-        <a
-          href="https://linkedin.com/in/noah"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-linkedin"></i>
-        </a>
-      </div>
-    </div>
-  );
-};
+    );
+  };
 // Links Cell
 export const LinksCell = () => (
   <div className="grid-item links card ">
@@ -69,10 +74,7 @@ export const LinksCell = () => (
 );
 export const CVCard = () => (
     <div className="grid-item CV card">
-      <h2>Hire me?</h2>
-      <p>Want to work with someone who built this horribly broken site you're browsing right now? 👀</p>
-            <p>It's a WIP and mostly a tool at the moment</p>
-      <p>CSS is my passion 😉 because you see it </p>
+hi
     </div>
   );
 
@@ -134,3 +136,16 @@ export const FunCell = () => (
     <p>Discover lighthearted content.</p>
   </div>
 );
+
+export const CTACard = () => {
+    return (
+      <div className="grid-item card cta-card">
+        <div className="cta-container">
+          <div className="arrow-wrapper">
+            <ArrowCta className="arrow" width="100px" height="100px" /> {/* Increased size of SVG */}
+          </div>
+          <p className="cta-text">Employers</p>
+        </div>
+      </div>
+    );
+  };

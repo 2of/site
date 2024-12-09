@@ -1,7 +1,7 @@
 import React from "react";
 import { useGlobalContext } from "../contexts/globalcontext";
 import projects from "../dummy_data/dummy_projects.json";
-import { HeroCell, LinksCell, ProjectCard, FixedCard, CVCard } from "./HomePageCells";
+import { HeroCell, LinksCell, ProjectCard, FixedCard, CVCard, CTACard } from "./HomePageCells";
 import "./homepage.scss";
 import CardWithSparkles from "../components/sparklecard";
 
@@ -27,9 +27,10 @@ const HomePage = () => {
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
+        <CTACard></CTACard>
 
         {/* Sparkles */}
-        <CardWithSparkles />
+        {/* <CardWithSparkles /> */}
       </div>
     </div>
   );

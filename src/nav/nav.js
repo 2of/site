@@ -16,7 +16,7 @@ const Nav = () => {
 
   return (
     <nav
-      className={`nav-container glassCard ${isDarkMode ? "dark-mode" : ""} ${
+      className={`nav-container card ${isDarkMode ? "dark-mode" : ""} ${
         showLinks ? "" : "mini"
       }`}
     >

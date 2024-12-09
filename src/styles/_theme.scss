@@ -6,9 +6,9 @@
     --text-color: #0b0b0d;// Darker Gray
     --font-family-base: "Arial", sans-serif;
     --font-family-heading: "Montserrat", sans-serif;
-    --border-radius: 8px;
+    --border-radius: 12px;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
+    --border-color:#363639;
     /* Glass Card specific */
     --glass-card-background: rgba(255, 255, 255, 0.758); // Light background
     --glass-card-border: rgba(255, 255, 255, 0.3); // Light border
@@ -27,7 +27,7 @@
     --font-family-heading: "Montserrat", sans-serif; // Same heading font
     --border-radius: 8px; // Same border radius
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Same shadow for dark mode
-  
+    --border-color:#515159;
     /* Glass Card specific for dark mode */
     --glass-card-background: rgba(0, 0, 0, 0.709); // Darker background
     --glass-card-border: rgba(255, 255, 255, 0.1); // Lighter border for contrast

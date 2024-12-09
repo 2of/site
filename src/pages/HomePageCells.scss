@@ -1,92 +1,61 @@
 .hero {
-    grid-column: span 3;
-    grid-row: span 2;
-    
-    border-radius: var(--border-radius);
+    position: relative;
+    background: linear-gradient(135deg, #ff7b00, #ff6a00, #ff5f00); /* Orange gradient */
+    color: var(--text-color);
     text-align: center;
-    position: relative;
-    background: linear-gradient(135deg, #FFB5A7, #d3a91d);
-    background-size: 400% 400%;
-    transition: background 0.5s ease;
-    z-index: 1;
-  
-    /* Adding padding for better spacing */
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--primary-color);
+    padding: 100px 20px;
+    border-radius: 10px;
+    overflow: hidden;
     
-    /* Adding a slight shadow effect */
-
-  }
-  .hero-image {
-    position: relative;
-    width: 100%;
-    height: 50%; /* Ensure it takes up the top half */
-    overflow: hidden; /* Prevent overflow */
-    border-radius: var(--border-radius);
-  }
+    .hero-image {
+      /* No image, so we remove the image styles */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
   
-  .hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: var(--border-radius); /* Ensure the image fits with rounded corners */
-    margin: 0; /* Remove any margin to ensure it stretches fully */
-  }
+    h1 {
+      font-size: 3rem;
   
-  .hero h1 {
-    // font-family: var(--font-family-heading);
-    // font-size: 3rem;
-    // font-weight: bold;
-    // color: var(--primary-color); /* Primary color for text */
-    // z-index: 2;
-    // position: relative;
-  }
+     
+    }
   
-  .hero-paragraph {
-    font-family: var(--font-family-base);
-    font-size: 1.2rem;
-    font-weight: 300;
-
-    max-width: 800px;
-    color: var(--primary-color); /* Primary color for text */
-    z-index: 2;
-    position: relative;
-    line-height: 1.6; /* Improved readability */
-  }
-  
-  .social-icons {
-    display: flex;
-    justify-content: center;
- 
-  }
-  
-  .social-icons i {
-    color: var(--primary-color); /* Primary color for icons */
-    font-size: 30px;
-    margin: 0 15px;
-    transition: transform 0.3s ease;
-  }
-  
-  .social-icons i:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
-  }
-  .hero-paragraph {
-    font-family: var(--font-family-base);
-    font-size: 1.2rem;
-    font-weight: 300;
-    margin: 0 auto;
-    max-width: 800px;
-    color: var(--primary-color); /* Primary color for text */
-
-    z-index: 2;
-    position: relative;
-  }
+    h2 {
+      font-size: 2rem;
 
 
+    }
+  
+    .hero-paragraph {
+      font-size: 1.2rem;
+      max-width: 800px;
+
+    }
+  
+    .cta-text {
+      font-size: 1.5rem;
+  
+    }
+  
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+  
+      a {
+        color: #fff;
+        font-size: 1.8rem;
+        transition: color 0.3s ease;
+  
+        &:hover {
+  
+        }
+      }
+    }
+  }
   .links {
     color: var(--text-color); /* Use your text color variable for consistency */
     font-family: var(--font-family-base); /* Use the base font for better readability */
@@ -132,6 +101,36 @@
             transform: translateX(5px); /* Slightly move the arrow */
           }
         }
+      }
+    }
+  }
+
+
+
+  .cta-card {
+    .cta-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+  
+      .arrow-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        .arrow {
+          width: 100%;  // Allow scaling with parent's size
+          height: auto; // Maintain aspect ratio
+          max-width: 300px;  // Limit max size for scaling
+        }
+      }
+  
+      .cta-text {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        color: #333;
       }
     }
   }

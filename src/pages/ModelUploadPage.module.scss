@@ -1,117 +1,55 @@
-.StandardPageContainer {
-    max-width: 1200px;
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    width: 500px;
+    height: 500px;
     margin: 0 auto;
-    padding: 2rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    position: relative;
   }
   
-  .modelUploadContainer {
-    width: 100%;
-    background-color: var(--background-color);
-    border-radius: 10px;
-    padding: 2rem;
-    // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  h1 {
-    text-align: center;
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-  }
-  
-  .formContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .inputGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .label {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-color);
-  }
-  
-  .inputField {
-    padding: 12px;
-    border-radius: var(--border-radius);
+  .grid-item {
+    background-color: #e0e0e0;
     border: 1px solid #ccc;
-    font-size: 1rem;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    transition: border-color 0.3s ease;
+    position: relative;
+    height: 100px;
+    transition: border-radius 0.2s ease, transform 0.2s ease;
   
-    &:focus {
-      border-color: var(--primary-color);
-      outline: none;
+    /* Dynamic border-radius based on cursor position */
+    border-radius: calc(
+        50% -
+          max(
+            10px,
+            50px - (distance-to-cursor(var(--cursor-x), var(--cursor-y), 0, 0) / 10)
+          )
+      )
+      calc(
+        50% -
+          max(
+            10px,
+            50px - (distance-to-cursor(var(--cursor-x), var(--cursor-y), 100%, 0) / 10)
+          )
+      )
+      calc(
+        50% -
+          max(
+            10px,
+            50px - (distance-to-cursor(var(--cursor-x), var(--cursor-y), 100%, 100%) / 10)
+          )
+      )
+      calc(
+        50% -
+          max(
+            10px,
+            50px - (distance-to-cursor(var(--cursor-x), var(--cursor-y), 0, 100%) / 10)
+          )
+      );
+  
+    @function distance-to-cursor($cursor-x, $cursor-y, $x, $y) {
+      @return sqrt(pow($cursor-x - $x, 2) + pow($cursor-y - $y, 2));
     }
-  }
-  
-  .stagedFile {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: var(--primary-color);
-  }
-  
-  .uploadButton {
-    padding: 1rem 2rem;
-    background-color: var(--primary-color);
-    color: var(--background-color);
-    border-radius: var(--border-radius);
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    align-self: center;
   
     &:hover {
-
+      transform: scale(1.05);
     }
-  
-    &:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
-  }
-  
-  .progressContainer {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 20px;
-  }
-  
-  .progressBar {
-    width: 100%;
-    height: 20px;
-    border-radius: var(--border-radius);
-    appearance: none;
-  }
-  
-  .progressBar::-webkit-progress-bar {
-    background-color: #f3f3f3;
-  }
-  
-  .progressBar::-webkit-progress-value {
-    background-color: var(--primary-color);
-    border-radius: var(--border-radius);
-  }
-  
-  .progressBar::-moz-progress-bar {
-    background-color: var(--primary-color);
-    border-radius: var(--border-radius);
   }

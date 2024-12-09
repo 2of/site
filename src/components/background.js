@@ -4,7 +4,8 @@ import "./BackgroundPattern.scss";
 export const BackgroundPattern = () => {
   return (
     <div className="BackgroundContainerPattern">
-      <div className="animated-gradient"></div>
+      {/* Random landscape image from Lorem Picsum */}
+      <div className="background-image"></div>
     </div>
   );
 };

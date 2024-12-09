@@ -2,7 +2,7 @@
     background-color: var(--background-color);
     color: var(--text-color);
     border-radius: var(--border-radius);
-    border: 1px solid rgba(#000000, 0.3);
+    border: 1px solid var(--border-color);
     display: flex;
     gap: 0px;
     flex-direction: column;
@@ -15,8 +15,8 @@
     padding: 12px;
     /* Card hover effect */
     &:hover {
-      box-shadow: var(--shadow-hover); /* Adjust hover shadow for effect */
-      transform: translateY(-5px); /* Slight upward movement on hover */
+    //   box-shadow: var(--shadow-hover); /* Adjust hover shadow for effect */
+    //   transform: translateY(-5px); /* Slight upward movement on hover */
     }
     
     /* If the card has an image background */
@@ -84,7 +84,6 @@
 
       font-weight: bold;
       text-align: center;
-      border-radius: var(--border-radius);
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.3s ease;
     
