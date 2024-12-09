@@ -1,14 +1,15 @@
 .hero {
     position: relative;
-    background: linear-gradient(135deg, #ff7b00, #ff6a00, #ff5f00); /* Orange gradient */
+    background: linear-gradient(135deg, #ff6a00, #ff5f00, #ff4d00); /* Stronger orange gradient */
     color: var(--text-color);
     text-align: center;
-    padding: 100px 20px;
+    padding: 150px 30px; /* Increased padding for a larger impact */
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Adds bold shadow for depth */
     
     .hero-image {
-      /* No image, so we remove the image styles */
+      /* No image, so we keep the background gradient */
       position: absolute;
       top: 0;
       left: 0;
@@ -18,40 +19,52 @@
     }
   
     h1 {
-      font-size: 3rem;
-  
-     
+      font-size: 3rem; /* Larger font size for more impact */
+      font-weight: 400;
+    //   text-transform: uppercase; /* Bold and uppercase for emphasis */
+      letter-spacing: 3px; /* Increase letter spacing for a sharper look */
+/* Add shadow for emphasis */
+      margin-bottom: 20px;
     }
   
     h2 {
-      font-size: 2rem;
-
-
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-top: 10px;
+     
     }
   
     .hero-paragraph {
-      font-size: 1.2rem;
-      max-width: 800px;
-
+      font-size: 1.3rem;
+      max-width: 900px;
+    //   margin: 20px auto;
+      line-height: 1.6;
+      font-weight: 500; /* Bolder text */
+      color: rgba(255, 255, 255, 0.8); /* Slightly more transparent text for contrast */
     }
   
     .cta-text {
-      font-size: 1.5rem;
-  
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+      margin-top: 30px;
     }
   
     .social-icons {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
+      margin-top: 20px;
   
       a {
-        color: #fff;
-        font-size: 1.8rem;
-        transition: color 0.3s ease;
+        color: white;
+        font-size: 2rem;
+        transition: transform 0.3s ease, color 0.3s ease;
+      
   
         &:hover {
-  
+          transform: scale(1.1); /* Add hover scaling effect */
+          color: #ff6a00; /* Change color on hover */
         }
       }
     }

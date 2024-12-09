@@ -2,6 +2,7 @@
 .nav-container {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   align-items: center;
   padding: 1rem 2rem;
   width: 60%;
@@ -12,41 +13,35 @@
   z-index: 1000;
   background-color: var(--background-color);
   transition: all 0.3s ease; /* Smooth transition for all properties */
-}
-
-/* Mini state for compact mode */
-.nav-container.mini {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  box-shadow: var(--shadow);
   border-radius: var(--border-radius);
-  width: 64px;
-  height: auto;
-  padding: 1rem;
-  // box-shadow: 0 24px 24px rgba(0, 0, 0, 0.4);
-  transform: scale(1); /* Ensure normal scale */
-  transition: all 0.3s ease-in-out;
-  gap: 12px;
-  background-color: var(--background-color);
-  .nav-socials {
-    display: none;
+  border: 1px solid var(--border-color);
 
-  }
-  .nav-title {
-    display: none;
-  }
-  .nav-links {
-    display: none;
-  }
-}
+  &.mini {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius);
+    width: 64px;
+    padding: 1rem;
+    transform: scale(1); /* Ensure normal scale */
+    gap: 12px;
+    background-color: var(--background-color);
 
-/* Ensure smooth transition for non-mini state */
-.nav-container:not(.mini) {
-  transform: translateX(0);
-  transition: all 0.3s ease-in-out;
+    .nav-socials,
+    .nav-title,
+    .nav-links {
+      display: none;
+    }
+  }
+
+  &:not(.mini) {
+    transform: translateX(0);
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 /* Navigation logo and title container */
@@ -55,12 +50,12 @@
   align-items: center;
   gap: 1rem;
   transition: all 0.3s ease-in-out;
-}
 
-.nav-logo .logo {
-  width: 40px;
-  height: auto;
-  transition: transform 0.3s ease;
+  .logo {
+    width: 40px;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
 }
 
 .nav-title {
@@ -69,10 +64,11 @@
   margin: 0;
   opacity: 1;
   transition: opacity 0.3s ease;
-}
+  color: var(--text-color);
 
-.nav-title.mini {
-  opacity: 0;
+  &.mini {
+    opacity: 0;
+  }
 }
 
 /* Navigation links container */
@@ -86,37 +82,38 @@
   flex-grow: 1;
   opacity: 1;
   transition: opacity 0.3s ease;
-}
+  color: var(--text-color);
 
-.nav-links.mini {
-  display: none;
-  opacity: 0;
-}
+  &.mini {
+    display: none;
+    opacity: 0;
+  }
 
-.nav-links li {
-  position: relative;
-}
+  li {
+    position: relative;
 
-.nav-links a {
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  display: block;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
+    a {
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      display: block;
+      transition: transform 0.3s ease, color 0.3s ease;
+      color: var(--text-color);
 
-/* Add flair to active link */
-.nav-links .active a {
-  font-weight: bold;
-  color: var(--primary-color);
-  border-bottom: 2px solid var(--primary-color);
-  padding-bottom: 0.4rem;
-}
+      &:hover {
+        transform: scale(1.1);
+        color: var(--primary-color);
+      }
 
-/* Hover effect for links */
-.nav-links a:hover {
-  transform: scale(1.1);
+      &.active {
+        font-weight: bold;
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--primary-color);
+        padding-bottom: 0.4rem;
+      }
+    }
+  }
 }
 
 /* Social media icons container */
@@ -127,22 +124,22 @@
   align-items: center;
   opacity: 1;
   transition: opacity 0.3s ease;
-}
 
-.nav-socials.mini {
-  display: none;
-  opacity: 0;
-}
+  &.mini {
+    display: none;
+    opacity: 0;
+  }
 
-.nav-socials a {
-  font-size: 1.5rem;
-  color: var(--text-color);
-  transition: transform 0.3s ease, color 0.3s ease;
-}
+  a {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    transition: transform 0.3s ease, color 0.3s ease;
 
-.nav-socials a:hover {
-  transform: scale(1.1);
-  color: var(--primary-color);
+    &:hover {
+      transform: scale(1.1);
+      color: var(--primary-color);
+    }
+  }
 }
 
 /* Theme toggle button */
@@ -153,10 +150,10 @@
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.3s ease;
-}
 
-.theme-toggle:hover {
-  transform: scale(1.1);
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 /* Media Queries for responsiveness */
@@ -184,4 +181,40 @@
     justify-content: center;
     gap: 0.5rem;
   }
+}
+
+/* CSS Custom Properties (Light Mode by default) */
+:root {
+    --primary-color: #4b4a5a; /* Soft Orange */
+    --secondary-color: #a55540; /* Dark Gray */
+    --background-color: #f6f5f6; /* White */
+    --text-color: #0b0b0d; /* Darker Gray */
+    --font-family-base: "Arial", sans-serif;
+    --font-family-heading: "Montserrat", sans-serif;
+    --border-radius: 12px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-color: #363639;
+    /* Glass Card specific */
+    --glass-card-background: rgba(255, 255, 255, 0.758); /* Light background */
+    --glass-card-border: rgba(255, 255, 255, 0.3); /* Light border */
+    --glass-card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+    --glass-card-text-color: var(--text-color); /* Text color for glass card */
+}
+
+/* Dark Mode Custom Properties */
+[data-theme="dark"] {
+    --primary-color: #f63b02; /* Purple */
+    --secondary-color: #444444; /* Dark Gray */
+    --background-color: #201f1f; /* Dark Background */
+    --text-color: #ffffff; /* White Text */
+    --font-family-base: "Arial", sans-serif; /* Same font family */
+    --font-family-heading: "Montserrat", sans-serif; /* Same heading font */
+    --border-radius: 8px; /* Same border radius */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Same shadow for dark mode */
+    --border-color: #515159;
+    /* Glass Card specific for dark mode */
+    --glass-card-background: rgba(0, 0, 0, 0.709); /* Darker background */
+    --glass-card-border: rgba(255, 255, 255, 0.1); /* Lighter border for contrast */
+    --glass-card-shadow: 0 4px 6px rgba(0, 0, 0, 0.25); /* Darker shadow */
+    --glass-card-text-color: var(--text-color); /* Text color for glass card */
 }

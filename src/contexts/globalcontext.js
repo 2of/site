@@ -1,4 +1,3 @@
-// globalcontext.js
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 // Create context
@@ -11,6 +10,7 @@ export const useGlobalContext = () => {
 // Provider component
 export const GlobalProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [basename, setBasename] = useState("/2of_site"); // Store basename in state
 
   const toggleTheme = () => {
     setIsDarkMode((prevMode) => !prevMode);
@@ -26,7 +26,7 @@ export const GlobalProvider = ({ children }) => {
   }, [isDarkMode]);
 
   return (
-    <GlobalContext.Provider value={{ isDarkMode, toggleTheme }}>
+    <GlobalContext.Provider value={{ isDarkMode, toggleTheme, basename }}>
       {children}
     </GlobalContext.Provider>
   );

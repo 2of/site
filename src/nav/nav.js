@@ -16,7 +16,7 @@ const Nav = () => {
 
   return (
     <nav
-      className={`nav-container card ${isDarkMode ? "dark-mode" : ""} ${
+      className={` nav-container  ${isDarkMode ? "dark-mode" : "" } ${
         showLinks ? "" : "mini"
       }`}
     >
@@ -29,7 +29,7 @@ const Nav = () => {
         <ul className="nav-links">
           {routes.map(
             (route, index) =>
-              true && ( // not needed
+              route.showInNav && ( // not needed
                 <li
                   key={index}
                   className={location.pathname === route.path ? "active" : ""}

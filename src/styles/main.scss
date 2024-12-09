@@ -279,8 +279,9 @@ h2{
   width: 100%;
   max-width: 1200px; /* Set a maximum width to prevent the content from stretching too far on large screens */
   margin: 0 auto; /* Center the container horizontally */
-  padding: 20px; /* Add some padding for spacing */
+  // padding: 20px; /* Add some padding for spacing */
   box-sizing: border-box; /* Ensure padding doesn't affect the overall width */
+
 
   /* Add responsiveness for smaller screens */
   @media (max-width: 768px) {

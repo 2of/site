@@ -41,9 +41,7 @@ export const HeroCell = () => {
             <i className="fab fa-linkedin"></i>
           </a>
         </div>
-        <p className="hero-paragraph">
-          Just messing around with React here, trying to learn and build some cool stuff. Feel free to poke around and see what I've been working on!
-        </p>
+     
         <h3 className="cta-text">Check out the links below to get started.</h3>
   
        
@@ -60,7 +58,7 @@ export const LinksCell = () => (
     <ul>
       {routes.map(
         (route, index) =>
-          true && (
+          route.showInNav && (
             <li key={index}>
               <Link to={route.path}>{route.label}</Link>
             </li>
