@@ -8,25 +8,33 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(1, 1fr); /* Default to one column on small screens */
-  grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
-  grid-template-columns: repeat(5, 1fr); /* Five columns on larger screens */
-  grid-auto-rows: minmax(250px, 350px); /* Larger cells */
-  gap: 16px;
+  grid-template-columns: 1fr; /* Default to one column on small screens */
+  grid-auto-rows: minmax(250px, auto); /* Responsive cell heights */
+  gap: 4px;
 
-  width: 100%;
+  width: 100%; /* Ensure full-width layout on smaller screens */
   max-width: 1200px;
 
   padding: 16px; /* Add padding to the grid container */
   box-sizing: border-box; /* Include padding in the width and height calculation */
 
   /* Media Queries for Responsive Grid */
+  @media (min-width: 0px) {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for small screens */
+ 
+  }
+
   @media (min-width: 768px) {
+    
     grid-template-columns: repeat(3, 1fr); /* Three columns for medium screens */
   }
 
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr); /* Four columns for larger screens */
+  }
+
   @media (min-width: 1200px) {
-    grid-template-columns: repeat(5, 1fr); /* Five columns for larger screens */
+    grid-template-columns: repeat(5, 1fr); /* Five columns for extra-large screens */
   }
 
   /* Allow scrolling if content overflows vertically */
@@ -41,41 +49,27 @@
   opacity: 0; /* Start with the item hidden */
   transform: translateY(20px); /* Start with a small downward position for a smooth animation */
   animation: fadeIn 0.8s forwards; /* Apply fade-in animation */
-  animation-delay: 0.2s; /* Delay for a staggered effect */
+  min-width: 120px;
+
+  /* Stagger animation delays */
+  &:nth-child(1) { animation-delay: 0.1s; }
+  &:nth-child(2) { animation-delay: 0.2s; }
+  &:nth-child(3) { animation-delay: 0.3s; }
+  &:nth-child(4) { animation-delay: 0.4s; }
+  &:nth-child(5) { animation-delay: 0.5s; }
+  &:nth-child(6) { animation-delay: 0.6s; }
 
   /* No hover effects */
   
   &.double-wide {
-    grid-column: span 3;
+    grid-column: span 2;
+
+    @media (min-width: 768px) {
+      grid-column: span 3;
+    }
+
     grid-row: span 2;
   }
-
-  /* Stagger animation delay for each grid item */
-  &:nth-child(1) {
-    animation-delay: 0.1s;
-  }
-
-  &:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-
-  &:nth-child(3) {
-    animation-delay: 0.3s;
-  }
-
-  &:nth-child(4) {
-    animation-delay: 0.4s;
-  }
-
-  &:nth-child(5) {
-    animation-delay: 0.5s;
-  }
-
-  &:nth-child(6) {
-    animation-delay: 0.6s;
-  }
-
-  /* Add more nth-child selectors as needed for additional items */
 }
 
 /* Fade-In Animation */

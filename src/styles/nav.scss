@@ -4,63 +4,49 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  width: 60%; /* Set width to 60% */
-  margin: 0 auto; /* Center the container horizontally */
+  width: 60%;
+  margin: 0 auto;
   box-sizing: border-box;
-  transition: all 0.3s ease;
-  position: sticky; /* Make the navbar sticky */
-  top: 20px; /* Stick the navbar to the top of the page */
-  z-index: 1000; /* Ensure the navbar is above other content */
-  background-color: var(--background-color); 
-  transition: all 0.3s ease;
+  position: sticky;
+  top: 20px;
+  z-index: 1000;
+  background-color: var(--background-color);
+  transition: all 0.3s ease; /* Smooth transition for all properties */
 }
 
-/* Apply the 'mini' class to hide items except the logo and theme toggle */
+/* Mini state for compact mode */
 .nav-container.mini {
   position: fixed;
-  top: 20px; /* Keep it positioned at the top */
-  left: 20px; /* Adjust the position as needed */
-  display: flex;
+  top: 20px;
+  left: 20px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  transform: translateX(-10%);
-  width: 64px; /* Make the
-   container smaller */
-  height: auto; /* Allow for flexible height */
-  padding: 1rem; /* Optional padding for spacing */
-  background-color: var(--background-color); /* Maintain background color */
-  box-shadow: 0 24px 24px rgba(0, 0, 0, 0.4); /* Optional: add subtle shadow */
-  
-  .nav-links { 
-    display: none; /* Hide both the links and social icons */
+  width: 64px;
+  height: auto;
+  padding: 1rem;
+  // box-shadow: 0 24px 24px rgba(0, 0, 0, 0.4);
+  transform: scale(1); /* Ensure normal scale */
+  transition: all 0.3s ease-in-out;
+  gap: 12px;
+  background-color: var(--background-color);
+  .nav-socials {
+    display: none;
+
   }
-
-  .nav-socials { 
-  display: none;
+  .nav-title {
+    display: none;
   }
-
-  .nav-logo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 8px; /* Add gap between logo and title */
-    margin-bottom: 16px; /* Add some space below logo */
-    
-    .logo {
-      width: 40px; /* Adjust logo size */
-      height: auto;
-    }
-
-    .nav-title {
-      display: none; /* Hide the title in mini mode */
-    }
+  .nav-links {
+    display: none;
   }
+}
 
-  
-  
+/* Ensure smooth transition for non-mini state */
+.nav-container:not(.mini) {
+  transform: translateX(0);
+  transition: all 0.3s ease-in-out;
 }
 
 /* Navigation logo and title container */
@@ -68,17 +54,25 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-logo .logo {
-  width: 40px; /* Adjust the size of the logo */
+  width: 40px;
   height: auto;
+  transition: transform 0.3s ease;
 }
 
 .nav-title {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.nav-title.mini {
+  opacity: 0;
 }
 
 /* Navigation links container */
@@ -88,8 +82,15 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  justify-content: center; /* Center the links horizontally */
-  flex-grow: 1; /* Ensure the links take up all available space */
+  justify-content: center;
+  flex-grow: 1;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links.mini {
+  display: none;
+  opacity: 0;
 }
 
 .nav-links li {
@@ -108,9 +109,9 @@
 /* Add flair to active link */
 .nav-links .active a {
   font-weight: bold;
-  color: var(--primary-color); /* Use your primary color for the active link */
-  border-bottom: 2px solid var(--primary-color); /* Add a bottom border for flair */
-  padding-bottom: 0.4rem; /* Adjust padding to give space for the border */
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.4rem;
 }
 
 /* Hover effect for links */
@@ -122,19 +123,26 @@
 .nav-socials {
   display: flex;
   gap: 1.5rem;
-  justify-content: flex-end; /* Align the social links to the right */
-  align-items: center; /* Center the icons vertically */
+  justify-content: flex-end;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.nav-socials.mini {
+  display: none;
+  opacity: 0;
 }
 
 .nav-socials a {
   font-size: 1.5rem;
-  color: var(--text-color); /* Set the color of social links */
+  color: var(--text-color);
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .nav-socials a:hover {
   transform: scale(1.1);
-  color: var(--primary-color); /* Color change on hover */
+  color: var(--primary-color);
 }
 
 /* Theme toggle button */
@@ -157,27 +165,23 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
-    width: 100%; /* Full width on smaller screens */
+    width: 100%;
   }
 
   .nav-links {
     flex-direction: column;
     gap: 1rem;
-    justify-content: center; /* Center links vertically */
-    align-items: center; /* Center links horizontally */
+    justify-content: center;
+    align-items: center;
   }
 
   .nav-socials {
     gap: 1rem;
-    justify-content: center; /* Center social icons */
+    justify-content: center;
   }
 
   .nav-logo {
     justify-content: center;
     gap: 0.5rem;
-  }
-
-  .debug-info {
-    display: block; /* Show debug info on small screens */
   }
 }

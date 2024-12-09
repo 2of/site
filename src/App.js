@@ -7,11 +7,13 @@ import LayoutMain from "./layouts/layout_main";
 import { GlobalProvider } from "./contexts/globalcontext"; // Import GlobalProvider
 import "./styles/main.scss";  // Import the main global SCSS file
 import "./styles/_theme.scss";  
+import { BackgroundPattern } from "./components/background";
 
 function App() {
   return (
     // Wrap the entire app with GlobalProvider to provide global state
     <GlobalProvider> 
+    <BackgroundPattern/>  
       <Router basename="/2of_site">
         <Routes>
           {/* Define the main layout route */}

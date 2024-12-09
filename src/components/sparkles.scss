@@ -1,0 +1,18 @@
+.card {
+
+  }
+  
+  .card_title {
+    // text-align: center;
+  }
+  
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.6), 0 0 20px 10px rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+
+    transition: transform 0.016s, opacity 0.016s;
+    filter: blur(12px);
+  }

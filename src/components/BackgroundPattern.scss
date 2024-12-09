@@ -1,0 +1,16 @@
+.BackgroundContainerPattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1; /* Place behind all other content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    opacity: 0.1;
+    background-size: 10px 10px;
+    background-image: repeating-linear-gradient(45deg, #837d7a 0, #837d7a 1px, #f4f4f4 0, #f4f4f4 50%);
+  }

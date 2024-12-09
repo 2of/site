@@ -1,9 +1,9 @@
 /* CSS Custom Properties (Light Mode by default) */
 :root {
-    --primary-color: #ff7043; // Soft Orange
-    --secondary-color: #37474f; // Dark Gray
-    --background-color: #ffffff; // White
-    --text-color: #212121; // Darker Gray
+    --primary-color: #4b4a5a; // Soft Orange
+    --secondary-color: #a55540;// Dark Gray
+    --background-color: #f6f5f6; // White
+    --text-color: #0b0b0d;// Darker Gray
     --font-family-base: "Arial", sans-serif;
     --font-family-heading: "Montserrat", sans-serif;
     --border-radius: 8px;
@@ -21,7 +21,7 @@
 [data-theme="dark"] {
     --primary-color: #f63b02; // Purple
     --secondary-color: #444444; // Dark Gray
-    --background-color: #333333; // Dark Background
+    --background-color: #201f1f; // Dark Background
     --text-color: #ffffff; // White Text
     --font-family-base: "Arial", sans-serif; // Same font family
     --font-family-heading: "Montserrat", sans-serif; // Same heading font

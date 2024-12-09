@@ -1,9 +1,9 @@
 import React from "react";
 import { useGlobalContext } from "../contexts/globalcontext";
 import projects from "../dummy_data/dummy_projects.json";
-import writings from "../dummy_data/dummy_writings.json";
-import { HeroCell, LinksCell, ProjectCard, WritingCard, FunCell } from "./HomePageCells";
+import { HeroCell, LinksCell, ProjectCard, FixedCard, CVCard } from "./HomePageCells";
 import "./homepage.scss";
+import CardWithSparkles from "../components/sparklecard";
 
 const HomePage = () => {
   const { isDarkMode } = useGlobalContext();
@@ -11,23 +11,25 @@ const HomePage = () => {
   return (
     <div className={isDarkMode ? "homepage dark-mode" : "homepage light-mode"}>
       <div className="grid-container">
+        {/* Section 1 Label */}
+   
         {/* Double-wide hero section */}
         <HeroCell />
 
         <LinksCell />
+        <CVCard />
+        <FixedCard />
+        <FixedCard />
 
+        {/* Section 2 Label */}
+        
         {/* Dynamic Project Cards */}
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
 
-        {/* Dynamic Writing Cards */}
-        {writings.map((writing) => (
-          <WritingCard key={writing.id} writing={writing} />
-        ))}
-
-        {/* Placeholder Fun Section */}
-        <FunCell />
+        {/* Sparkles */}
+        <CardWithSparkles />
       </div>
     </div>
   );

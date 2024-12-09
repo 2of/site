@@ -1,23 +1,24 @@
 [
-    {
-      "id": 1,
-      "title": "The Future of AI",
-      "description": "How AI shapes the world we live in.",
-      "date": "2024-05-01",
-      "image": "https://picsum.photos/300/200?5"
-    },
+    
     {
       "id": 2,
-      "title": "React Best Practices",
-      "description": "Tips for building scalable React apps.",
+      "title": "React Best Practices: Building Apps Faster Than a Pizza Delivery",
+      "description": "Building a React app should be as fun as building a Lego set—except you don’t have to step on any pieces! Learn how to make your React apps so smooth that even your cat will be impressed (and probably try to sit on your keyboard).",
       "date": "2024-06-10",
       "image": "https://picsum.photos/300/200?6"
     },
     {
       "id": 3,
-      "title": "Debugging with Ease",
-      "description": "Simplify your debugging workflow.",
+      "title": "Debugging with Ease: It’s Like Finding Hidden Objects",
+      "description": "Debugging is like a treasure hunt, but with fewer pirates and more syntax errors. Ready to find that pesky bug? Grab your magnifying glass and join me in making your code flawless (or at least close enough to fool everyone).",
       "date": "2024-07-20",
       "image": "https://picsum.photos/300/200?7"
+    },
+    {
+      "id": -1,
+      "title": "See More →: The Quest Continues",
+      "description": "The adventure doesn’t stop here! There’s more fun, more projects, and more nerdy goodness waiting for you. Click to continue the journey—no treasure map required.",
+      "date": "2024-12-09",
+      "image": "https://picsum.photos/300/200?8"
     }
   ]

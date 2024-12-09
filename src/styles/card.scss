@@ -1,0 +1,100 @@
+.card {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(#000000, 0.3);
+    display: flex;
+    gap: 0px;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align:left;
+    transition: all 0.3s ease; /* Smooth transition on hover */
+    position: relative; /* For the background positioning */
+    overflow: hidden; /* Ensure elements are hidden when not hovered */
+    align-items: start;
+    padding: 12px;
+    /* Card hover effect */
+    &:hover {
+      box-shadow: var(--shadow-hover); /* Adjust hover shadow for effect */
+      transform: translateY(-5px); /* Slight upward movement on hover */
+    }
+    
+    /* If the card has an image background */
+    &.card_with_image {
+      position: relative; /* To position the content on top of the background image */
+      overflow: hidden;
+      .cardBGImg {
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.01; /* Faded background by default */
+        transition: opacity 0.3s ease-in-out, filter 0.3s ease; /* Smooth transition *
+        /* Hover: make the background image more prominent */
+        &:hover {
+          opacity: 1; /* Reveal the background image fully */
+          filter: blur(0px);
+        }
+      }
+    }
+
+    .card_title h2 { 
+        margin: 0px;
+        padding: 0px;
+    }
+  
+    .card_title,
+    .card_content,
+    .card_cta {
+      z-index: 1; /* Ensure content appears above the background image */
+
+  
+      opacity: 1; /* Content always visible */
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .card_title {
+      font-size: 1rem;
+      font-weight:bolder;
+      color: var(--text-color);
+      transition: color 0.3s ease;
+      &:hover {
+        color: var(--secondary-color);
+      }
+    }
+    
+    .card_content {
+      font-size: 1rem;
+      font-weight: 100;
+
+      color: var(--text-color);
+   text-overflow: ellipsis;
+    }
+
+    .card_subtitle { 
+            margin: 0px;
+            font-size: 0.8rem;
+    }
+    
+    .card_cta {
+      padding: 10px 20px;
+
+      font-weight: bold;
+      text-align: center;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    
+      &:hover {
+        background-color: var(--primary-color-hover);
+        transform: translateY(-2px); /* Slight movement on hover */
+      }
+    
+      &:active {
+        transform: translateY(0); /* Reset position when clicked */
+      }
+    }
+  }
