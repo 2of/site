@@ -1,10 +1,10 @@
 .hero {
     position: relative;
-    background: linear-gradient(135deg, #ff6a00, #ff5f00, #ff4d00); /* Stronger orange gradient */
+    background: linear-gradient(135deg, #fa7d23, #ff5f00, #ff4d00); /* Stronger orange gradient */
     color: var(--text-color);
-    text-align: center;
-    padding: 150px 30px; /* Increased padding for a larger impact */
-    border-radius: 10px;
+    text-align: left;
+    // padding: 150px 30px; /* Increased padding for a larger impact */
+ 
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Adds bold shadow for depth */
     
@@ -78,7 +78,10 @@
       padding-left: 0; /* Remove default indentation */
       margin: 0; /* Ensure no extra margin around the list */
     }
-  
+  .active-link {
+    color: #f00; /* Example active link color */
+    font-weight: bold;
+  }
     /* Style individual list items */
     li {
     //   margin-bottom: 12px; /* Space out the items */
@@ -101,7 +104,7 @@
           left: -25px; /* Position it before the link text */
           opacity: 0; /* Initially hide the arrow */
           transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for arrow */
-          font-size: 1.2rem; /* Make the arrow a bit larger */
+          font-size: 1.5rem; /* Make the arrow a bit larger */
           color: var(--primary-color); /* Same color as the link */
         }
   

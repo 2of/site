@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
 import routes from "../routes"; // Import routes.js
 import "./HomePageCells.scss";
 import { useState, useEffect } from "react";
@@ -10,64 +10,40 @@ import { ArrowCta } from "../res/arrowcta";
 export const HeroCell = () => {
     return (
       <div className="grid-item hero double-wide card">
-        <div className="hero-image">
-          {/* Background gradient instead of an image */}
-        </div>
-        <h1>Hey there! I'm Noah 👋 this is my website</h1>
-        <p className="hero-paragraph">
-            the css is a work in progress
-         </p>
-        <h2>This page is mostly for fun... but check out my writeups below</h2>
-        <div className="social-icons">
-          <a
-            href="https://github.com/noah"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fab fa-github"></i>
-          </a>
-          <a
-            href="https://twitter.com/noah"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fab fa-twitter"></i>
-          </a>
-          <a
-            href="https://linkedin.com/in/noah"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fab fa-linkedin"></i>
-          </a>
-        </div>
-     
-        <h3 className="cta-text">Check out the links below to get started.</h3>
+        <div className="hero-content">
+          <h1>Hey, I'm Noah 👋 This is just my lil WIP</h1>
+         
+
+          </div>
   
-       
+         
+   
       </div>
     );
   };
 // Links Cell
-export const LinksCell = () => (
-  <div className="grid-item links card ">
-    {/* <div className="card_title">
-      <h2>Links</h2>
-    </div> */}
-    <div className="card_content">
-    <ul>
-      {routes.map(
-        (route, index) =>
-          route.showInNav && (
-            <li key={index}>
-              <Link to={route.path}>{route.label}</Link>
-            </li>
-          )
-      )}
-    </ul>
 
+
+export const LinksCell = () => (
+  <div className="grid-item links card">
+    <div className="card_content">
+      <ul>
+        {routes.map(
+          (route, index) =>
+            route.showInNav && (
+              <li key={index}>
+                <NavLink
+                  to={route.path}
+                  activeClassName="active-link" // Applies when the link is active
+                  exact // Ensure the link is only active when exactly matching the path
+                >
+                  {route.label}
+                </NavLink>
+              </li>
+            )
+        )}
+      </ul>
     </div>
-    
   </div>
 );
 export const CVCard = () => (

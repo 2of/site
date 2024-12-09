@@ -8,7 +8,7 @@ import { GlobalProvider, useGlobalContext } from "./contexts/globalcontext"; // 
 import "./styles/main.scss";  // Import the main global SCSS file
 import "./styles/_theme.scss";  
 import { BackgroundPattern } from "./components/background";
-import "./styles/card_glass.scss";
+import "./styles/card.scss";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ const AppContent = () => {
 
   return (
     <Router basename={basename}>  {/* Use the basename from context */}
-      <BackgroundPattern />  {/* Place BackgroundPattern inside Router */}
+      {/* <BackgroundPattern />  Place BackgroundPattern inside Router */}
       <Routes>
         {/* Define the main layout route */}
         <Route element={<LayoutMain />}>

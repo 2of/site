@@ -13,14 +13,14 @@
   z-index: 1000;
   background-color: var(--background-color);
   transition: all 0.3s ease; /* Smooth transition for all properties */
-  box-shadow: var(--shadow);
+
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
 
   &.mini {
     position: fixed;
     top: 20px;
-    left: 20px;
+    right: 20px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -30,12 +30,15 @@
     transform: scale(1); /* Ensure normal scale */
     gap: 12px;
     background-color: var(--background-color);
+    border: none;
 
     .nav-socials,
     .nav-title,
+    .nav-logo,
     .nav-links {
       display: none;
     }
+
   }
 
   &:not(.mini) {
@@ -181,40 +184,4 @@
     justify-content: center;
     gap: 0.5rem;
   }
-}
-
-/* CSS Custom Properties (Light Mode by default) */
-:root {
-    --primary-color: #4b4a5a; /* Soft Orange */
-    --secondary-color: #a55540; /* Dark Gray */
-    --background-color: #f6f5f6; /* White */
-    --text-color: #0b0b0d; /* Darker Gray */
-    --font-family-base: "Arial", sans-serif;
-    --font-family-heading: "Montserrat", sans-serif;
-    --border-radius: 12px;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --border-color: #363639;
-    /* Glass Card specific */
-    --glass-card-background: rgba(255, 255, 255, 0.758); /* Light background */
-    --glass-card-border: rgba(255, 255, 255, 0.3); /* Light border */
-    --glass-card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
-    --glass-card-text-color: var(--text-color); /* Text color for glass card */
-}
-
-/* Dark Mode Custom Properties */
-[data-theme="dark"] {
-    --primary-color: #f63b02; /* Purple */
-    --secondary-color: #444444; /* Dark Gray */
-    --background-color: #201f1f; /* Dark Background */
-    --text-color: #ffffff; /* White Text */
-    --font-family-base: "Arial", sans-serif; /* Same font family */
-    --font-family-heading: "Montserrat", sans-serif; /* Same heading font */
-    --border-radius: 8px; /* Same border radius */
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Same shadow for dark mode */
-    --border-color: #515159;
-    /* Glass Card specific for dark mode */
-    --glass-card-background: rgba(0, 0, 0, 0.709); /* Darker background */
-    --glass-card-border: rgba(255, 255, 255, 0.1); /* Lighter border for contrast */
-    --glass-card-shadow: 0 4px 6px rgba(0, 0, 0, 0.25); /* Darker shadow */
-    --glass-card-text-color: var(--text-color); /* Text color for glass card */
 }

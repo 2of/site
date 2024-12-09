@@ -11,6 +11,8 @@ export const DirPage = () => {
       <div className={styles.phonebookContainer}>
         <h1>./dir (or $ls for the better amongst us)</h1>
         <h2>I keep a lot of junk on this page so, hey a handy dir for forgetting the paths</h2>
+
+        <h3>A lot of these are just rough tools that I needed to host somewhere, expect no quality </h3>
         <div className={styles.phonebook}>
           {routes
            // Filter routes that should be shown

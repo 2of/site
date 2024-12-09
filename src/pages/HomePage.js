@@ -13,21 +13,28 @@ const HomePage = () => {
       <div className="grid-container">
         {/* Section 1 Label */}
    
-        {/* Double-wide hero section */}
-        <HeroCell />
+        {/* Hero section (3x2) */}
+        <div className="grid-item threebytwo">
+          <HeroCell />
+        </div>
 
         <LinksCell />
         <CVCard />
-        <FixedCard />
-        <FixedCard />
+        <FixedCard className="twobyone" /> {/* Example of a 2-column wide card */}
+        <FixedCard className="twobyone" /> {/* Example of a 2x2 card */}
 
         {/* Section 2 Label */}
         
         {/* Dynamic Project Cards */}
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-        <CTACard></CTACard>
+        {projects.map((project, index) => (
+  <div
+    className={`grid-item ${index === projects.length - 1 ? 'twobyone' : 'twobyone'}`}
+    key={project.id}
+  >
+    <ProjectCard project={project} />
+  </div>
+))}
+        {/* <CTACard></CTACard> */}
 
         {/* Sparkles */}
         {/* <CardWithSparkles /> */}

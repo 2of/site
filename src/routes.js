@@ -6,7 +6,7 @@ import NonsensePage from "./pages/NonsensePage";
 import WritingPage from "./pages/WritingsPage";
 const routes = [
   { path: "/", label: "home", element: <HomePage />, showlinks: false, showInNav: true },
-  { path: "/dir", label: "./dir", element: <DirPage />, showlinks: true, showInNav: true },
+  { path: "/dir", label: "dir", element: <DirPage />, showlinks: true, showInNav: true },
   { path: "/projects", label: "projects", element: <h1>Projects</h1>, showlinks: true, showInNav: true },
   { path: "/words", label: "articles", element: <WritingPage />, showlinks: true, showInNav: true },
   { path: "/modelup1", label: "upload to model", element: <ModelUploadPage />, showlinks: true, showInNav: false },

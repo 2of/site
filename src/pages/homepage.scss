@@ -8,24 +8,17 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr; /* Default to one column on small screens */
-  grid-auto-rows: minmax(250px, auto); /* Responsive cell heights */
-  gap: 4px;
-
+  grid-template-columns: repeat(1, 1fr); /* Default to one column on small screens */
+  grid-template-rows: repeat(1, 1fr); /* Default to one row on small screens */
   width: 100%; /* Ensure full-width layout on smaller screens */
-  max-width: 1200px;
-
-  padding: 16px; /* Add padding to the grid container */
   box-sizing: border-box; /* Include padding in the width and height calculation */
 
   /* Media Queries for Responsive Grid */
   @media (min-width: 0px) {
     grid-template-columns: repeat(2, 1fr); /* Two columns for small screens */
- 
   }
 
   @media (min-width: 768px) {
-    
     grid-template-columns: repeat(3, 1fr); /* Three columns for medium screens */
   }
 
@@ -34,10 +27,10 @@
   }
 
   @media (min-width: 1200px) {
-    grid-template-columns: repeat(5, 1fr); /* Five columns for extra-large screens */
+    grid-template-columns: repeat(6, 1fr); /* Six columns for extra-large screens */
   }
 
-  /* Allow scrolling if content overflows vertically */
+  grid-auto-rows: minmax(250px, auto); /* Ensure row height adjusts to content but doesn't shrink too much */
   overflow-y: auto; /* Enable vertical scrolling */
   max-height: 100vh; /* Prevent it from exceeding the height of the viewport */
 }
@@ -45,12 +38,13 @@
 .grid-item {
   position: relative;
   overflow: hidden;
-
-  opacity: 0; /* Start with the item hidden */
-  transform: translateY(20px); /* Start with a small downward position for a smooth animation */
+  height: 100%;
+  opacity: 0;
+  transform: translateY(20px); /* Initial small downward position for animation */
   animation: fadeIn 0.8s forwards; /* Apply fade-in animation */
   min-width: 120px;
-
+  box-sizing: border-box; /* Ensure that padding and margins don't affect the grid size */
+  
   /* Stagger animation delays */
   &:nth-child(1) { animation-delay: 0.1s; }
   &:nth-child(2) { animation-delay: 0.2s; }
@@ -63,17 +57,34 @@
   &:nth-child(9) { animation-delay: 0.3s; }
   &:nth-child(10) { animation-delay: 0.5s; }
   &:nth-child(11) { animation-delay: 0.4s; }
-  /* No hover effects */
-  
-  &.double-wide {
-    grid-column: span 2;
 
-    @media (min-width: 768px) {
-      grid-column: span 3;
-    }
-
-    grid-row: span 2;
+  /* Specific grid item class sizes */
+  &.twobyone {
+    grid-column: span 2; /* Span across 2 columns */
+    grid-row: span 1; /* Default span for rows */
   }
+
+  &.twobytwo {
+    grid-column: span 2; /* Span across 2 columns */
+    grid-row: span 2; /* Span across 2 rows */
+  }
+
+  &.onebytwo {
+    grid-column: span 1; /* Span across 1 column */
+    grid-row: span 2; /* Span across 2 rows */
+  }
+
+  &.threebytwo {
+    grid-column: span 3; /* Span across 3 columns */
+    grid-row: span 2; /* Span across 2 rows */
+  }
+
+  /* Prevent cells from shrinking below their designated size */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  min-height: 250px; /* Ensures minimum height for cells, respecting the grid span */
 }
 
 /* Fade-In Animation */
@@ -87,3 +98,4 @@
     transform: translateY(0);
   }
 }
+
