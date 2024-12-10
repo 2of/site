@@ -1,0 +1,59 @@
+.links {
+    color: var(--text-color); /* Use your text color variable for consistency */
+    font-family: var(--font-family-base); /* Use the base font for better readability */
+    padding: 15px;
+    overflow: hidden;
+    background-color: var(--background-color);
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  
+    ul {
+      list-style-type: none; /* Remove bullets */
+      padding-left: 0; /* Remove default indentation */
+      margin: 0; /* Ensure no extra margin around the list */
+    }
+  
+    .active-link {
+      font-weight: bold; /* Make active links bold */
+    }
+  
+    /* Style individual list items */
+    li {
+      font-size: 1.7rem; /* Make text slightly larger */
+      margin-bottom: 12px; /* Space out the items */
+      
+      /* Add a subtle transition effect for links */
+      a {
+        color: var(--text-color); /* Primary link color */
+        text-decoration: none; /* Remove underline */
+        font-weight: 500; /* Make the link text weight slightly bolder */
+        transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+        padding: 5px 0; /* Add vertical padding for better spacing */
+        display: inline-block; /* Make sure padding works as expected */
+        position: relative; /* To position the arrow */
+        
+        /* The arrow that appears on hover */
+        &::before {
+          content: "→"; /* Arrow symbol */
+          position: absolute;
+          left: -25px; /* Position it before the link text */
+          opacity: 0; /* Initially hide the arrow */
+          transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for arrow */
+          font-size: 1.5rem; /* Make the arrow a bit larger */
+          color: var(--primary-color); /* Same color as the link */
+        }
+  
+        &:hover {
+          color: var(--primary-color); /* Change link color on hover */
+          transform: translateX(4px); /* Slight movement effect */
+          
+          &::before {
+            opacity: 1; /* Show the arrow on hover */
+            transform: translateX(5px); /* Slightly move the arrow */
+          }
+        }
+      }
+    }
+  }

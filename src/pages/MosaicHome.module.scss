@@ -1,0 +1,93 @@
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    // transform: translateY(20px); /* Start slightly below */
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End in its original position */
+    transform: scale(1);
+  }
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 equal columns */
+
+  grid-gap: 0px; /* No space between items */
+  width: 100%; /* Full width */
+  height: 100vh; /* Full height of the viewport */
+  margin: 0 auto; /* Center the grid horizontally */
+  padding: 32px; /* No extra padding */
+  box-sizing: border-box; /* Ensure padding/margins don't affect the layout */
+}
+
+.gridItem {
+  border: 1px solid var(--border-color); /* Border for each item */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+/* Slight opacity to make it subtle */
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  /* Ensure the ite  opacity: 0;m stays consistent in size */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Prevent content from stretching the grid */
+  overflow: hidden;
+
+  /* Fixed aspect ratio */
+  aspect-ratio: 1; /* Ensures it remains a square, adjust if you want different proportions */
+
+  /* Animation for fade-in and slide-up */
+  animation:  fadeInSlideUp 0.3s forwards; /* 0.6 seconds duration */
+  // animation-delay: 0.1s; /* Delay before the animation starts */
+
+  
+}
+
+.gridItem:nth-child(odd) {
+  animation-delay: 0.3s; /* Delay for odd items */
+}
+
+.gridItem:nth-child(even) {
+  animation-delay: 0.1s; /* Delay for even items */
+}
+
+.gridItem:nth-child(3n) {
+  animation-delay: 0.1s; /* Delay for every third item */
+}
+
+/* Responsive grid */
+@media (max-width: 768px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .gridContainer {
+    grid-template-columns: 1fr; /* 1 column on very small screens */
+  }
+}
+
+/* Specific grid item variations */
+.onextwo {
+  grid-column: span 1; /* Span 1 column */
+  grid-row: span 2; /* Span 2 rows */
+}
+
+.twoxone {
+  grid-column: span 2; /* Span 2 columns */
+  grid-row: span 1; /* Span 1 row */
+}
+
+.threextwo {
+  grid-column: span 3; /* Span 3 columns */
+  grid-row: span 2; /* Span 2 rows */
+}

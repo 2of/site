@@ -7,7 +7,7 @@ import { useGlobalContext } from "../contexts/globalcontext"; // Import global c
 import DarkModeToggle from "../components/darkmodetoggle";
 
 const Nav = () => {
-  const { isDarkMode, toggleTheme } = useGlobalContext();
+  const { isDarkMode } = useGlobalContext();
   const location = useLocation(); // Detect the current path
 
   // Get the current route
@@ -16,48 +16,67 @@ const Nav = () => {
 
   return (
     <nav
-      className={` nav-container  ${isDarkMode ? "dark-mode" : "" } ${
+      className={`nav-container ${isDarkMode ? "dark-mode" : ""} ${
         showLinks ? "" : "mini"
       }`}
     >
       <div className="nav-logo">
         <img src={logo} alt="Logo" className="logo" />
-        <h1 className="nav-title">2of</h1>
+        <h1 className="nav-title">2of.io</h1>
       </div>
 
       {true && (
         <ul className="nav-links">
-          {routes.map(
-            (route, index) =>
-              route.showInNav && ( // not needed
-                <li
-                  key={index}
-                  className={location.pathname === route.path ? "active" : ""}
-                >
-                  <Link to={route.path}>{route.label}</Link>
-                </li>
-              )
+          {routes.map((route, index) =>
+            route.showInNav ? (
+              <li
+                key={index}
+                className={location.pathname === route.path ? "active" : ""}
+              >
+                <Link to={route.path}>
+                  <span
+                    className={`prefix ${
+                      location.pathname === route.path ? "show" : ""
+                    }`}
+                  >
+                    ./
+                  </span>
+                  <span className="label">{route.label}</span>
+                </Link>
+              </li>
+            ) : null
           )}
         </ul>
       )}
 
-      <div className="nav-socials">
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-github"></i>
-        </a>
-        <a
-          href="https://linkedin.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-linkedin"></i>
-        </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-twitter"></i>
-        </a>
-      </div>
+      <div className="nav-right-container">
+        {/* Social Links */}
+        <div className="nav-socials">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-github"></i>
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-twitter"></i>
+          </a>
+        </div>
 
-      <DarkModeToggle />
+        {/* Separator */}
+        <span className="separator">•</span>
+
+        {/* Dark Mode Toggle */}
+        <DarkModeToggle />
+      </div>
     </nav>
   );
 };

@@ -1,3 +1,8 @@
+.fill_to_grid{
+    height: 100%;
+    width: 100%;
+}
+
 .hero {
     position: relative;
     background: linear-gradient(135deg, #fa7d23, #ff5f00, #ff4d00); /* Stronger orange gradient */
@@ -72,6 +77,8 @@
   .links {
     color: var(--text-color); /* Use your text color variable for consistency */
     font-family: var(--font-family-base); /* Use the base font for better readability */
+    padding: 10px;
+    background-color: red;
  
     ul {
       list-style-type: none; /* Remove bullets */
@@ -79,7 +86,7 @@
       margin: 0; /* Ensure no extra margin around the list */
     }
   .active-link {
-    color: #f00; /* Example active link color */
+    // color: #f00; /* Example active link color */
     font-weight: bold;
   }
     /* Style individual list items */
@@ -89,7 +96,7 @@
       
       /* Add a subtle transition effect for links */
       a {
-        color: var(--primary-color); /* Primary link color */
+        color: var(--text-color); /* Primary link color */
         text-decoration: none; /* Remove underline */
         font-weight: 500; /* Make the link text weight slightly bolder */
         transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
@@ -109,7 +116,7 @@
         }
   
         &:hover {
-          color: var(--secondary-color); /* Change link color on hover */
+          color: var(--primary-color); /* Change link color on hover */
           transform: translateX(4px); /* Slight movement effect */
           
           &::before {

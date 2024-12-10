@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import routes from "../routes"; // Import routes.js
-import "./HomePageCells.scss";
+// import "./HomePageCells.scss";
 import { useState, useEffect } from "react";
 // Hero Cell
 // import "../styles/card.scss";
@@ -24,8 +24,8 @@ export const HeroCell = () => {
 // Links Cell
 
 
-export const LinksCell = () => (
-  <div className="grid-item links card">
+export const LinksCell = ({ cardtype  = "" }) => (
+    <div className={`grid-item links card ${cardtype}`}>
     <div className="card_content">
       <ul>
         {routes.map(
@@ -93,6 +93,48 @@ export const ProjectCard = ({ project }) => {
     </div>
   );
 };
+
+
+
+export const AboutMeCard = ({cardtype}) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const aboutMe = {
+    image: "path_to_your_image.jpg", // Replace with your image URL or path
+    title: "About Me",
+    subtitle: "Software Developer & Designer",
+    description:
+      "Hi! I'm passionate about creating engaging user experiences, solving complex problems, and bringing ideas to life through code. Let's build something amazing together!",
+  };
+
+  return (
+    <div
+      className={`grid-item about-me card ${aboutMe.image ? "card_with_image" : ""}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {aboutMe.image && (
+        <div
+          className="cardBGImg"
+          style={{
+            backgroundImage: `url(${aboutMe.image})`,
+            opacity: isHovered ? 0.6 : 0.1, // Change opacity based on hover state
+          }}
+        />
+      )}
+
+      <div className="card_title">
+        <h2 className="card_title">{aboutMe.title}</h2>
+        <h3 className="card_subtitle">{aboutMe.subtitle}</h3>
+        <p className="card_content">{aboutMe.description}</p>
+      </div>
+
+      <div className="card_cta">Learn More →</div>
+    </div>
+  );
+};
+
+
 // Writing Card Cell
 export const WritingCard = ({ writing }) => (
   <div className="grid-item writing card">

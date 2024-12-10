@@ -7,7 +7,7 @@ const WritingPage = () => {
   // Define the header content
   const header = (
     <div className="writing-header">
-      <h1>My Writing Portfolio</h1>
+      <h1>placeholder</h1>
       <p>These are all AI genereated to fill space (again, public sneaking in)</p>
     </div>
   );

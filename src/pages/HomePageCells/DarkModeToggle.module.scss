@@ -1,0 +1,269 @@
+.darkModeToggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+
+  transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+  // border: 1px solid var(--border-color);
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.light {
+    background: linear-gradient(135deg, #A9C9E5, #D5E6F2); /* Muted light blue gradient */ /* Light sky blue gradient */
+    color: #333;
+    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &.dark {
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Dark night sky gradient */
+    color: #f4f4f4;
+   
+  }
+
+
+
+  .moonAndStars {
+    position: relative;
+    margin-top: 1rem;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .sun {
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #f5ed0c67, #ffeda5); /* Bright yellow gradient */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(255, 223, 89, 0.7), 0 0 40px rgba(255, 223, 89, 0.5), 0 0 60px rgba(255, 223, 89, 0.3);
+    animation: sunRise 0.3s forwards;
+  }
+
+
+
+  .moon {
+    position: absolute;
+    bottom: -100px; /* Start below the screen */
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #f0e68c, #f9d769); /* Soft moon yellow */
+    border-radius: 50%;
+    
+    /* Add a soft glow around the moon */
+    box-shadow: 0 0 30px rgba(240, 230, 140, 0.6), 0 0 60px rgba(240, 230, 140, 0.4), 0 0 90px rgba(240, 230, 140, 0.2);
+    
+
+    
+    animation: moonRise 0.3s forwards; /* Moon rise animation */
+  }
+
+  .stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: starryNight 6s infinite alternate;
+    opacity: 0.9;
+    filter: brightness(0.7);
+  }
+
+
+
+  .buoy {
+    position: relative;
+    bottom: 20px; /* Position above the hill */
+    left: 50px;
+    width: 50px; /* Adjust buoy size */
+    height: 50px;
+    animation: buoyMotion 3s infinite cubic-bezier(0.42, 0, 0.58, 1);
+    z-index: 3;
+
+    img {
+      width: 100%;
+      height: auto;
+      transform-origin: center; /* Center rotation for the buoy */
+    }
+  }
+  .hill {
+    position: absolute;
+    bottom: 0; /* Stick to the bottom of the parent */
+    width: 100%; /* Full width of the parent */
+    height: 25%; /* 25% of the parent height */
+    // z-index: 100;
+  }
+  
+  &.light .hill {
+    background: linear-gradient(135deg, #A8C58C, #B8D6A3); /* Muted green gradient */
+  }
+  
+  &.dark .hill {
+    background: #2c3e50; /* Dark green for nighttime */
+  }
+
+
+}
+
+/* Animate the moon out */
+.animateMoonOut {
+  opacity: 0.5; /* Fade out the moon */
+}
+
+@keyframes sunRise { 
+  0% {
+    bottom: -100px; /* Start below the screen */
+    opacity: 0; /* Hidden at the start */
+    right: 0px;
+  }
+  100% {
+    bottom: 80px;
+    right: 80px; /* Place the moon just above the hill */
+    opacity: 1; /* Make the moon visible */
+  }
+}
+
+/* Animation for sun setting */
+@keyframes sunSet {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100px; /* Move the sun off the screen */
+    opacity: 0; /* Fade out the sun */
+  }
+}
+
+/* Animation for moon rising */
+@keyframes moonRise {
+  0% {
+    bottom: 50px; /* Start below the screen */
+    opacity: 0; /* Hidden at the start */
+    left: 0px;
+  }
+  100% {
+    bottom: 80px;
+    left: 40px; /* Place the moon just above the hill */
+    opacity: 1; /* Make the moon visible */
+  }
+}
+
+@keyframes moonset { }
+
+/* Animation for stars in the night sky */
+@keyframes starryNight {
+  0% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+/**D************/
+
+@keyframes hillBob {
+  0% {
+    transform: translateY(0); /* Neutral position */
+    transform: scale(2);
+  }
+  50% {
+    transform: translateY(-10px); /* Slight lift */
+    transform: scale(2);
+  }
+  100% {
+    transform: translateY(0); /* Return to neutral */
+    transform: scale(2);
+  }
+}
+
+.moonReflection {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(240, 230, 140, 0.5) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.4; /* Semi-transparent for reflection effect */
+  filter: blur(8px); /* Blur to simulate water ripples */
+  transform-origin: center top; /* Anchor transform for flipping */
+  pointer-events: none; /* Prevent interactions with the reflection */
+  z-index: 1; /* Place it below other elements */
+  bottom: 0; /* Keep it at the bottom of the .hill */
+  left: 50%; /* Center it horizontally */
+  transform: translateX(-50%); /* Center it horizontally */
+}
+
+.animateMoon {
+  animation: rippleEffect 2s infinite; /* Add subtle ripple animation */
+}
+
+@keyframes rippleEffect {
+  0% {
+    transform: scaleY(-1) translateY(0);
+  }
+  50% {
+    transform: scaleY(-1) translateY(2px);
+  }
+  100% {
+    transform: scaleY(-1) translateY(0);
+  }
+}
+
+@keyframes buoyMotion {
+  0% {
+    transform: translateY(0) rotate(0deg); /* Neutral position */
+  }
+  25% {
+    transform: translateY(-5px) rotate(-3deg); /* Slight lift and tilt */
+  }
+  50% {
+    transform: translateY(0) rotate(3deg); /* Back to neutral */
+  }
+  75% {
+    transform: translateY(5px) rotate(1deg); /* Slight drop and tilt */
+  }
+  100% {
+    transform: translateY(0) rotate(0deg); /* Back to neutral */
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes boatSail {
+  0% {
+    left: -50px; /* Start off-screen to the left */
+  }
+  50% {
+    transform: translateY(-10px); /* Slight bobbing effect */
+  }
+  100% {
+    left: 100%; /* Move off-screen to the right */
+    transform: translateY(0); /* Reset bobbing */
+  }
+}
+
+

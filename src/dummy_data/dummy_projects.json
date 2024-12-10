@@ -18,12 +18,5 @@
     "description": "Ions.",
     "date": "2024-03-20",
     "image": "https://picsum.photos/300/200?random=3"
-  },
-  {
-    "id": 4,
-    "title": "Upload a Model!",
-    "description": "",
-    "date": "2024-04-05",
-    "image": "https://picsum.photos/300/200?random=4"
   }
 ]
