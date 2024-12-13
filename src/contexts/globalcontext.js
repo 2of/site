@@ -10,7 +10,7 @@ export const useGlobalContext = () => {
 // Provider component
 export const GlobalProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [basename, setBasename] = useState("/2of_site"); // Store basename in state
+  const [basename, setBasename] = useState("/site"); // Store basename in state
   const [isBlurPage, setBlurPage] = useState(true);
 
   const toggleTheme = () => {
