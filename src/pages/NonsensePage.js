@@ -1,5 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./MorphingGrid.scss";
+import Person from "./PlayGround/Person";
+
+
+
+
+
+
+
+
+
+
+
+
 
 const MorphingGrid = () => {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
@@ -73,7 +86,10 @@ const MorphingGrid = () => {
         );
       })}
 
+      <div className="PersonContainerTest"> 
 
+        <Person random={true}/>
+      </div>
 
     </div>
   );

@@ -4,11 +4,13 @@ import { CSSTransition, TransitionGroup } from "react-transition-group"; // Impo
 import Nav from "../nav/nav";
 import routes from "../routes";
 import styles from "../styles/LayoutMain.module.scss";
+import { useGlobalContext } from "../contexts/globalcontext";
 
 const LayoutMain = () => {
   const location = useLocation(); // Get the current location (route) from React Router
   const currentRoute = routes.find((route) => route.path === location.pathname);
   const showLinks = currentRoute?.showlinks || false; // Check if links are to be shown
+  const { isBlurPage, setBlurPage } = useGlobalContext(); // Correctly access isBlurPage and setBlurPage
 
   return (
     <div className={styles.layoutMain}>
@@ -28,15 +30,14 @@ const LayoutMain = () => {
           <div
             className={`${styles.pageContainer} ${
               showLinks ? styles.withPadding : ""
-            }`}
+            } ${!isBlurPage ? styles.blurAll : ""}`}
           >
             <Outlet />
+
           </div>
         </CSSTransition>
       </TransitionGroup>
-      {/* <a href="https://www.flaticon.com/free-icons/buoy" title="buoy icons">Buoy icons created by Freepik - Flaticon</a> */}
     </div>
-    
   );
 };
 

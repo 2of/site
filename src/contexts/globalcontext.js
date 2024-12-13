@@ -11,6 +11,7 @@ export const useGlobalContext = () => {
 export const GlobalProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [basename, setBasename] = useState("/2of_site"); // Store basename in state
+  const [isBlurPage, setBlurPage] = useState(false);
 
   const toggleTheme = () => {
     setIsDarkMode((prevMode) => !prevMode);
@@ -26,7 +27,15 @@ export const GlobalProvider = ({ children }) => {
   }, [isDarkMode]);
 
   return (
-    <GlobalContext.Provider value={{ isDarkMode, toggleTheme, basename }}>
+    <GlobalContext.Provider
+      value={{
+        isDarkMode,
+        toggleTheme,
+        basename,
+        isBlurPage,
+        setBlurPage, // Include setBlurPage in the context
+      }}
+    >
       {children}
     </GlobalContext.Provider>
   );

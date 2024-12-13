@@ -19,12 +19,20 @@
 .pageContainer {
   flex: 1;
   position: relative;
+  transition: all 0.2s;
+
 
   &.withPadding {
     padding-top: 64px; /* Matches the height of navArea */
   }
-}
 
+  
+}
+.blurAll {
+  filter: blur(12px); /* Add appropriate blur value */
+  transform: scale(0.9);
+  opacity: 0.6;
+}
 /* Page transition styles */
 .pageTransitionEnter {
   opacity: 0;

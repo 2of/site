@@ -1,0 +1,70 @@
+.person {
+    width: 40%; /* Narrower body for better proportions */
+    height: 100%; /* Fill the parent container's height */
+    position: relative;
+    left: 30%; /* Center the body horizontally */
+}
+
+.head {
+    width: 100%; /* Proportional to .person's width */
+    aspect-ratio: 1 / 1; /* Ensure the head is a perfect circle */
+    border-radius: 50%;
+    position: absolute;
+    height: 15%;
+    left: 0%; /* Center horizontally */
+    top: 0; /* Align head to the top */
+    background-color: inherit; /* Use inherited skin tone */
+}
+
+.arm {
+    width: 20%; /* Proportional width for arms */
+    height: 30%; /* Proportional height for arms */
+    position: absolute;
+    border-radius: 10px; /* Softer edges */
+    top: 20%; /* Align with the shirt */
+    background-color: inherit; /* Match skin tone */
+}
+
+.left-arm {
+    left: -25%; /* Slight offset outward */
+}
+
+.right-arm {
+    right: -25%; /* Slight offset outward */
+}
+
+.shirt {
+    width: 100%; /* Full width of the body */
+    height: 40%; /* Balanced shirt height */
+    border-radius: 25% 25% 0 0; /* Rounded shoulders */
+    position: absolute;
+    top: 15%; /* Start slightly below the head */
+    left: 0;
+    background-color: inherit; /* Shirt color */
+}
+
+.shorts {
+    width: 100%; /* Full width of the body */
+    height: 15%; /* Shorter shorts for better proportions */
+    position: absolute;
+    top: 55%; /* Positioned below the shirt */
+    left: 0;
+    background-color: inherit; /* Shorts color */
+}
+
+.leg {
+    width: 20%; /* Slim legs */
+    height: 15%; /* Balanced height for legs */
+    position: absolute;
+    bottom: 15%;
+    /* border-radius: 8px; Slightly rounded edges */
+    background-color: inherit; /* Match skin tone */
+}
+
+.left-leg {
+    left: 10%; /* Align under shorts */
+}
+
+.right-leg {
+    right: 10%; /* Align under shorts */
+}

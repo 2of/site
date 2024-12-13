@@ -1,79 +1,13 @@
-@keyframes fadeInSlideUp {
-  0% {
-    opacity: 0;
-    // transform: translateY(20px); /* Start slightly below */
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* End in its original position */
-    transform: scale(1);
-  }
-}
-
+/* Base Grid Styles */
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(6, 1fr); /* 6 equal columns */
-
   grid-gap: 0px; /* No space between items */
   width: 100%; /* Full width */
   height: 100vh; /* Full height of the viewport */
   margin: 0 auto; /* Center the grid horizontally */
   padding: 32px; /* No extra padding */
   box-sizing: border-box; /* Ensure padding/margins don't affect the layout */
-}
-
-.gridItem {
-  border: 1px solid var(--border-color); /* Border for each item */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-/* Slight opacity to make it subtle */
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
-  /* Ensure the ite  opacity: 0;m stays consistent in size */
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* Prevent content from stretching the grid */
-  overflow: hidden;
-
-  /* Fixed aspect ratio */
-  aspect-ratio: 1; /* Ensures it remains a square, adjust if you want different proportions */
-
-  /* Animation for fade-in and slide-up */
-  animation:  fadeInSlideUp 0.3s forwards; /* 0.6 seconds duration */
-  // animation-delay: 0.1s; /* Delay before the animation starts */
-
-  
-}
-
-.gridItem:nth-child(odd) {
-  animation-delay: 0.3s; /* Delay for odd items */
-}
-
-.gridItem:nth-child(even) {
-  animation-delay: 0.1s; /* Delay for even items */
-}
-
-.gridItem:nth-child(3n) {
-  animation-delay: 0.1s; /* Delay for every third item */
-}
-
-/* Responsive grid */
-@media (max-width: 768px) {
-  .gridContainer {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .gridContainer {
-    grid-template-columns: 1fr; /* 1 column on very small screens */
-  }
 }
 
 /* Specific grid item variations */
@@ -91,3 +25,103 @@
   grid-column: span 3; /* Span 3 columns */
   grid-row: span 2; /* Span 2 rows */
 }
+
+/* Grid item styles */
+.gridItem {
+  border: 1px solid var(--border-color); /* Border for each item */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 1; /* Ensures it remains a square, adjust if you want different proportions */
+  animation: fadeInSlideUp 0.3s forwards; /* 0.6 seconds duration */
+}
+
+.gridItem:nth-child(odd) {
+  animation-delay: 0.3s; /* Delay for odd items */
+}
+
+.gridItem:nth-child(even) {
+  animation-delay: 0.1s; /* Delay for even items */
+}
+
+.gridItem:nth-child(3n) {
+  animation-delay: 0.1s; /* Delay for every third item */
+}
+
+/* Fade-in and slide-up animation */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    transform: scale(1);
+  }
+}
+
+/* =========================== */
+/* DYNAMIC SIZING & RESPONSIVE  */
+/* =========================== */
+
+/* Default Grid for Larger Screens */
+.gridContainer {
+  grid-template-columns: repeat(6, 1fr); /* Default: 6 columns */
+  padding: 32px;
+}
+
+/* Responsive Design Adjustments */
+
+/* Tablet and Smaller Screens */
+@media (max-width: 1024px) {
+  .gridContainer {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
+    padding: 16px;
+  }
+
+  .threextwo {
+    grid-column: span 2; /* Span 2 columns on smaller screens */
+  }
+
+  .twoxone {
+    grid-column: span 2; /* Span 2 columns on smaller screens */
+  }
+}
+
+// /* Small Mobile Screens */
+// @media (max-width: 768px) {
+//   .gridContainer {
+//     grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+//     padding: 12px;
+//   }
+// }
+
+/* Very Small Screens (Mobile Portrait) */
+@media (max-width: 640px) {
+  .gridContainer {
+    grid-template-columns: 1fr; /* 1 column on very small screens */
+    padding: 8px;
+  }
+
+  .threextwo {
+    grid-column: span 1; /* Stack 3-column items into 1 column */
+  }
+
+  .twoxone {
+    grid-column: span 1; /* Stack 2-column items into 1 column */
+  }
+
+  .onextwo {
+    grid-column: span 1; /* Stack 1-column items into 1 column */
+  }
+}
+
+/* =========================== */
+/* END OF DYNAMIC SIZING & RESPONSIVE  */
+/* =========================== */

@@ -1,15 +1,64 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useGlobalContext } from "../../contexts/globalcontext";
-import styles from "./DarkModeToggle.module.scss"; // Scoped styles
+import React, { useEffect, useState } from 'react';
+import { useGlobalContext } from '../../contexts/globalcontext';
+import styles from './DarkModeToggle.module.scss'; // Scoped styles
 
-import buoy from "../../res/buoy.png";
+import buoy from '../../res/buoy.png';
+import Person from '../PlayGround/Person';
+import SunMoon from './SunMoon'; // Import the SunMoon component
+
+const Wave = () => {
+  const getRandomDuration = () => `${Math.random() * 8 + 2}s`; // Random duration between 1s and 3s
+  const getRandomDelay = () => `${Math.random() * 7}s`; // Random delay between 0s and 2s
+
+  const waves = [1, 2, 3].map((_, index) => (
+    <div key={index} className={styles.wave} style={{ '--i': index + 1 }}>
+      test
+    </div>
+  ));
+
+  return <>{waves}</>;
+};
 
 
+
+
+const BeachPeople = ({ onwater = false }) => {
+  // Function to generate a random position and random animation delay within the container
+  const createRandomPosition = () => {
+    const delay = onwater ? `${Math.random() * 2}s` : '0s'; // Random delay between 0s and 2s for onwater people
+
+    if (onwater) {
+      return {
+        top: `${Math.random() * 30 + 10}%`,  // Random vertical position (10% to 40% height)
+        right: `${Math.random() * 30 + 1}%`, // Random horizontal position (1% to 31% width)
+        animationDelay: delay, // Apply the random delay
+      };
+    } else {
+      return {
+        top: `${Math.random() * 30 - 10}%`,  // Random vertical position (50% to 80% height)
+        left: `${Math.random() * 30 - 4}%`, // Random horizontal position (1% to 31% width)
+      };
+    }
+  };
+
+  return (
+    <div className={styles.beach_people}>
+      {[...Array(8)].map((_, index) => (
+        <div
+          key={index}
+          className={`${styles.SinglePersonContainer_BEACH} ${onwater ? styles.bobbing : ''}`}
+          style={createRandomPosition()}
+        >
+          <Person random={true} hasLegs={!onwater} />
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export const DarkModeToggleCell = () => {
   const { isDarkMode, toggleTheme } = useGlobalContext();
   const [animating, setAnimating] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   // Handle theme toggle animations
   useEffect(() => {
@@ -18,74 +67,49 @@ export const DarkModeToggleCell = () => {
     return () => clearTimeout(timer);
   }, [isDarkMode]);
 
-  // Track mouse movement for parallax effect
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
-  // Calculate transform for parallax elements
-  const getTransform = (isReflection = false) => {
-    const range = 8; // Pixel movement range
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
-
-    const offsetX = ((mousePosition.x - centerX) / centerX) * range * 2;
-    const offsetY = ((mousePosition.y - centerY) / centerY) * range;
-
-    // Flip the reflection vertically
-    if (isReflection) {
-      return `translate(${offsetX}px, ${-offsetY}px) scaleY(-1)`;
-    }
-
-    return `translate(${offsetX}px, ${offsetY}px)`;
-  };
-
   return (
     <div
-      className={` ${styles.darkModeToggle} ${
-        isDarkMode ? styles.dark : styles.light
-      }`}
+      className={`${styles.darkModeToggle} ${isDarkMode ? styles.dark : styles.light}`}
       onClick={toggleTheme}
     >
       <div className={styles.content}>
-        <div className={styles.moonAndStars}>
-          {isDarkMode ? (
-            <div
-              className={`${styles.moon} ${
-                animating ? styles.animateMoon : ""
-              }`}
-              style={{ transform: getTransform() }}
-            ></div>
-          ) : (
-            <div
-              className={`${styles.sun} ${animating ? styles.animateSun : ""}`}
-              style={{ transform: getTransform() }}
-            ></div>
-          )}
-          <div className={styles.stars}></div>
-        </div>
+        <SunMoon isDarkMode={isDarkMode} animating={animating} />
       </div>
 
       {isDarkMode && (
-    <div className={styles.buoy}  >
-      <img src={buoy} alt="Buoy" />
-    </div>
-  )}
+        <div className={styles.buoy}>
+          <img src={buoy} alt="Buoy" />
+        </div>
+      )}
       <div className={styles.hill}>
-      
-        {isDarkMode && (
-          <div
-            className={`${styles.moonReflection} ${
-              animating ? styles.animateMoon : ""
-            }`}
-            style={{ transform: getTransform(true) }}
-          ></div>
+        {!isDarkMode && (
+          <div className={styles.river}>
+            <Wave />
+          </div>
         )}
-    
+
+        {!isDarkMode && (
+          <>
+        <BeachPeople/>
+        <BeachPeople onwater={true}/>
+
+
+        </>
+          // <div className={styles.beach_people}>
+          //   <div className={styles.SinglePersonContainer_BEACH}>
+          //     <Person random={true} />
+          //   </div>
+          //   <div className={styles.SinglePersonContainer_BEACH}>
+          //     <Person random={true} />
+          //   </div>
+          //   <div className={styles.SinglePersonContainer_BEACH}>
+          //     <Person random={true} />
+          //   </div>
+          //   <div className={styles.SinglePersonContainer_BEACH}>
+          //     <Person random={true} />
+          //   </div>
+          // </div>
+        )}
       </div>
     </div>
   );

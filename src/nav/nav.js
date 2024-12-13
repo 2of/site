@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom"; // For routing and active link detection
 import routes from "../routes"; // Importing routes
 import "../styles/nav.scss"; // Import SCSS for styling
 import logo from "../res/logo512.png";
 import { useGlobalContext } from "../contexts/globalcontext"; // Import global context
 import DarkModeToggle from "../components/darkmodetoggle";
+import { ContainerNav } from "./containernav";
 
 const Nav = () => {
   const { isDarkMode } = useGlobalContext();
@@ -13,7 +14,23 @@ const Nav = () => {
   // Get the current route
   const currentRoute = routes.find((route) => route.path === location.pathname);
   const showLinks = currentRoute?.showlinks || false; // Use 'false' as a fallback
+  const [mobilemenustate, setmobilemenustate] = useState(false);
+  const { isblurPage, setBlurPage } = useGlobalContext(true)
 
+
+  const handleNavLinkClick = () => { 
+   setmobilemenustate((prevState) => !prevState)
+    setBlurPage(true);
+
+  }
+  const handleMenuOpenclose = () => {
+
+    setmobilemenustate((prevState) => {
+      const newState = !prevState; // Compute the new state
+      setBlurPage(!newState); // Use the opposite value for blurPage
+      return newState;
+    });
+  };
   return (
     <nav
       className={`nav-container ${isDarkMode ? "dark-mode" : ""} ${
@@ -52,7 +69,11 @@ const Nav = () => {
       <div className="nav-right-container">
         {/* Social Links */}
         <div className="nav-socials">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fab fa-github"></i>
           </a>
           <a
@@ -77,6 +98,23 @@ const Nav = () => {
         {/* Dark Mode Toggle */}
         <DarkModeToggle />
       </div>
+
+      <div
+        className="hamburger-menu-button"
+        onClick={handleMenuOpenclose}
+      >
+        ./menu
+      </div>
+
+      {mobilemenustate && (
+        <div className="expanded-links-for-mobile">
+          <ContainerNav
+            clickhandler={handleNavLinkClick}
+          />
+
+     
+        </div>
+      )}
     </nav>
   );
 };
