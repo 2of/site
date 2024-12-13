@@ -1,6 +1,6 @@
 // /routes.js
 import { DirPage } from "./pages/DirPage";
-import HomePage from "./pages/HomePage";
+
 import { HomePage2 } from "./pages/HomePageMosaic";
 import ModelUploadPage from "./pages/ModelUpload";
 import NonsensePage from "./pages/NonsensePage";

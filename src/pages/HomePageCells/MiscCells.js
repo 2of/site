@@ -10,7 +10,7 @@ export const FillerCard = ({text = "placeholder"}) => {
     return (
     <div className=" card ">
     <h2>{text}</h2>
-    <p>blah</p>
+ 
   
   </div>
 );

@@ -16,11 +16,19 @@ const Herocell = () => {
     >
       <div className={styles.greeting}>
         <h1>
-          Hey there! <span role="img" aria-label="wave">👋</span>
+          Work In Progress! <span role="img" aria-label="wave">👋</span>
         </h1>
         <p>
-         Portfolio etc, it's that kind of site<span role="img" aria-label="smile">😊</span>
+       This is a (reasonably) responsive REACT site .. <span role="img" aria-label="smile">😊</span>
         </p>
+
+        <p>
+       It's a work in progress, But feel free to punt around. 
+       When I get time I'll squash bugs
+        <span role="img" aria-label="smile">😊</span>
+        </p>
+
+
         <p>
           I also put a whole bunch of handy stuff on here!
         </p>

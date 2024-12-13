@@ -22,7 +22,7 @@ export const HomePage2 = () => {
         <DarkModeToggleCell />
       </div>
       <div className={`${styles.gridItem} ${styles.onexone}`}>
-        <FillerCard text="Darkmode ? " />
+        <FillerCard text="Over the top dark mode toggle ^^ " />
       </div>
       <div className={`${styles.gridItem} ${styles.onexone}`}>
         <FillerCard />

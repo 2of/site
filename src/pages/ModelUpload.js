@@ -53,14 +53,14 @@ const ModelUploadPage = () => {
       {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio praesentium repellendus, consequatur fugiat beatae odit veniam harum numquam. Autem, eius.</p> */}
       <div className={styles.formContainer}>
         <div className={styles.inputGroup}>
-          <label htmlFor="ip-address" className={styles.label}>IP Address:</label>
+          <label htmlFor="ip-address" className={styles.label}>IP Address and path (port num only added if you dont:</label>
           <input
             type="text"
-            id="ip-address"
+            id="ip-address + PATH"
             className={styles.inputField}
             value={ipAddress}
             onChange={handleIpChange}
-            placeholder="Enter IP Address"
+            placeholder="Enter IP Address  + PATH"
           />
         </div>
         <div className={styles.inputGroup}>
