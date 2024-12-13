@@ -2,12 +2,14 @@
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(6, 1fr); /* 6 equal columns */
-  grid-gap: 0px; /* No space between items */
+  grid-gap: 8px; /* No space between items */
   width: 100%; /* Full width */
   height: 100vh; /* Full height of the viewport */
   margin: 0 auto; /* Center the grid horizontally */
   padding: 32px; /* No extra padding */
   box-sizing: border-box; /* Ensure padding/margins don't affect the layout */
+
+
 }
 
 /* Specific grid item variations */
@@ -33,6 +35,7 @@
   align-items: center;
   justify-content: center;
   transition: opacity 0.3s ease-in-out;
+  // box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
   opacity: 0;
   height: 100%;
   width: 100%;
@@ -73,7 +76,7 @@
 /* Default Grid for Larger Screens */
 .gridContainer {
   grid-template-columns: repeat(6, 1fr); /* Default: 6 columns */
-  padding: 32px;
+  padding: 16px;
 }
 
 /* Responsive Design Adjustments */
