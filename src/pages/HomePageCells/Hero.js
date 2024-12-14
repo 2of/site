@@ -11,8 +11,7 @@ const Herocell = () => {
   return (
     <div
       className={styles.heroCell}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+
     >
       <div className={styles.greeting}>
         <h1>

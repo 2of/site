@@ -29,17 +29,16 @@ export const HomePage2 = () => {
       </div>
 
       <div className={`${styles.gridItem} ${styles.onexone}`}>
-        <ProjectCard project={projects[0]} />
+        {/* <ProjectCard project={projects[0]} /> */}
       </div>
       <div className={`${styles.gridItem} ${styles.onexone}`}>
-        <ProjectCard project={projects[1]}></ProjectCard>
+        {/* <ProjectCard project={projects[1]}></ProjectCard> */}
       </div>
       <div className={`${styles.gridItem} ${styles.onexone}`}>
-        <ProjectCard project={projects[1]}></ProjectCard>
+        {/* <ProjectCard project={projects[1]}></ProjectCard> */}
       </div>
       <div className={`${styles.gridItem} ${styles.twoxone}`}>
-        {" "}
-        <ProjectCard project={projects[2]} />
+        {/* <ProjectCard project={projects[2]} /> */}
       </div>
       <div className={`${styles.gridItem} ${styles.onexone}`}>        <FooterCard /></div>
       {/* <div className={`${styles.gridItem} ${styles.onexone}`}>Item 1</div> */}
