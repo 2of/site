@@ -56,6 +56,46 @@ const BeachPeople = ({ onwater = false }) => {
   );
 };
 
+
+const AnimatedWaveText = ({text}) => {
+  return (
+    <svg
+      width="100%"
+      height="150"
+      viewBox="0 0 500 150"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-labelledby="waveTextTitle"
+    >
+      {/* Accessible Title */}
+      <title id="waveTextTitle">Animated wave-shaped text</title>
+
+      {/* Define the wave path */}
+      <path
+        id="wavePath"
+        d="M0,75 Q125,0 250,75 T500,75"
+        fill="none"
+        stroke="none"
+      />
+
+      {/* Text following the wave path */}
+      <text fill="#1c2a38" fontSize="2.5rem" textAnchor="middle">
+        <textPath href="#wavePath">
+          <animate
+            attributeName="startOffset"
+            from="0%"
+            to="100%"
+            dur="5s"
+            repeatCount="indefinite"
+          />
+          {text}
+        </textPath>
+      </text>
+    </svg>
+  );
+};
+
+
+
 export const DarkModeToggleCell = () => {
   const { isDarkMode, toggleTheme } = useGlobalContext();
   const [animating, setAnimating] = useState(false);
@@ -72,6 +112,8 @@ export const DarkModeToggleCell = () => {
       className={`${styles.darkModeToggle} ${isDarkMode ? styles.dark : styles.light}`}
       onClick={toggleTheme}
     >
+
+<AnimatedWaveText text={"TOGGLE DARKMODE"}/>
       <div className={styles.content}>
         <SunMoon isDarkMode={isDarkMode} animating={animating} />
       </div>
@@ -81,6 +123,7 @@ export const DarkModeToggleCell = () => {
           <img src={buoy} alt="Buoy" />
         </div>
       )}
+
       <div className={styles.hill}>
         {!isDarkMode && (
           <div className={styles.river}>

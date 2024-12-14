@@ -4,12 +4,12 @@
     // border-radius: var(--border-radius);
     // border: 1px solid var(--border-color);
     display: flex;
-    gap: 0px;
+    gap: 12px;
     width: 100%;
     height: 100%;
     flex-direction: column;
-    justify-content: space-around;
-    text-align:left;
+    justify-content: space-between;
+    text-align:cee;
     transition: all 0.3s ease; /* Smooth transition on hover */
     position: relative; /* For the background positioning */
     overflow: hidden; /* Ensure elements are hidden when not hovered */
@@ -42,7 +42,27 @@
         }
       }
     }
-
+    .tags {
+      display: flex;
+      flex-wrap: wrap; /* Allow wrapping to a new line if needed */
+      gap: 8px; /* Space between each chip */
+      margin-bottom: 1rem;
+    }
+    
+    .tag-chip {
+      background-color: var(--text-color);
+      color: var(--background-color);
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 0.875rem;
+      text-transform: capitalize;
+      transition: background-color 0.3s ease;
+      white-space: nowrap; /* Prevent text from breaking into multiple lines */
+      overflow: hidden; /* Ensure text doesn’t overflow */
+      text-overflow: ellipsis; /* Show ellipsis if text overflows */
+    }
+    
+   
     .card_title h2 { 
         margin: 0px;
         padding: 0px;

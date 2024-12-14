@@ -51,7 +51,6 @@
 
   .logo {
     width: 48px;
-    height: auto;
     transition: transform 0.3s ease;
   }
 }
@@ -201,13 +200,6 @@
   }
   }
 
-  .nav-logo-and-button {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    text-align: center;
-    position: relative;
-  }
 
   .nav-right-container {
     display: none;
@@ -227,14 +219,17 @@
   }
 
   .nav-logo {
-    display: inline-block;
-    align-items: center;
-    gap: 0.5rem;
+    // background-color: red;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically center the logo */
+    justify-content: flex-start; /* Horizontally center the logo */
+    width: 100%; /* Ensure it takes up full width of its parent */
   }
-
+  
   .logo {
-    width: 3rem;
-    height: auto;
+    width: 3rem; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    transform: translateY(12px);
   }
 
   .nav-title {

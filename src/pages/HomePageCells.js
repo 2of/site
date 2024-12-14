@@ -82,12 +82,31 @@ export const ProjectCard = ({ project }) => {
         />
       )}
 
-      <div className="card_title">
+  
         <h2 className="card_title">{project.title}</h2>
         <h3 className="date card_subtitle">{project.date}</h3>
-        <p className="card_content">{project.description}</p>
 
-      </div>
+        {project.tags && (
+        <div className="tags">
+          {project.tags.map((tag, index) => (
+            <div key={index} className="tag-chip">
+              {tag}
+            </div>
+          ))}
+        </div>
+      )}
+
+
+        <div className="card_content">
+<p>
+
+{project.description}
+</p>
+
+
+        </div>
+
+  
 
       <div className="card_cta">See More →</div>
     </div>

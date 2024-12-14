@@ -12,31 +12,14 @@
   color: var(--text-color);
   padding-bottom: 40px;
   position: relative; /* Allow positioning of child elements */
-}
 
-.greeting {
-  z-index: 2;
-  margin-bottom: 20px;
-
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    font-size: 1.25rem;
+  .bouncyarrows { 
+    // display: none;
   }
 }
-
 .bouncyarrows {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-  position: absolute;
-  bottom: 96px; /* Adjust to give more space */
-  left: 50%;
-  transform: translateX(-50%);
+
+display: none;
 }
 
 .arrow {
@@ -60,5 +43,33 @@
   }
   50% {
     transform: translateY(-10px); /* Adjust bounce height */
+  }
+}
+
+
+
+.greeting {
+  z-index: 2;
+  margin-bottom: 20px;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 768px) {
+  .bouncyarrows { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 96px; /* Adjust to give more space */
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

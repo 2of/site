@@ -21,10 +21,10 @@ export const HomePage2 = () => {
       <div className={`${styles.gridItem} ${styles.twoxone} ${styles.halfscreenmini}`}>
         <DarkModeToggleCell />
       </div>
-      <div className={`${styles.gridItem} ${styles.onexone}`}>
+      <div className={`${styles.gridItem} ${styles.onexone} ${styles.hideinMini}`}>
         <FillerCard text="Over the top dark mode toggle ^^ " />
       </div>
-      <div className={`${styles.gridItem} ${styles.onexone}`}>
+      <div className={`${styles.gridItem} ${styles.onexone} ${styles.hideinMini} `}>
         <FillerCard />
       </div>
 

@@ -126,8 +126,13 @@
     overflow-y: scroll; /* Enable vertical scrolling */
     height: 100vh; /* Full viewport height to limit visible area */
 
-  }
 
+
+
+  }
+  .hideinMini { 
+    display: none;
+  }
   .gridItem {
     /* Optional: Add styles for grid items if needed */
     aspect-ratio: 1;
@@ -165,3 +170,4 @@
 /* =========================== */
 /* END OF DYNAMIC SIZING & RESPONSIVE  */
 /* =========================== */
+

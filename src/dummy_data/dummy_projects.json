@@ -2,19 +2,21 @@
   {
     "id": 1,
     "title": "GeoLocator Model",
+    "tags" : ["Machine Learning", "Python" , "AI", "Tensorflow"],
     "description": "I did things",
     "date": "2024-01-10"
   },
   {
     "id": 2,
-    "title": "Really Bad Chess Bot",
+    "title": "Responsive Portfolio Website",
+    "tags" : ["react", "JS" , "SCSS", "Node"],
     "description": "MinMax? State Search? Nah. We use NN",
     "date": "2024-02-15",
     "image": "https://picsum.photos/300/200?2"
   },
   {
     "id": 3,
-    "title": "Blah Blah",
+    "title": "This Website",
     "description": "Ions.",
     "date": "2024-03-20",
     "image": "https://picsum.photos/300/200?random=3"
