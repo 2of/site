@@ -18,7 +18,7 @@ export const HomePage2 = () => {
       <div className={`${styles.gridItem} ${styles.onextwo}`}>
         <ContainerNav />
       </div>
-      <div className={`${styles.gridItem} ${styles.twoxone}`}>
+      <div className={`${styles.gridItem} ${styles.twoxone} ${styles.halfscreenmini}`}>
         <DarkModeToggleCell />
       </div>
       <div className={`${styles.gridItem} ${styles.onexone}`}>
@@ -40,7 +40,7 @@ export const HomePage2 = () => {
       <div className={`${styles.gridItem} ${styles.twoxone}`}>
         <ProjectCard project={projects[2]} />
       </div>
-       <div className={`${styles.gridItem} ${styles.lastGridItem}`}> <FooterCard /> </div>
+       <div className={`${styles.gridItem} ${styles.lastGridItem} ${styles.halfscreenmini}`}> <FooterCard /> </div>
 
        </div>
   );
