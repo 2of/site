@@ -9,9 +9,11 @@ const Herocell = () => {
   const handleMouseLeave = () => setHovered(false);
 
   return (
+
+    
     <div
       className={styles.heroCell}
-
+      
     >
       <div className={styles.greeting}>
         <h1>
@@ -32,6 +34,13 @@ const Herocell = () => {
           I also put a whole bunch of handy stuff on here!
         </p>
         <button className={styles.ctaButton}>Let's Connect!</button>
+      </div>
+
+      <div className={styles.bouncyarrows}>
+      <span className={styles.arrow}>↓</span>
+  <span className={styles.arrow}>↓</span>
+  <span className={styles.arrow}>↓</span>
+
       </div>
     </div>
   );

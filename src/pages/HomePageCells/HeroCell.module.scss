@@ -1,66 +1,63 @@
 .heroCell {
-    display: grid;
-    place-items: center;
-    height: 100%;
-    background-color: var(--primary-color);
-    text-align: center;
-    transition: background-color 0.3s ease-in-out;
-    padding: 20px;
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-    color: var(--text-color);
-  }
-  
-  .greeting {
-    z-index: 2;
-    margin-bottom: 20px;
+  display: grid;
+  place-items: center;
+  height: 100%;
+  background-color: var(--primary-color);
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  color: var(--text-color);
+  position: relative; /* Allow positioning of child elements */
+}
 
-  
-    h1 {
-      font-size: 3rem;
-    //   color: #333;
-      margin-bottom: 0.5rem;
-    }
-  
-    p {
-      font-size: 1.25rem;
-    //   color: #555;
-    }
-  }
-  
-  .graphic {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .heroGraphic {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .animateGraphic {
-    transform: rotate(360deg);
-  }
-  
-  /* Optional: add some hover effect for the whole hero cell */
+.greeting {
+  z-index: 2;
+  margin-bottom: 20px;
 
-  
-  @keyframes floatAnimation {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
   }
+
+  p {
+    font-size: 1.25rem;
+  }
+}
+
+.bouncyarrows {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 50px; /* Align arrows at the bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Center the arrows horizontally */
+}
+
+.arrow {
+  font-size: 5rem; /* Adjust size as needed */
+  animation: bounce 1.5s infinite ease-in-out;
+  color: var(--text-color); /* Match text color */
+}
+
+.arrow:nth-child(2) {
+  animation-delay: 0.2s; /* Delay for the second arrow */
+}
+
+.arrow:nth-child(3) {
+  animation-delay: 0.4s; /* Delay for the third arrow */
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Adjust bounce height */
+  }
+}

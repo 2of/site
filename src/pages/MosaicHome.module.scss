@@ -2,11 +2,12 @@
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(6, 1fr); /* 6 equal columns */
-  grid-gap: 8px; /* No space between items */
+  grid-template-rows: repeat(3, 1fr);
+  // grid-gap: 0px; /* No space between items */
   width: 100%; /* Full width */
   height: 100vh; /* Full height of the viewport */
   margin: 0 auto; /* Center the grid horizontally */
-  padding: 32px; /* No extra padding */
+  // padding: 8px; /* No extra padding */
   box-sizing: border-box; /* Ensure padding/margins don't affect the layout */
 
 
@@ -30,7 +31,10 @@
 
 /* Grid item styles */
 .gridItem {
-  border: 1px solid var(--border-color); /* Border for each item */
+  background-color: var(--background-color);
+  outline: 1px solid var(--border-color); 
+  // border: 1px solid var(--border-color); /* Border for each item */
+  // margin: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,6 +48,7 @@
   animation: fadeInSlideUp 0.3s forwards; /* 0.6 seconds duration */
 }
 
+ 
 .gridItem:nth-child(odd) {
   animation-delay: 0.3s; /* Delay for odd items */
 }
@@ -85,7 +90,10 @@
 @media (max-width: 1024px) {
   .gridContainer {
     grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
+    grid-template-rows: repeat(1, 1fr);
+    grid-auto-rows: 1fr; /* Make all rows the same height */
     padding: 16px;
+    // background-color: red;
   }
 
   .threextwo {
@@ -97,6 +105,7 @@
   }
 }
 
+
 // /* Small Mobile Screens */
 // @media (max-width: 768px) {
 //   .gridContainer {
@@ -106,18 +115,41 @@
 // }
 
 /* Very Small Screens (Mobile Portrait) */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .gridContainer {
     grid-template-columns: 1fr; /* 1 column on very small screens */
-    padding: 8px;
+    grid-auto-rows: minmax(50vh, auto); /* Ensures rows adjust dynamically */
+    padding: 0px;
+    // background-color: yellow;
+    // row-gap: 8px; /* Add vertical space between items */
+    scroll-snap-type: y mandatory; /* Snap in vertical direction */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    height: 100vh; /* Full viewport height to limit visible area */
+
+  }
+
+  .gridItem {
+    /* Optional: Add styles for grid items if needed */
+    aspect-ratio: 1;
+    width: 100%;
+    scroll-snap-align: start; 
+    // min-height: 50vh;
+    height: 100%;
+    // background-color: magenta;
   }
 
   .threextwo {
     grid-column: span 1; /* Stack 3-column items into 1 column */
+    grid-row: span 3;
+  }
+  .onextwo {
+    grid-column: span 1; /* Stack 2-column items into 1 column */
+    grid-row: span ;
   }
 
   .twoxone {
     grid-column: span 1; /* Stack 2-column items into 1 column */
+    grid-row: span 1;
   }
 
   .onextwo {

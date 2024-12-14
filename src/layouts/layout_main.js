@@ -1,31 +1,29 @@
 import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import { CSSTransition, TransitionGroup } from "react-transition-group"; // Import Transition Components
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Nav from "../nav/nav";
 import routes from "../routes";
 import styles from "../styles/LayoutMain.module.scss";
 import { useGlobalContext } from "../contexts/globalcontext";
 
 const LayoutMain = () => {
-  const location = useLocation(); // Get the current location (route) from React Router
+  const location = useLocation();
   const currentRoute = routes.find((route) => route.path === location.pathname);
-  const showLinks = currentRoute?.showlinks || false; // Check if links are to be shown
-  const { isBlurPage, setBlurPage } = useGlobalContext(); // Correctly access isBlurPage and setBlurPage
+  const showLinks = currentRoute?.showlinks || false;
+  const { isBlurPage } = useGlobalContext();
 
   return (
     <div className={styles.layoutMain}>
-      {/* Navigation Area */}
       {showLinks && (
         <div className={styles.navArea}>
           <Nav />
         </div>
       )}
-      {/* Page Transition Area */}
       <TransitionGroup>
         <CSSTransition
-          key={location.key} // Use location key to trigger a new transition on route change
-          timeout={300} // Duration of the transition
-          classNames="pageTransition" // CSS class that controls the transition styles
+          key={location.key}
+          timeout={{ enter: 300, exit: 0 }} // Disable exit animation
+          classNames="pageTransition"
         >
           <div
             className={`${styles.pageContainer} ${
@@ -33,7 +31,6 @@ const LayoutMain = () => {
             } ${!isBlurPage ? styles.blurAll : ""}`}
           >
             <Outlet />
-
           </div>
         </CSSTransition>
       </TransitionGroup>
