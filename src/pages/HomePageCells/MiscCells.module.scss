@@ -1,0 +1,188 @@
+.explainer {
+    /* Main card styling */
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ensure content starts at the top */
+    align-items: center;
+    // transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+    .highlight {
+      color: var(--primary-color);
+    }
+  
+    /* Title */
+    .card_title {
+      margin-bottom: 20px;
+      h2 {
+        text-align: center;
+      }
+    }
+  
+    /* Avatar container */
+    .avatarContainer {
+      text-align: center;
+      margin-bottom: 10px;
+  
+      .avatar {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border: 1px solid var(--text-color);
+      }
+    }
+  
+    /* First paragraph */
+    .firstp {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+  
+    /* Qualifications List */
+    .qualifications {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-bottom: 20px;
+  
+      li {
+        margin-bottom: 10px;
+      }
+    }
+  
+    /* Second paragraph (with GitHub link) */
+    .secondp {
+      line-height: 1.6;
+      margin-bottom: 20px;
+      a {
+        text-decoration: none;
+      }
+    }
+  
+    /* Social Media Links */
+    .social_media {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+  
+      a {
+        color: #333;
+        font-size: 1.5rem;
+        // transition: color 0.3s ease;
+  
+        &:hover {
+          color: #f39c12;
+        }
+  
+        .social_icon {
+          transition: transform 0.3s ease;
+        }
+  
+        &:hover .social_icon {
+          transform: scale(1.1);
+        }
+      }
+    }
+  
+    /* Media Query for smaller screens like iPhone 12 Pro */
+    @media (max-width: 768px) {
+        // background-color: rebeccapurple;
+      padding: 15px;
+      /* Adjust the avatar size */
+      .avatar {
+        width: 120px;
+        height: 120px;
+      }
+  
+      /* Make title font size smaller */
+      .card_title h2 {
+        font-size: 1.5rem;
+      }
+  
+      /* Adjust paragraph text for smaller screens */
+      .firstp {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+        display: none;
+      }
+      .secondp {
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+        // display: none;
+      }
+      /* Adjust qualifications list for mobile */
+      .qualifications {
+        font-size: 0.9rem;
+        padding-left: 10px;
+  
+        li {
+          margin-bottom: 8px;
+        }
+      }
+  
+      /* Make social media icons smaller */
+      .social_media a {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .footerCard {
+    /* Styling for the footer card */
+    padding: 20px;
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: flex-end;
+  
+    .card_content {
+      text-align: center;
+  
+      p.footerText {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        // color: var(--footer-text-color, #ccc); /* Light gray text */
+      }
+  
+      .contactLink {
+        color: var(--primary-color);
+
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  
+    .socialLinks {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      
+      .socialLink {
+        font-size: 1.5rem;
+
+        // transition: color 0.3s ease;
+        
+        
+  
+        &.twitter {
+          color: #1da1f2; /* Twitter blue */
+        }
+  
+        &.github {
+          color: #333; /* GitHub dark color */
+        }
+  
+        &.linkedin {
+          color: #0077b5; /* LinkedIn blue */
+        }
+      }
+    }
+  }

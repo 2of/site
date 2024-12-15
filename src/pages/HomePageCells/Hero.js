@@ -9,38 +9,42 @@ const Herocell = () => {
   const handleMouseLeave = () => setHovered(false);
 
   return (
-
-    
-    <div
-      className={styles.heroCell}
-      
-    >
+    <div className={styles.heroCell}>
       <div className={styles.greeting}>
         <h1>
-          Work In Progress! <span role="img" aria-label="wave">👋</span>
+          Howdy{" "}
+          <span role="img" aria-label="wave">
+            👋
+          </span>{" "}
+          
         </h1>
         <p>
-       This is a (reasonably) responsive REACT site .. <span role="img" aria-label="smile">😊</span>
+          This is a (reasonably) responsive REACT site ..{" "}
+          <span role="img" aria-label="smile">
+            😊
+          </span> It's mostly a WIP at the moment 
         </p>
 
+        <p></p>
+
+        <h1>
+          <p> Work in Progress </p>
+          <span role="img" aria-label="wave">
+            🛠️
+          </span>
+          <span role="img" aria-label="wave">
+            🛠️
+          </span>
+        </h1>
         <p>
-       It's a work in progress, But feel free to punt around. 
-       When I get time I'll squash bugs
-        <span role="img" aria-label="smile">😊</span>
+          {/* There's a bit of dummy info on here at the moment, but the site itself is a WIP. Check out my <a href="https://github.com/2of" target="_blank" rel="noopener noreferrer">GitHub</a> for projects not yet here! */}
         </p>
-
-
-        <p>
-          I also put a whole bunch of handy stuff on here!
-        </p>
-        <button className={styles.ctaButton}>Let's Connect!</button>
       </div>
 
       <div className={styles.bouncyarrows}>
-      <span className={styles.arrow}>↓</span>
-  <span className={styles.arrow}>↓</span>
-  <span className={styles.arrow}>↓</span>
-
+        <span className={styles.arrow}>↓</span>
+        <span className={styles.arrow}>↓</span>
+        <span className={styles.arrow}>↓</span>
       </div>
     </div>
   );

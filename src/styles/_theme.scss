@@ -1,6 +1,6 @@
 /* CSS Custom Properties (Light Mode by default) */
 :root {
-    --primary-color: rgb(195, 93, 47);// Soft Orange
+    --primary-color: rgb(184, 79, 79);// Soft Orange
     --secondary-color: #a55540;// Dark Gray
     --background-color: #dad8cb; // White
     --text-color: #0b0b0d;// Darker Gray
@@ -30,7 +30,7 @@
 /* Dark Mode Custom Properties */
 /* Dark Mode Custom Properties */
 [data-theme="dark"] {
-    --primary-color: rgb(195, 93, 47); // Purple
+    --primary-color: rgb(242, 111, 51); // Purple
     --secondary-color: #323232; // Dark Gray
     --background-color: #1a1a1a; // Dark Background
     --text-color: #ffffff; // White Text

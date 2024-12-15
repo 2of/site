@@ -43,7 +43,7 @@ const BeachPeople = ({ onwater = false }) => {
 
   return (
     <div className={styles.beach_people}>
-      {[...Array(8)].map((_, index) => (
+      {[...Array(3)].map((_, index) => (
         <div
           key={index}
           className={`${styles.SinglePersonContainer_BEACH} ${onwater ? styles.bobbing : ''}`}
@@ -84,7 +84,7 @@ const AnimatedWaveText = ({text}) => {
             attributeName="startOffset"
             from="0%"
             to="100%"
-            dur="5s"
+            dur="15s"
             repeatCount="indefinite"
           />
           {text}

@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: space-between;
     text-align:cee;
-    transition: all 0.3s ease; /* Smooth transition on hover */
+    // transition: all 0.3s ease; /* Smooth transition on hover */
     position: relative; /* For the background positioning */
     overflow: hidden; /* Ensure elements are hidden when not hovered */
     align-items: start;
@@ -82,7 +82,7 @@
       font-size: 1rem;
       font-weight:bolder;
       color: var(--text-color);
-      transition: color 0.3s ease;
+      // transition: color 0.3s ease;
       &:hover {
         color: var(--secondary-color);
       }
