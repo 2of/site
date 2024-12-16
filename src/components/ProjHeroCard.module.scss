@@ -133,14 +133,14 @@
         grid-template-columns: 1fr; /* One column layout */
         gap: 0;
         min-height: 100vh; /* Full screen height */
-        padding: 0;
+        padding: 16px;
         margin: 0;
     }
 
     .leftSection {
         flex: 1;
         order: 1;
-        padding: 20px;
+        padding: 10px; /* Reduced padding */
     }
 
     .rightSection {
@@ -150,8 +150,50 @@
     .PaddingImage {
         display: none; /* Hide the PaddingImage on mobile */
     }
-}
 
+    /* Smaller text and elements for mobile */
+    .title {
+        font-size: 2rem; /* Reduce title size */
+    }
+
+    .metaInfo {
+        font-size: 0.8rem; /* Smaller font for metadata */
+    }
+
+    .description {
+        font-size: 0.9rem; /* Smaller text for description */
+    }
+
+    /* Adjusting CTA for better accessibility on mobile */
+    .cta {
+        padding: 12px 20px; /* Increased padding for better click area */
+        font-size: 1rem; /* Adjust button text size */
+        margin-top: 20px; /* Ensure some space from the content above */
+        display: inline-block;
+        background-color: var(--accent-color);
+        width: 100%; /* Make it take full width to make it easier to tap */
+        box-sizing: border-box; /* Prevent overflow */
+    }
+
+    .cta:hover {
+        background-color: #FF4F3B;
+    }
+
+    .techUsed h3 {
+        font-size: 1rem; /* Smaller heading */
+    }
+
+    .techUsed .tag {
+        padding: 4px 12px; /* Smaller tag padding */
+        font-size: 0.8rem; /* Smaller font for tags */
+    }
+
+    /* Footer adjustments */
+    .footer {
+        font-size: 0.8rem; /* Smaller footer text */
+        padding: 15px; /* Reduced padding for footer */
+    }
+}
 @media (min-width: 769px) and (max-width: 2100px) {
     .padleft, .padright {
         display: flex; /* Stack content with image on the side for tablets */

@@ -18,21 +18,21 @@
 }
 
 .greetingTitle {
-  font-size: 6rem;
+  font-size: 3rem;
   color: var(--background-color);
   // font-weight: bold;
   margin-bottom: 16px;
 }
 
 .introText {
-  font-size: 2rem;
+  font-size: 1.2rem;
   color: var(--secondary-color);
   margin-bottom: 24px;
   line-height: 1.6;
 }
 
 .wipTitle {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--accent-color);
   margin-bottom: 16px;
 }
@@ -62,7 +62,7 @@
 }
 
 .arrow {
-  font-size: 10rem;
+  font-size: 8rem;
   color: var(--accent-color);
   animation: bounce 1.5s infinite;
   transition: transform 0.2s ease, color 0.2s ease;
