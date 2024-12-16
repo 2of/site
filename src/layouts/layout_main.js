@@ -5,6 +5,7 @@ import Nav from "../nav/nav";
 import routes from "../routes";
 import styles from "../styles/LayoutMain.module.scss";
 import { useGlobalContext } from "../contexts/globalcontext";
+import { Footer } from "../components/Footer";
 
 const LayoutMain = () => {
   const location = useLocation();
@@ -19,6 +20,7 @@ const LayoutMain = () => {
           <Nav />
         </div>
       )}
+
       <TransitionGroup>
         <CSSTransition
           key={location.key}
@@ -31,9 +33,17 @@ const LayoutMain = () => {
             } ${!isBlurPage ? styles.blurAll : ""}`}
           >
             <Outlet />
+
           </div>
         </CSSTransition>
       </TransitionGroup>
+
+      {/* Conditionally render the footer if showLinks is true */}
+      {showLinks && (
+        <footer className={styles.footer}>
+      <Footer/>
+        </footer>
+      )}
     </div>
   );
 };

@@ -11,40 +11,54 @@ const Herocell = () => {
   return (
     <div className={styles.heroCell}>
       <div className={styles.greeting}>
-        <h1>
+        <h1 className={styles.greetingTitle}>
           Howdy{" "}
           <span role="img" aria-label="wave">
             👋
-          </span>{" "}
-          
+          </span>
         </h1>
-        <p>
-          This is a (reasonably) responsive REACT site ..{" "}
+        <p className={styles.introText}>
+          Welcome to my <span className={styles.highlight}>REACT</span> site!{" "}
           <span role="img" aria-label="smile">
             😊
-          </span> It's mostly a WIP at the moment 
+          </span>{" "}
+          It's currently a work in progress, but feel free to explore.
         </p>
-
-        <p></p>
-
-        <h1>
-          <p> Work in Progress </p>
-          <span role="img" aria-label="wave">
+        <h2 className={styles.wipTitle}>
+          Work in Progress{" "}
+          <span role="img" aria-label="tools">
             🛠️
           </span>
-          <span role="img" aria-label="wave">
+          <span role="img" aria-label="tools">
             🛠️
           </span>
-        </h1>
-        <p>
-          {/* There's a bit of dummy info on here at the moment, but the site itself is a WIP. Check out my <a href="https://github.com/2of" target="_blank" rel="noopener noreferrer">GitHub</a> for projects not yet here! */}
+        </h2>
+
+        <p className={styles.introText}>
+        Some information on my site is AI generated to fill in for dummy queries
+          <span role="img" aria-label="smile">
+            😊
+          </span>{" "}
+  
+        </p>
+        <p className={styles.subText}>
+          Check out my{" "}
+          <a
+            href="https://github.com/2of"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.link}
+          >
+            GitHub
+          </a>{" "}
+          for more projects!
         </p>
       </div>
 
-      <div className={styles.bouncyarrows}>
-        <span className={styles.arrow}>↓</span>
-        <span className={styles.arrow}>↓</span>
-        <span className={styles.arrow}>↓</span>
+      <div className={styles.bouncyArrows} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <span className={`${styles.arrow} ${hovered ? styles.hovered : ""}`}>↓</span>
+        <span className={`${styles.arrow} ${hovered ? styles.hovered : ""}`}>↓</span>
+        <span className={`${styles.arrow} ${hovered ? styles.hovered : ""}`}>↓</span>
       </div>
     </div>
   );

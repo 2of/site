@@ -79,8 +79,8 @@
     }
     
     .card_title {
-      font-size: 1rem;
-      font-weight:bolder;
+      font-size: 2rem;
+
       color: var(--text-color);
       // transition: color 0.3s ease;
       &:hover {
@@ -90,7 +90,7 @@
     
     .card_content {
       font-size: 1rem;
-      font-weight: 100;
+
 
       color: var(--text-color);
    text-overflow: ellipsis;
@@ -104,7 +104,7 @@
     .card_cta {
       padding: 10px 20px;
 
-      font-weight: bold;
+
       text-align: center;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.3s ease;

@@ -1,0 +1,113 @@
+.animationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Disco Ball */
+  .discoBall {
+    width: 200px;
+    height: 200px;
+  
+    .discoTile {
+      animation: shimmer 1.5s infinite ease-in-out;
+    }
+  }
+  
+  @keyframes shimmer {
+    0%, 100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  /* Smiling Dog */
+  .smilingDog {
+    width: 200px;
+    height: 200px;
+  
+    .dogSmile {
+      animation: dogSmileAnimation 2s infinite ease-in-out;
+    }
+  }
+  
+  @keyframes dogSmileAnimation {
+    0%, 100% {
+      d: path("M70,130 Q100,160 130,130");
+    }
+    50% {
+      d: path("M70,120 Q100,150 130,120");
+    }
+  }
+  
+  /* Parachuting */
+  .parachuting {
+    width: 200px;
+    height: 200px;
+  
+    circle {
+      animation: bounce 3s infinite ease-in-out;
+    }
+  
+    rect {
+      animation: swing 2s infinite ease-in-out;
+      transform-origin: center;
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes swing {
+    0%, 100% {
+      transform: rotate(5deg);
+    }
+    50% {
+      transform: rotate(-5deg);
+    }
+  }
+  
+  /* Bird Bobbing Head */
+  .bird {
+    width: 200px;
+    height: 200px;
+  
+    circle:first-child {
+      animation: bob 2s infinite ease-in-out;
+    }
+  }
+  
+  @keyframes bob {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  /* Default Animation */
+  .defaultAnimation {
+    width: 100px;
+    height: 100px;
+    animation: pulse 2s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }

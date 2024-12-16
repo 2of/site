@@ -103,7 +103,7 @@ const Nav = () => {
         className="hamburger-menu-button"
         onClick={handleMenuOpenclose}
       >
-        ./menu
+        ./ menu
       </div>
 
       {mobilemenustate && (

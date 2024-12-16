@@ -1,23 +1,98 @@
 [
   {
     "id": 1,
-    "title": "GeoLocator Model",
-    "tags" : ["Machine Learning", "Python" , "AI", "Tensorflow"],
-    "description": "I did things",
-    "date": "2024-01-10"
+    "title": "Deep Learning GeoLocalization Model feat: Attention, Scene Analysis, Convolutional Neural Nets...",
+    "tags": ["Machine Learning", "Python", "AI", "TensorFlow"],
+    "description": "The GeoLocator model is designed to predict geographic locations based on various input parameters. It leverages advanced machine learning algorithms and deep learning techniques to provide accurate location predictions from minimal data. Built with TensorFlow and Python, the model trains on a large dataset to recognize patterns and improve accuracy over time.",
+    "timeTaken": "2 years",
+    "date": "2024-01-10",
+    "author": "Noah King"
   },
   {
     "id": 2,
     "title": "Responsive Portfolio Website",
-    "tags" : ["react", "JS" , "SCSS", "Node"],
-    "description": "MinMax? State Search? Nah. We use NN",
+    "tags": ["React", "JavaScript", "SCSS", "Node.js", "HTML"],
+    "description": "This website, which you're currently visiting, is a fully responsive portfolio built from scratch using React, JavaScript, SCSS, and HTML. It features modern web practices such as a dynamic layout, mobile-first design, and interactive elements powered by React. The website also integrates a server-side Node.js backend for efficient data handling. The goal was to create an engaging and fast user experience while maintaining flexibility for future enhancements.",
+    "timeTaken": "6 months",
     "date": "2024-02-15",
-    "image": "https://picsum.photos/300/200?2"
+    "author": "Noah King",
+    "importantLinks": {
+      "Github": "https://github.com/noahking/portfolio",
+      "LiveSite": "https://noahking.com",
+      "LinkedIn": "https://www.linkedin.com/in/noahking"
+    },
+    "extraImages": [
+      "https://picsum.photos/300/200?random=7",
+      "https://picsum.photos/300/200?random=8",
+      "https://picsum.photos/300/200?random=9"
+    ]
   },
   {
     "id": 3,
-    "title": "This Website",
-    "description": "Ions.",
-    "date": "2024-03-20"
+    "title": "Semantic Chess Bot",
+    "tags": ["AI", "Machine Learning", "Chess", "Neural Networks", "Deep Learning"],
+    "description": "The Semantic Chess Bot is an AI-powered chess engine that uses a neural network to make moves based on semantic understanding of the board's state, rather than traditional rule-based approaches. It is trained on approximately 9 million games from lichess.org and utilizes machine learning techniques to improve its gameplay. While the bot is still a work in progress and far from unbeatable, it represents an innovative attempt at approaching chess AI from a different angle.",
+    "timeTaken": "1 year",
+    "date": "2024-03-20",
+    "author": "Noah King",
+    "image": "https://picsum.photos/300/200?3",
+    "extraImages": [
+      "https://picsum.photos/300/200?random=10",
+      "https://picsum.photos/300/200?random=11",
+      "https://picsum.photos/300/200?random=12"
+    ],
+    "importantLinks": {
+      "Github": "https://github.com/noahking/chess-bot",
+      "Demo": "https://chessbot.noahking.com"
+    }
+  },
+  {
+    "id": 4,
+    "title": "#1 Chrome Extension in NZ (very briefly)",
+    "tags": ["JS", "Manifest V3", "CSS"],
+    "description": "This project features an automated home gardening system that uses sensors to monitor soil moisture, temperature, and light conditions. The system automatically waters plants based on real-time data and can be controlled remotely via a mobile app. Built with a Raspberry Pi and Python, this project aims to make home gardening easier for everyone, even those without a green thumb.",
+    "timeTaken": "4 months",
+    "date": "2024-04-05",
+    "author": "Noah King",
+    "extraImages": [
+      "https://picsum.photos/300/200?random=13",
+      "https://picsum.photos/300/200?random=14",
+      "https://picsum.photos/300/200?random=15"
+    ],
+    "importantLinks": {
+      "Github": "https://github.com/noahking/home-garden",
+      "Demo": "https://homegarden.noahking.com"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Filler Cell 1",
+    "tags": ["AI", "JavaScript", "Node.js", "NLP"],
+    "description": "The AI-Powered Personal Assistant project uses natural language processing (NLP) and machine learning algorithms to create a smart assistant that can understand and respond to user commands. Built with Node.js and various NLP libraries, this assistant can schedule appointments, answer questions, and manage tasks using voice commands. It's designed to integrate seamlessly with a variety of third-party services.",
+    "timeTaken": "8 months",
+    "date": "2024-06-18",
+    "author": "Noah King",
+    "importantLinks": {
+      "Github": "https://github.com/noahking/ai-assistant",
+      "Demo": "https://assistant.noahking.com"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Filler Cell 2",
+    "tags": ["Web Development", "VR", "JavaScript", "Unity"],
+    "description": "An immersive, interactive virtual museum tour created using Unity and JavaScript. The tour offers users a chance to explore an art gallery in a fully virtual environment, complete with audio guides and interactive exhibits. This project combines web development with VR technology to provide a more engaging way to experience art and history from the comfort of your home.",
+    "timeTaken": "5 months",
+    "date": "2024-07-22",
+    "author": "Noah King",
+    "importantLinks": {
+      "Github": "https://github.com/noahking/virtual-museum",
+      "Demo": "https://museumtour.noahking.com"
+    },
+    "extraImages": [
+      "https://picsum.photos/300/200?random=16",
+      "https://picsum.photos/300/200?random=17",
+      "https://picsum.photos/300/200?random=18"
+    ]
   }
 ]

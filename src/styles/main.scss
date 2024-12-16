@@ -3,7 +3,7 @@ body {
   color: var(--text-color);
   margin: 0;
   font-family: var(--font-family-base);
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition between themes */
+  // transition: background-color 0.3s, color 0.3s; /* Smooth transition between themes */
 }
 
 button {
@@ -106,7 +106,7 @@ select {
   font-size: 1rem;
   color: var(--text-color);
   background-color: var(--background-color);
-  transition: border-color 0.3s ease;
+  // transition: border-color 0.3s ease;
 
   &:focus {
     border-color: var(--primary-color);
@@ -159,7 +159,7 @@ select {
   font-size: 1rem;
   color: var(--text-color);
   background-color: var(--background-color);
-  transition: border-color 0.3s ease;
+  // transition: border-color 0.3s ease;
 
   &:focus {
     border-color: var(--primary-color);
@@ -176,7 +176,7 @@ button[type="submit"] {
   padding: 1rem 2rem;
   cursor: pointer;
   border: none;
-  transition: background-color 0.3s ease;
+  // transition: background-color 0.3s ease;
 
   &:hover {
 
@@ -254,7 +254,7 @@ h1 {
   font-weight: 100;
   padding: 0.5rem 1rem;
   display: block;
-  transition: transform 0.3s ease, color 0.3s ease;
+  // transition: transform 0.3s ease, color 0.3s ease;
 }
 
 
@@ -264,26 +264,27 @@ h2{
   font-weight: 100;
   padding: 0.5rem 1rem;
   display: block;
-  transition: transform 0.3s ease, color 0.3s ease;
+  // transition: transform 0.3s ease, color 0.3s ease;
 }
 
 
 
 .StandardPageContainer{
-  width: 100%;
-  max-width: 1200px; /* Set a maximum width to prevent the content from stretching too far on large screens */
+  // width: 100%;
+  
+  max-width: 80%; /* Set a maximum width to prevent the content from stretching too far on large screens */
   margin: 0 auto; /* Center the container horizontally */
   // padding: 20px; /* Add some padding for spacing */
   box-sizing: border-box; /* Ensure padding doesn't affect the overall width */
 
-
+  
   /* Add responsiveness for smaller screens */
   @media (max-width: 768px) {
-    padding: 15px; /* Less padding on smaller screens */
+    // padding: 15px; /* Less padding on smaller screens */
   }
 
   @media (max-width: 480px) {
-    padding: 10px; /* Even less padding for very small screens */
+    // padding: 10px; /* Even less padding for very small screens */
   }
 }
 
@@ -322,4 +323,8 @@ h2{
   transform: translateY(20px);
   transition: opacity 300ms ease, transform 300ms ease;
 }
+
+
+
+
 

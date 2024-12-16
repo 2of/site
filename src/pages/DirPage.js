@@ -9,7 +9,7 @@ export const DirPage = () => {
   return (
     <div className="StandardPageContainer">
       <div className={styles.phonebookContainer}>
-        <h1>./dir (or $ls for the better amongst us)</h1>
+        <h1>./directory</h1>
         <h2>I keep a lot of junk on this page so, hey a handy dir for forgetting the paths</h2>
 
         <h3>A lot of these are just rough tools that I needed to host somewhere, expect no quality </h3>

@@ -1,58 +1,37 @@
 /* CSS Custom Properties (Light Mode by default) */
 :root {
-    --primary-color: rgb(184, 79, 79);// Soft Orange
-    --secondary-color: #a55540;// Dark Gray
-    --background-color: #dad8cb; // White
-    --text-color: #0b0b0d;// Darker Gray
-    --font-family-base: "Arial", sans-serif;
-    --font-family-heading: "Montserrat", sans-serif;
-    --font-family-base: 'Courier New', Courier, monospace;  
-    --border-radius: 0px;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    font-family: 'Montserrat';
+
     --border-color:#363639;
-    /* Glass Card specific */
-    --glass-card-background: rgba(255, 255, 255, 0.758); // Light background
-    --glass-card-border: rgba(255, 255, 255, 0.3); // Light border
-    --glass-card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Light shadow
-    --glass-card-text-color: var(--text-color); // Text color for glass card
 
 
-        /* Device sizes */
-        --breakpoint-xs: 480px;   /* Extra Small Devices (phones) */
-        --breakpoint-sm: 640px;   /* Small Devices (larger phones) */
-        --breakpoint-md: 768px;   /* Medium Devices (tablets) */
-        --breakpoint-lg: 1024px;  /* Large Devices (small laptops/desktops) */
-        --breakpoint-xl: 1280px;  /* Extra Large Devices (larger desktops) */
+
+
+    --background-color: #F1F0E8;
+        --primary-color: #89A8B2;
+        --secondary-color: #B3C8CF;
+        --accent-color: #FF6F61; /* Example of a bold accent color */
+        --text-color: #333333;
+        --muted-text-color: #777777;
+        -font-family: 'Montserrat';
+
+
 
 
 }
 
 /* Dark Mode Custom Properties */
-/* Dark Mode Custom Properties */
 [data-theme="dark"] {
-    --primary-color: rgb(242, 111, 51); // Purple
-    --secondary-color: #323232; // Dark Gray
-    --background-color: #1a1a1a; // Dark Background
-    --text-color: #ffffff; // White Text
-    --font-family-base: "Arial", sans-serif;
-    --font-family-heading: "Montserrat", sans-serif;
-    --font-family-base: 'Courier New', Courier, monospace;  
-    --border-radius: 0px; // Same border radius
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Same shadow for dark mode
-    --border-color:#515159;
-    /* Glass Card specific for dark mode */
-    --glass-card-background: rgba(0, 0, 0, 0.709); // Darker background
-    --glass-card-border: rgba(255, 255, 255, 0.1); // Lighter border for contrast
-    --glass-card-shadow: 0 4px 6px rgba(0, 0, 0, 0.25); // Darker shadow
-    --glass-card-text-color: var(--text-color); // Text color for glass card
+    --background-color: #1E1E1E; /* Dark, but not black for comfort */
+    --primary-color: #6A9BAE; /* Muted teal, matching the feel of light mode's primary color */
+    --secondary-color: #445B63; /* Slightly darker variant for secondary elements */
+    --accent-color: #FF6F61; /* Keep the bold accent color consistent */
+    --text-color: #E4E4E4; /* Light gray for comfortable contrast */
+    --muted-text-color: #A9A9A9; /* Muted gray, slightly lighter for subtle text */
+    --border-color: #575757; /* Neutral dark gray for borders */
+    font-family: 'Montserrat'; /* Ensure consistency in typography */
 
 
-        /* Device sizes */
-        --breakpoint-xs: 480px;   /* Extra Small Devices (phones) */
-        --breakpoint-sm: 640px;   /* Small Devices (larger phones) */
-        --breakpoint-md: 768px;   /* Medium Devices (tablets) */
-        --breakpoint-lg: 1024px;  /* Large Devices (small laptops/desktops) */
-        --breakpoint-xl: 1280px;  /* Extra Large Devices (larger desktops) */
-
-
+    
 }

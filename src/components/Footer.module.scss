@@ -1,0 +1,60 @@
+// footer.module.scss
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: auto; /* Pushes the footer to the bottom if content is short */
+  }
+  
+  .footerContent {
+    max-width: 1200px; /* Optional: controls the max width */
+    margin: 0 auto; /* Center the content */
+  }
+  
+  .footerText {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .contactLink {
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .socialLink {
+    font-size: 24px;
+    color: #fff;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: #0077b5; /* LinkedIn color, adjust for other icons if needed */
+    }
+  }
+  
+  .twitter {
+    color: #1da1f2;
+  }
+  
+  .github {
+    color: #333;
+  }
+  
+  .linkedin {
+    color: #0077b5;
+  }
+  

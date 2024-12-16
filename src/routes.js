@@ -1,14 +1,16 @@
 // /routes.js
+import { NotFoundPage } from "./pages/404";
 import { DirPage } from "./pages/DirPage";
 
 import { HomePage2 } from "./pages/HomePageMosaic";
 import ModelUploadPage from "./pages/ModelUpload";
 import NonsensePage from "./pages/NonsensePage";
+import { ProjPage } from "./pages/ProjPage";
 import WritingPage from "./pages/WritingsPage";
 const routes = [
   { path: "/", label: "home", element: <HomePage2 />, showlinks: false, showInNav: true },
   { path: "/dir", label: "dir", element: <DirPage />, showlinks: true, showInNav: true },
-  { path: "/projects", label: "projects", element: <h1>Projects</h1>, showlinks: true, showInNav: true },
+  { path: "/projects", label: "projects", element: <ProjPage/>, showlinks: true, showInNav: true },
   // { path: "/home2", label: "home2", element: <HomePage2/>, showlinks: false, showInNav: true },
   { path: "/words", label: "articles", element: <WritingPage />, showlinks: true, showInNav: true },
   { path: "/modelup1", label: "upload to model", element: <ModelUploadPage />, showlinks: true, showInNav: true },
@@ -28,9 +30,6 @@ const routes = [
   { path: "/test4", label: "test4", element: <h1>Test 4</h1>, showlinks: false, showInNav: false },
   { path: "/test5", label: "test5", element: <h1>Test 5</h1>, showlinks: false, showInNav: false },
   { path: "/test6", label: "test6", element: <h1>Test 6</h1>, showlinks: false, showInNav: false },
-  { path: "/test7", label: "test7", element: <h1>Test 7</h1>, showlinks: false, showInNav: false },
-  { path: "/test8", label: "test8", element: <h1>Test 8</h1>, showlinks: false, showInNav: false },
-  { path: "/test9", label: "test9", element: <h1>Test 9</h1>, showlinks: false, showInNav: false },
-  { path: "/test10", label: "test10", element: <h1>Test 10</h1>, showlinks: false, showInNav: false }
+  {path: "/404", label: "404", element: <NotFoundPage />, showlinks: true, showInNav: false },  // Add this route to catch all undefined paths
 ];
 export default routes;

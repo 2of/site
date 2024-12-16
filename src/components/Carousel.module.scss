@@ -1,0 +1,77 @@
+/* Carousel Styles */
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    margin: 120px;
+    border-radius: 12px;
+    position: relative;
+}
+
+/* Main Image Container Styles */
+.mainImageContainer {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    position: relative; /* Ensure proper positioning */
+    height: 100%; /* Take full available height */
+}
+
+/* When no thumbnails, make the image take full space */
+.mainImageContainer.full-screen {
+    flex-grow: 1; /* Make the image container take all the space */
+}
+
+/* When thumbnails are present, leave space for the thumbnails */
+.mainImageContainer.with-thumbnails {
+    padding-bottom: 80px; /* Adjust based on thumbnail height */
+}
+
+/* Main Image */
+.mainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below the final position */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for opacity and slide */
+}
+
+/* Slide-up effect (for fade-in and sliding) */
+.fadeIn {
+    opacity: 1; /* Make the image visible */
+    transform: translateY(0); /* Slide the image into its final position */
+}
+
+/* Thumbnail Container */
+.thumbnailContainer {
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    visibility: visible;
+}
+
+.thumbnailWrapper {
+    cursor: pointer;
+}
+
+.thumbnail {
+    width: 70px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.thumbnail:hover {
+    transform: scale(0.9);
+}

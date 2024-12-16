@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import '@fortawesome/fontawesome-free/css/all.min.css';  
 import Nav from "./nav/nav";
 import routes from "./routes";
@@ -25,7 +25,7 @@ const AppContent = () => {
 
   return (
     <Router basename={basename}>  {/* Use the basename from context */}
-      {/* <BackgroundPattern />   */}
+      {/* <BackgroundPattern /> */}
       <Routes>
         {/* Define the main layout route */}
         <Route element={<LayoutMain />}>
@@ -37,6 +37,8 @@ const AppContent = () => {
               element={route.element} 
             />
           ))}
+          {/* If the route doesn't match any, redirect to the /404 route */}
+          <Route path="*" element={<Navigate to="/404" />} />
         </Route>
       </Routes>
     </Router>

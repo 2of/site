@@ -1,31 +1,70 @@
-/* GalleryTemplate.module.scss */
+@media (max-width: 769px){
+  /* PHONE */
+  .CellContainer { 
+  // background-color: yellow;
+  grid-template-columns: 1fr; /* 1 column on very small screens */
+      grid-auto-rows: minmax(50vh, auto); /* Ensures rows adjust dynamically */
+      padding: 0px;
+      // background-color: yellow;
+      // row-gap: 8px; /* Add vertical space between items */
+      scroll-snap-type: y mandatory; /* Snap in vertical direction */
+      overflow-y: scroll;
+      height: 100vh; 
 
-/* General layout styling for the header */
-.header {
-    /* Styles for the header */
   }
   
-  /* Styling for the main content section */
-  .mainContent {
-    background-color: red;
+  .FullPageForMobile{
+    // background-color: aliceblue;
+    aspect-ratio: 1;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    scroll-snap-align: start; 
+    // min-height: 50vh;
+    height: 100%;
+    grid-row: span 2;
+  }
   }
   
-  /* Blog posts container */
-  .blogPosts {
-    background-color: blue;
-    max-width: 1200px;
+  @media (min-width: 769px) and (max-width: 1600px) {
+    /* IN BETWEEN */
+    .CellContainer { 
+      // background-color: palegreen;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 128px;
+      // background-color: red;
+      }
+      .Cell { 
+    // background-color: orange; /* Example color */
+    // max-width: 80%;
+    display: flex; /* This ensures we can control alignment within the cell */
+    align-items: flex-start; /* Align the content to the left */
+    justify-content: flex-start; /* Ensure the content starts from the left */
+    padding: 10px; /* Optional padding to create space inside the cell */
+    // border-bottom: 1px solid var(--secondary-color); /* Line to separate cells */
   }
+
+}
+
   
-  /* Wrapper for each blog post */
-  .blogPostWrapper {
-    background-color: green;
-  
-    /* Targeting post card inside the wrapper */
-    .post-card {
-      width: 30px; /* This will apply only to post cards inside blogPostWrapper */
+  @media (min-width: 1600px) {
+      /* DESKTOP */
+      .CellContainer { 
+        // background-color: rgb(30, 153, 30);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+        .Cell { 
+      // background-color: orange; /* Example color */
+      max-width: 1600px;
+      display: flex; /* This ensures we can control alignment within the cell */
+      align-items: flex-start; /* Align the content to the left */
+      justify-content: flex-start; /* Ensure the content starts from the left */
+      padding: 10px; /* Optional padding to create space inside the cell */
+      // border-bottom: 1px solid var(--secondary-color);
     }
+
   }
+  
+  

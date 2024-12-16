@@ -16,22 +16,12 @@ export const FillerCard = ({text = "placeholder"}) => {
 );
 }
 
-
 export const ExplainerCard = () => {
   return (
     <div className={` ${styles.explainer}`}> {/* Combine 'card' and 'styles.explainer' */}
       <div className={styles.card_title}>
         <h2>Hey, I'm Noah! 👋 </h2>
-        {/* <h3>Let me tell you about myself...</h3> */}
       </div>
-
-      {/* <div className={styles.avatarContainer}>
-        <img
-          src="https://via.placeholder.com/150" // Placeholder image
-          alt="Noah's Avatar"
-          className={styles.avatar}
-        />
-      </div> */}
 
       <div className="card_content">
         <p className={styles.firstp}>
@@ -39,28 +29,26 @@ export const ExplainerCard = () => {
         </p>
 
         <ul className={styles.qualifications}>
-        <li><span className={styles.highlight}>Master's in Artificial Intelligence</span> @ UC (In progress) 🎓</li>
-          <li>Bachelor of Science in <span className={styles.highlight}>Computer Science</span> @ UC 🎓</li>
-          <li>5+ years of experience as an <span className={styles.highlight}>IT Administrator</span>  🛠️</li>
-          <li>M365, Entra, Intune, MDM, Google Admin</li>
-         <li><span className={styles.highlight}>Network Engineering expertise</span> (both design and troubleshooting) 🌐</li>
-          <li>Proficient in multiple programming languages and frameworks: <span className={styles.highlight}>Python, Java, JavaScript, C#, REACT, CSS, C, C++, R</span> 💻</li>
-          <li>Proficient with <span className={styles.highlight}>Tensorflow, Pandas, SQL, SPARK, PyTorch </span> and other faucets of <span className={styles.highlight}>Machine Learning and Neural Netowrk Architecture, Assessment, and Optimization</span>  </li>
-          <li>Can do R and data processing, including <span className={styles.highlight}>regression analysis</span> and data analysis 📊</li>
-          <li>Loves documentation 📚</li>
-          {/* <li>Passionate about <span className={styles.highlight}>emerging technologies</span> and innovation 🚀</li> */}
-   
+          <li>🎓 <span className={styles.highlight}>Master's in Artificial Intelligence</span> @ UC (In progress)</li>
+          <li>🎓 Bachelor of Science in <span className={styles.highlight}>Computer Science</span> @ UC</li>
+          <li>🛠️ 5+ years of experience as an <span className={styles.highlight}>IT Administrator</span></li>
+          <li>🛠️ Expertise with <span className={styles.highlight}>M365, Entra, Intune, MDM, Google Admin</span></li>
+          <li>🛠️ <span className={styles.highlight}>Network Engineering expertise</span> (design & troubleshooting)</li>
+          <li>💻 Langs & Frameworks: <span className={styles.highlight}>Python, Java, JavaScript, C#, React, CSS, C, C++, R</span></li>
+          <li>💻 More specific Langs & Tools: <span className={styles.highlight}>TensorFlow, Pandas, SQL, Spark, PyTorch</span> for <span className={styles.highlight}>Machine Learning and Neural Network Architecture</span></li>
+          <li>📊 Strong in <span className={styles.highlight}>R, regression analysis, and data processing</span></li>
+          <li>📚 A big fan of creating thorough documentation</li>
         </ul>
+
         <div className="card_content">
-        <p className={styles.secondp}>
-          Want to see what I've been working on? Check out my work on <a className={styles.highlight} href="https://github.com/2of" target="_blank" rel="noopener noreferrer">GitHub</a> 💼. More projects will be added here soon! ✨
-        </p>
+          <p className={styles.secondp}>
+            Want to see what I've been working on? Check out my work on <a className={styles.highlight} href="https://github.com/2of" target="_blank" rel="noopener noreferrer">GitHub</a> 💼. More projects will be added here soon! ✨
+          </p>
         </div>
       </div>
     </div>
   );
 };
-
 export const ProjectCard = ({ project }) => {
     const [isHovered, setIsHovered] = useState(false);
   

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./MorphingGrid.scss";
 import Person from "./PlayGround/Person";
+import { AnimationDull } from "../components/dancers/fun_one";
 
 
 
@@ -56,42 +57,16 @@ const MorphingGrid = () => {
   };
 
   return (
-    <div className="grid-container">
-      {[...Array(9)].map((_, index) => {
-        const borderRadiusValues = calculateBorderRadius(
-          (index % 3) * 120 + 60, // x position of the grid item's center
-          Math.floor(index / 3) * 120 + 60, // y position of the grid item's center
-          cursorPos.x,
-          cursorPos.y,
-          100,
-          100
-        );
+    <div>
+   <h1>test</h1>
 
-        const borderRadiusString = borderRadiusValues.join("% ") + "%";
-
-        return (
-          <div
-            key={index}
-            className="grid-item"
-            style={{
-              borderRadius: borderRadiusString,
-            }}
-          >
-            <div className="border-radius-text">
-              {borderRadiusValues.map((value, i) => (
-                <p key={i}>Corner {i + 1}: {value.toFixed(1)}%</p>
-              ))}
-            </div>
-          </div>
-        );
-      })}
-
-      <div className="PersonContainerTest"> 
-
-        <Person random={true}/>
-      </div>
-
+      <AnimationDull anim_number={1}/>
+      <AnimationDull anim_number={2}/>
+      <AnimationDull anim_number={4}/>
+      <AnimationDull anim_number={3}/>
+      <AnimationDull anim_number={5}/>
     </div>
+
   );
 };
 

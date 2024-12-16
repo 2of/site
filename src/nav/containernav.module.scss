@@ -1,6 +1,6 @@
 .links {
   color: var(--text-color); /* Use your text color variable for consistency */
-  font-family: var(--font-family-base); /* Use the base font for better readability */
+
   padding: 15px;
   overflow: hidden;
   // background-color: var(--background-color);
@@ -43,12 +43,12 @@
 
       /* The arrow that appears on hover */
       &::before {
-        content: "→"; /* Arrow symbol */
+        content: "→\00A0"; 
         position: absolute;
         left: -25px; /* Position it before the link text */
         opacity: 0; /* Initially hide the arrow */
         transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for arrow */
-        font-size: 1.5rem; /* Make the arrow a bit larger */
+        font-size: 1.3rem; /* Make the arrow a bit larger */
         color: var(--primary-color); /* Same color as the link */
       }
 

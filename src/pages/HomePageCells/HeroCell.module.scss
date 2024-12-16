@@ -1,75 +1,86 @@
+/* HeroCell.module.scss */
 .heroCell {
-  display: grid;
-  place-items: center;
-  height: 100%;
-  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  transition: background-color 0.3s ease-in-out;
-  padding: 20px;
+  padding: 40px 20px;
+  height: 100%;
   width: 100%;
-  border-radius: 10px;
-  overflow: hidden;
+  background-color: var(--primary-color);
   color: var(--text-color);
-  padding-bottom: 40px;
-  position: relative; /* Allow positioning of child elements */
+  font-family: 'Montserrat', sans-serif;
+}
 
-  .bouncyarrows { 
-    // display: none;
+.greeting {
+  margin-bottom: 30px;
+}
+
+.greetingTitle {
+  font-size: 6rem;
+  color: var(--background-color);
+  // font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.introText {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.wipTitle {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 16px;
+}
+
+.subText {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.link {
+  color: var(--accent-color);
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-bottom: 2px solid var(--accent-color);
   }
 }
-.bouncyarrows {
 
-display: none;
+.bouncyArrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .arrow {
-  font-size: 5rem; /* Adjust size as needed */
-  animation: bounce 1.5s infinite ease-in-out;
-  color: var(--text-color); /* Match text color */
+  font-size: 10rem;
+  color: var(--accent-color);
+  animation: bounce 1.5s infinite;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.arrow:nth-child(2) {
-  animation-delay: 0.2s; /* Delay for the second arrow */
-}
 
-.arrow:nth-child(3) {
-  animation-delay: 0.4s; /* Delay for the third arrow */
-}
 
 @keyframes bounce {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px); /* Adjust bounce height */
+    transform: translateY(-30px);
   }
 }
 
-
-
-.greeting {
-  z-index: 2;
-  margin-bottom: 20px;
-
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    font-size: 1.25rem;
-  }
-}
-@media (max-width: 768px) {
-  .bouncyarrows { 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    position: absolute;
-    bottom: 96px; /* Adjust to give more space */
-    left: 50%;
-    transform: translateX(-50%);
+@media (min-width: 768px) {
+  .bouncyArrows { 
+    display: none;
   }
 }
