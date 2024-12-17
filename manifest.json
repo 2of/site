@@ -1,8 +1,6 @@
 {
-  "short_name": "Noah's Site",
-  "name": "Noah King Porfolio Website",
-  "description": "Cheeky Portfolio of Work Here",
-
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
