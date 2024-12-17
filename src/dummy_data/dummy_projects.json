@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Deep Learning GeoLocalization Model feat: Attention, Scene Analysis, Convolutional Neural Nets...",
     "tags": ["Machine Learning", "Python", "AI", "TensorFlow"],
-    "description": "The GeoLocator model is designed to predict geographic locations based on various input parameters. It leverages advanced machine learning algorithms and deep learning techniques to provide accurate location predictions from minimal data. Built with TensorFlow and Python, the model trains on a large dataset to recognize patterns and improve accuracy over time.",
+    "description": "Capstone Project @ UC for Master's of AI. Using pretrained OCR, Object Detection and Scene analysis models on google street view images to inform an attention based model for predicting geolocation with an average loss of 87.4% on our test data across a 10km radius of Chciago",
     "timeTaken": "2 years",
     "date": "2024-01-10",
 
@@ -14,7 +14,7 @@
     "id": 2,
     "title": "Responsive Portfolio Website",
     "tags": ["React", "JavaScript", "SCSS", "Node.js", "HTML"],
-    "description": "This website, which you're currently visiting, is a fully responsive portfolio built from scratch using React, JavaScript, SCSS, and HTML. It features modern web practices such as a dynamic layout, mobile-first design, and interactive elements powered by React. The website also integrates a server-side Node.js backend for efficient data handling. The goal was to create an engaging and fast user experience while maintaining flexibility for future enhancements.",
+    "description": "That's this website! It's responive, robust and has a neat tik-tok esque view for projects / home on mobile",
     "timeTaken": "6 months",
     "date": "2024-02-15",
     "author": "Noah King",
@@ -33,8 +33,8 @@
     "id": 3,
     "title": "Semantic Chess Bot",
     "tags": ["AI", "Machine Learning", "Chess", "Neural Networks", "Deep Learning"],
-    "description": "The Semantic Chess Bot is an AI-powered chess engine that uses a neural network to make moves based on semantic understanding of the board's state, rather than traditional rule-based approaches. It is trained on approximately 9 million games from lichess.org and utilizes machine learning techniques to improve its gameplay. While the bot is still a work in progress and far from unbeatable, it represents an innovative attempt at approaching chess AI from a different angle.",
-    "timeTaken": "1 year",
+    "description": "No state space here and certainly no board analysis. This is a cheeky Neural Network on 9m games from lichess.org; we predict based PURELY on the syntax of the boardstate and next move",
+    "timeTaken": "A few hours",
     "date": "2024-03-20",
     "author": "Noah King",
     "importantLinks": {
@@ -42,7 +42,7 @@
       "Demo": "https://chessbot.noahking.com"
     },
     "images": [
-      "https://picsum.photos/300/200?3",
+      "https://picsum.photos/900/900?3",
       "https://picsum.photos/300/200?random=10",
       "https://picsum.photos/300/200?random=11",
       "https://picsum.photos/300/200?random=12"
@@ -52,8 +52,8 @@
     "id": 4,
     "title": "#1 Chrome Extension in NZ (very briefly)",
     "tags": ["JS", "Manifest V3", "CSS"],
-    "description": "This project features an automated home gardening system that uses sensors to monitor soil moisture, temperature, and light conditions. The system automatically waters plants based on real-time data and can be controlled remotely via a mobile app. Built with a Raspberry Pi and Python, this project aims to make home gardening easier for everyone, even those without a green thumb.",
-    "timeTaken": "4 months",
+    "description": "A major New Zealand retailer opted to reset the 'hide third party sellers' on each new query on their website. This extension just fixed that behaviour and was briefly the #1 post on Reddit Aotearoa",
+    "timeTaken": "about an hour",
     "date": "2024-04-05",
     "author": "Noah King",
     "importantLinks": {

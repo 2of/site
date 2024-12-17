@@ -70,10 +70,8 @@ const GalleryTemplate = ({
       <div className={clsx(styles.MobileHeader, styles.FullPageForMobile)}>
         <ZuneTextBG text={header_text} blur={true}>
 
-          <h1> Scroll down!</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quisquam dolores dolorem aspernatur est! Est.</p>
-        </ZuneTextBG>
-
+          </ZuneTextBG>
+      
        
    
       </div>
