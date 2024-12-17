@@ -23,6 +23,12 @@ const Nav = () => {
     setBlurPage(true);
 
   }
+
+  const handleHomeClick = () => { 
+    setBlurPage(true);
+
+
+  }
   const handleMenuOpenclose = () => {
 
     setmobilemenustate((prevState) => {
@@ -37,7 +43,7 @@ const Nav = () => {
         showLinks ? "" : "mini"
       }`}
     >
-      <NavLink to="/" className="nav-logo">
+      <NavLink to="/" className="nav-logo" onClick={handleHomeClick}>
           <img src={logo} alt="Logo" className="logo" />
           <h1 className="nav-title">2of.io</h1>
         </NavLink>
