@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./HeroCell.module.scss";
 
+import { ZuneTextBG } from "../../components/ZuneText";
+
 const Herocell = () => {
   const [hovered, setHovered] = useState(false);
 
@@ -10,6 +12,11 @@ const Herocell = () => {
 
   return (
     <div className={styles.heroCell}>
+
+
+      <ZuneTextBG text={"Howdy"} blur={false}/>
+
+
       <div className={styles.greeting}>
         <h1 className={styles.greetingTitle}>
           Howdy{" "}
@@ -18,14 +25,12 @@ const Herocell = () => {
           </span>
         </h1>
         <p className={styles.introText}>
-          Welcome to my <span className={styles.highlight}>REACT</span> site!{" "}
-          <span role="img" aria-label="smile">
-            😊
-          </span>{" "}
-          It's currently a work in progress, but feel free to explore.
+         This place is a little 'in progress' 
+          
+      
         </p>
         <h2 className={styles.wipTitle}>
-          Work in Progress{" "}
+          {" "}
           <span role="img" aria-label="tools">
             🛠️
           </span>
@@ -35,7 +40,7 @@ const Herocell = () => {
         </h2>
 
         <p className={styles.introText}>
-        Some information on my site is AI generated to fill in for dummy queries
+        Scroll down for a little CV and some links {" "}
           <span role="img" aria-label="smile">
             😊
           </span>{" "}
@@ -60,7 +65,9 @@ const Herocell = () => {
         <span className={`${styles.arrow} ${hovered ? styles.hovered : ""}`}>↓</span>
         <span className={`${styles.arrow} ${hovered ? styles.hovered : ""}`}>↓</span>
       </div>
+
     </div>
+    
   );
 };
 

@@ -33,17 +33,17 @@ const LayoutMain = () => {
             } ${!isBlurPage ? styles.blurAll : ""}`}
           >
             <Outlet />
-
+     
           </div>
         </CSSTransition>
       </TransitionGroup>
 
       {/* Conditionally render the footer if showLinks is true */}
-      {showLinks && (
+      {/* {showLinks && (
         <footer className={styles.footer}>
       <Footer/>
         </footer>
-      )}
+      )} */}
     </div>
   );
 };

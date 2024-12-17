@@ -5,6 +5,7 @@
   grid-template-columns: 1fr; /* 1 column on very small screens */
       grid-auto-rows: minmax(50vh, auto); /* Ensures rows adjust dynamically */
       padding: 0px;
+      margin: 0px;
       // background-color: yellow;
       // row-gap: 8px; /* Add vertical space between items */
       scroll-snap-type: y mandatory; /* Snap in vertical direction */
@@ -12,6 +13,31 @@
       height: 100vh; 
 
   }
+
+  .MainAreaTitle{
+    display: none;
+  }
+
+ 
+  .MobileHeader { 
+    display: block;
+    // height: 1000px;
+    // background-color: orange;
+  }
+
+
+  .DesktopHeader{ 
+    display: none;
+
+    .LargeHeader { 
+ 
+    }
+  }
+
+  .MobileHeader{
+    display: block;
+  }
+
   
   .FullPageForMobile{
     // background-color: aliceblue;
@@ -21,6 +47,8 @@
     // min-height: 50vh;
     height: 100%;
     grid-row: span 2;
+    margin: 0;
+    padding: 0;
   }
   }
   
@@ -31,7 +59,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 128px;
+      gap: 48px;
       // background-color: red;
       }
       .Cell { 
@@ -44,27 +72,105 @@
     // border-bottom: 1px solid var(--secondary-color); /* Line to separate cells */
   }
 
+  .MobileHeader{
+    display: none;
+  }
+
 }
 
   
-  @media (min-width: 1600px) {
-      /* DESKTOP */
-      .CellContainer { 
-        // background-color: rgb(30, 153, 30);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        }
-        .Cell { 
-      // background-color: orange; /* Example color */
-      max-width: 1600px;
-      display: flex; /* This ensures we can control alignment within the cell */
-      align-items: flex-start; /* Align the content to the left */
-      justify-content: flex-start; /* Ensure the content starts from the left */
-      padding: 10px; /* Optional padding to create space inside the cell */
-      // border-bottom: 1px solid var(--secondary-color);
-    }
+@media (min-width: 1200px) {
+  /* DESKTOP STYLES */
 
+  .CellContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1600px;
+    padding-top: 32px;
   }
+
+  // Default Large Header (Reusable styles)
+  .LargeHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    // width: 100%;
+    // padding: 48px;
+    // padding: 40px 20px;
+  }
+.headerContent { 
+  // background-color: red;
+  // text-align: left;
+  max-width: 1200px;
+
+  width: 100%;
+}
+
+.MainAreaTitle {
+  font-size: 1rem;
+  width: 100vw;
+  display: block;
+  height: 32px;
+  // max-width: 1200px;
+  text-align: left;
+  text-decoration: none;
+  padding-top: 16px;
+  border-bottom: 1px solid var(--primary-color);
   
-  
+  /* Sticky positioning */
+  position: sticky;
+  top: 64px; /* Sticks to the top of the page */
+  z-index: 10; /* Ensure it stays above other elements */
+  background-color: var(--background-color); /* Avoid transparency issues */
+}
+
+.FeaturedTitle { 
+  // background-color: orangered;
+  font-size: 1rem;
+  width: 100%;
+  display: block;
+  max-width: 1200px;
+ text-align: left;
+  text-decoration: initial;
+  border-bottom: 1px solid var(--background-color);
+
+}
+ 
+
+  // Container for the featured post (Reusable spacing)
+
+  // Posts in the list
+  .Cell {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    margin: 10px 0;
+    max-width: 1200px;
+    border-bottom: 1px solid var(--secondary-color);
+    // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
+  // Hide Featured Post in the list
+  .FeaturedHidden {
+    display: none;
+  }
+
+  .MobileHeader {
+    display: none;
+  }
+}
+
+h1 {
+  font-size: 3rem; /* Bigger title */
+  font-weight: bold;
+  line-height: 1.2;
+}

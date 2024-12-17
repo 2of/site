@@ -15,6 +15,7 @@ import { AnimationDull } from "../components/dancers/fun_one";
 
 
 
+
 const MorphingGrid = () => {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
@@ -65,7 +66,17 @@ const MorphingGrid = () => {
       <AnimationDull anim_number={4}/>
       <AnimationDull anim_number={3}/>
       <AnimationDull anim_number={5}/>
+
+
+     
+
     </div>
+
+
+
+
+
+
 
   );
 };

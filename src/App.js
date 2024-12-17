@@ -25,7 +25,7 @@ const AppContent = () => {
 
   return (
     <Router basename={basename}>  {/* Use the basename from context */}
-      {/* <BackgroundPattern /> */}
+      <BackgroundPattern /> 
       <Routes>
         {/* Define the main layout route */}
         <Route element={<LayoutMain />}>
@@ -40,6 +40,7 @@ const AppContent = () => {
           {/* If the route doesn't match any, redirect to the /404 route */}
           <Route path="*" element={<Navigate to="/404" />} />
         </Route>
+        
       </Routes>
     </Router>
   );

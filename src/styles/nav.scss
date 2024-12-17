@@ -12,12 +12,13 @@
   margin: 0 auto;
   box-sizing: border-box;
   z-index: 10;
-  background-color: var(--background-color);
+  background-color: var(--nav-color);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  border-radius: var(--border-radius);
-  border-bottom: 1px solid var(--primary-color);
+  // border-radius: var(--border-radius);
+  // border-bottom: 1px solid var(--primary-color);
   position: relative;
   height: 100%;
+  backdrop-filter: blur(12px);
   .expanded-links-for-mobile {
     display: none;
   }
@@ -29,7 +30,7 @@
     justify-content: center;
     align-items: center;
     width: 64px;
-    background-color: var(--background-color);
+    background-color: var(--nav-color);
     padding: 0.5rem;
     gap: 8px;
     border: none;
@@ -190,6 +191,7 @@
     display: block; /* Block layout */
     align-items: center;
     min-height: 100%;
+    position: absolute;
     height: fit-content;
     overflow: hidden; /* Hide the expanded part when collapsed */
     transition: height 10s ease; /* Smooth transition for height */
@@ -208,14 +210,14 @@
   /* Hamburger Menu Button */
   .hamburger-menu-button {
     display: inline-block;
-    font-style: italic;
+    // font-style: italic;
     background: none;
     border: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
     cursor: pointer;
     position: absolute;
     right: 1rem; /* Keep it right-aligned */
-    top: 1rem;
+    top: 1.2rem;
   }
 
   .nav-logo {

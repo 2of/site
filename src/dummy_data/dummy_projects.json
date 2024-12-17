@@ -6,7 +6,9 @@
     "description": "The GeoLocator model is designed to predict geographic locations based on various input parameters. It leverages advanced machine learning algorithms and deep learning techniques to provide accurate location predictions from minimal data. Built with TensorFlow and Python, the model trains on a large dataset to recognize patterns and improve accuracy over time.",
     "timeTaken": "2 years",
     "date": "2024-01-10",
-    "author": "Noah King"
+
+    "author": "Noah King",
+    "images": ["/res/proj_geo.png"]
   },
   {
     "id": 2,
@@ -21,7 +23,7 @@
       "LiveSite": "https://noahking.com",
       "LinkedIn": "https://www.linkedin.com/in/noahking"
     },
-    "extraImages": [
+    "images": [
       "https://picsum.photos/300/200?random=7",
       "https://picsum.photos/300/200?random=8",
       "https://picsum.photos/300/200?random=9"
@@ -35,16 +37,16 @@
     "timeTaken": "1 year",
     "date": "2024-03-20",
     "author": "Noah King",
-    "image": "https://picsum.photos/300/200?3",
-    "extraImages": [
-      "https://picsum.photos/300/200?random=10",
-      "https://picsum.photos/300/200?random=11",
-      "https://picsum.photos/300/200?random=12"
-    ],
     "importantLinks": {
       "Github": "https://github.com/noahking/chess-bot",
       "Demo": "https://chessbot.noahking.com"
-    }
+    },
+    "images": [
+      "https://picsum.photos/300/200?3",
+      "https://picsum.photos/300/200?random=10",
+      "https://picsum.photos/300/200?random=11",
+      "https://picsum.photos/300/200?random=12"
+    ]
   },
   {
     "id": 4,
@@ -54,15 +56,15 @@
     "timeTaken": "4 months",
     "date": "2024-04-05",
     "author": "Noah King",
-    "extraImages": [
-      "https://picsum.photos/300/200?random=13",
-      "https://picsum.photos/300/200?random=14",
-      "https://picsum.photos/300/200?random=15"
-    ],
     "importantLinks": {
       "Github": "https://github.com/noahking/home-garden",
       "Demo": "https://homegarden.noahking.com"
-    }
+    },
+    "images": [
+      "https://picsum.photos/300/200?random=13",
+      "https://picsum.photos/300/200?random=14",
+      "https://picsum.photos/300/200?random=15"
+    ]
   },
   {
     "id": 5,
@@ -75,7 +77,8 @@
     "importantLinks": {
       "Github": "https://github.com/noahking/ai-assistant",
       "Demo": "https://assistant.noahking.com"
-    }
+    },
+    "images": []
   },
   {
     "id": 6,
@@ -85,14 +88,10 @@
     "timeTaken": "5 months",
     "date": "2024-07-22",
     "author": "Noah King",
+
     "importantLinks": {
       "Github": "https://github.com/noahking/virtual-museum",
       "Demo": "https://museumtour.noahking.com"
-    },
-    "extraImages": [
-      "https://picsum.photos/300/200?random=16",
-      "https://picsum.photos/300/200?random=17",
-      "https://picsum.photos/300/200?random=18"
-    ]
+    }
   }
 ]

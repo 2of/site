@@ -24,9 +24,9 @@ export const ExplainerCard = () => {
       </div>
 
       <div className="card_content">
-        <p className={styles.firstp}>
+        {/* <p className={styles.firstp}>
           Welcome to my corner of the internet! 🌍 I'm currently a Master of AI student at the University of Canterbury, Christchurch, New Zealand 🇳🇿. Alongside my academic pursuits, I have a strong background in IT, with experience as an IT administrator, network engineer, and general IT specialist 🖥️.
-        </p>
+        </p> */}
 
         <ul className={styles.qualifications}>
           <li>🎓 <span className={styles.highlight}>Master's in Artificial Intelligence</span> @ UC (In progress)</li>

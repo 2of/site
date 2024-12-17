@@ -1,0 +1,161 @@
+.FeaturedContainer {
+    padding: 32px 0; /* Uniform padding for vertical alignment */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative; /* For precise alignment */
+    // background-color: green;
+  
+    .Left {
+      width: 60%;
+    //   background-color: yellow;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px; /* Spacing between sections */
+  
+      .TitleSection {
+        margin: 0;
+        padding: 0;
+  
+        .Title {
+            top: 0;
+            margin: 0;
+            padding: 0;
+          font-size: 3rem; /* Bigger title */
+          font-weight: bold;
+          line-height: 1.2;
+        //   color: var(--primary-color);
+          text-align: left;
+        }
+  
+        .Author {
+          font-size: 1.2rem;
+        //   background-color: red;
+          display: flex;
+          gap: 4px;
+    
+
+  
+          strong {
+            font-weight: bold;
+            // color: var(--primary-color);
+          }
+  
+          em {
+            font-style: italic;
+            // color: var(--secondary-color);
+          }
+        }
+      }
+  
+      .TagsSection {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+  
+        .Tag {
+        //   background-color: var(--tag-background);
+          color: var(--text-on-tag);
+          padding: 8px 12px;
+          font-size: 1rem;
+        //   border-radius: 20px;
+          text-transform: capitalize;
+          font-weight: 600;
+            background: var(--accent-color);
+
+  
+          &:hover {
+            background-color: var(--tag-hover-background);
+            cursor: pointer;
+          }
+        }
+      }
+  
+      .DescriptionSection {
+        font-size: 1.1rem;
+        // color: var(--text-color);
+        line-height: 1.7;
+        margin-top: 16px;
+        text-align: left;
+      }
+  
+      .LinksSection {
+        margin-top: 16px;
+        display: flex;
+        gap: 16px;
+  
+        .Link {
+          font-size: 1rem;
+          font-weight: bold;
+          color: var(--link-color);
+          text-decoration: none;
+  
+          &:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+          }
+        }
+      }
+  
+      .CallToActionSection {
+        margin-top: 24px;
+  
+        .CallToActionButton {
+          padding: 12px 24px;
+          font-size: 1.1rem;
+          font-weight: bold;
+          background-color: var(--primary-color);
+          color: white;
+          border: none;
+          border-radius: 50px;
+          cursor: pointer;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+          &:hover {
+            background-color: var(--cta-hover-background);
+            transform: translateY(-2px);
+          }
+  
+          &:active {
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  
+    .Right {
+        
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-left: 32px; /* Adds space for the divider */
+      position: relative;
+    //   background-color: red;
+      height: 100%;
+  
+      /* Divider between Left and Right sections */
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background-color: var(--divider-color);
+        transform: translateX(-50%);
+      }
+  
+      .CarouselSection {
+        width: 100%;
+        // max-width: 400px;
+      }
+    }
+  }
+  .CTA { 
+    background-color: var(--accent-color)
+  }

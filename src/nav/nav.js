@@ -6,7 +6,7 @@ import logo from "../res/logo512.png";
 import { useGlobalContext } from "../contexts/globalcontext"; // Import global context
 import DarkModeToggle from "../components/darkmodetoggle";
 import { ContainerNav } from "./containernav";
-
+import { NavLink } from "react-router-dom";
 const Nav = () => {
   const { isDarkMode } = useGlobalContext();
   const location = useLocation(); // Detect the current path
@@ -37,10 +37,15 @@ const Nav = () => {
         showLinks ? "" : "mini"
       }`}
     >
-      <div className="nav-logo">
-        <img src={logo} alt="Logo" className="logo" />
-        <h1 className="nav-title">2of.io</h1>
-      </div>
+      <NavLink to="/" className="nav-logo">
+          <img src={logo} alt="Logo" className="logo" />
+          <h1 className="nav-title">2of.io</h1>
+        </NavLink>
+
+
+     
+
+
 
       {true && (
         <ul className="nav-links">

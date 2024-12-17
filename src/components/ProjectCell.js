@@ -15,17 +15,13 @@ export const ProjHeroCard = ({ project, layoutFlag, ishighlight = false }) => {
     author,
     timeTaken,
     tags = [],
-    image,
+    images = [],
     description,
     id,
-    extraImages = [],
   } = project;
 
-  // Fallback image if no image is provided (for both main and extra images)
-  const projectImage = image || require("../res/404.png"); // Ensure path is correct
-
-  // Fallback for extra images
-  const fallbackExtraImages = [projectImage]; // Use projectImage as fallback for extra images
+  // Fallback image array if no images are provided
+  const projectImages = images.length > 0 ? images : [require("../res/404.png")];
 
   // Check if the ID is even or odd and set padding flag accordingly
   const paddingFlag = id % 2 === 0;
@@ -38,6 +34,23 @@ export const ProjHeroCard = ({ project, layoutFlag, ishighlight = false }) => {
             ishighlight ? styles.highlightedproj : ""
           } ${layoutFlag ? styles.altLayout : ""} `}
         >
+
+
+<div
+  className={styles.background}
+  style={{
+    background: images
+      ? `linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), url(${images[0]})`
+      : 'linear-gradient(to bottom, rgba(0, 0, 0,1) 50%, rgba(0, 0, 0, 1) 50%)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}
+>
+  {/* Background content (can be an image, gradient, etc.) */}
+</div>
+
+
+
           <div className={styles.leftSection}>
             <div className={styles.header}>
               <h2 className={styles.title}>{title}</h2>
@@ -80,22 +93,8 @@ export const ProjHeroCard = ({ project, layoutFlag, ishighlight = false }) => {
             </div>
           </div>
           <div className={styles.rightSection}>
-            <Carousel
-              images={
-                extraImages.length > 0 ? extraImages : fallbackExtraImages
-              }
-            />
+            <Carousel images={projectImages} />
           </div>
-        </div>
-
-        {/* PaddingImage container */}
-
-        <div
-          className={`${styles.PaddingImage} ${
-            paddingFlag ? styles.padright : ""
-          }`}
-        >
-          <div className={styles.patternBackground}></div>
         </div>
       </div>
     </>

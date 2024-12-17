@@ -268,7 +268,14 @@ h2{
 }
 
 
-
+.StandardpageHeader{ 
+  font-size: 2rem;
+  width: 100%;
+  max-width: 1200px;
+ text-align: left;
+  text-decoration: initial;
+  border-bottom: 1px solid var(--background-color);
+}
 .StandardPageContainer{
   // width: 100%;
   

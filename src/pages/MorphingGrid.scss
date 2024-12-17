@@ -1,5 +1,40 @@
-.PersonContainerTest {
-    background-color: red;
-    height: 100%; /* Fill parent height */
-    aspect-ratio: 3 / 10; /* Width is 30% of height */
+.firstBackgroundWrapper,
+.secondBackgroundWrapper {
+  position: relative;
+  width: 100%; /* or any specific width you want */
+  height: 100vh; /* or any specific height you want */
+  overflow: hidden; /* Prevent overflow */
+  background-color: orange;
 }
+
+.content {
+  position: relative;
+  z-index: 1; /* Ensure it appears above the background */
+//   color: red;
+  text-align: center;
+}
+.ParentThingie {
+    position: relative;
+    width: 500px; /* Fill the entire width of the viewport or parent */
+    height: 500px; /* Fill the entire viewport height */
+    overflow: hidden; /* Prevent any overflow */
+    // background-color: #9f78787a; /* Set a background color */
+  }
+  
+  .floatingTextBackgroundWrapper {
+    position: absolute; /* Ensures it's positioned relative to the parent container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide overflow */
+    z-index: -1; /* Place behind the content */
+  }
+  
+  .content {
+    position: relative;
+    z-index: 1; /* Ensure it's on top of the floating text */
+    color: white;
+    text-align: center;
+  }
+  

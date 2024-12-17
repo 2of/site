@@ -1,37 +1,24 @@
-/* CSS Custom Properties (Light Mode by default) */
 :root {
-
     font-family: 'Montserrat';
-
-    --border-color:#363639;
-
-
-
-
+    --border-color: #363639;
     --background-color: #F1F0E8;
-        --primary-color: #89A8B2;
-        --secondary-color: #B3C8CF;
-        --accent-color: #FF6F61; /* Example of a bold accent color */
-        --text-color: #333333;
-        --muted-text-color: #777777;
-        -font-family: 'Montserrat';
-
-
-
-
+    --primary-color: #89A8B2;
+    --secondary-color: #B3C8CF;
+    --accent-color: #FF6F61;
+    --text-color: #333333;
+    --muted-text-color: #777777;
+    --font-family: 'Montserrat';
+    --nav-color: rgba(241, 240, 232, 0.9);
 }
 
-/* Dark Mode Custom Properties */
 [data-theme="dark"] {
-    --background-color: #1E1E1E; /* Dark, but not black for comfort */
-    --primary-color: #6A9BAE; /* Muted teal, matching the feel of light mode's primary color */
-    --secondary-color: #445B63; /* Slightly darker variant for secondary elements */
-    --accent-color: #FF6F61; /* Keep the bold accent color consistent */
-    --text-color: #E4E4E4; /* Light gray for comfortable contrast */
-    --muted-text-color: #A9A9A9; /* Muted gray, slightly lighter for subtle text */
-    --border-color: #575757; /* Neutral dark gray for borders */
-    font-family: 'Montserrat'; /* Ensure consistency in typography */
-
-
-    
+    --background-color: #1E1E1E;
+    --primary-color: #6A9BAE;
+    --secondary-color: #445B63;
+    --accent-color: #FF6F61;
+    --text-color: #E4E4E4;
+    --muted-text-color: #A9A9A9;
+    --border-color: #575757;
+    --nav-color: rgba(30, 30, 30, 0.6);
+    font-family: 'Montserrat';
 }

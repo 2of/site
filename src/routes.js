@@ -8,14 +8,16 @@ import NonsensePage from "./pages/NonsensePage";
 import { ProjPage } from "./pages/ProjPage";
 import WritingPage from "./pages/WritingsPage";
 const routes = [
-  { path: "/", label: "home", element: <HomePage2 />, showlinks: false, showInNav: true },
+  { path: "/", label: "home", element: <HomePage2 />, showlinks: false, showInNav: false },
+  
   { path: "/dir", label: "dir", element: <DirPage />, showlinks: true, showInNav: true },
+  { path: "/about", label: "about", element: <h1>About</h1>, showlinks: true, showInNav: true },
   { path: "/projects", label: "projects", element: <ProjPage/>, showlinks: true, showInNav: true },
   // { path: "/home2", label: "home2", element: <HomePage2/>, showlinks: false, showInNav: true },
   { path: "/words", label: "articles", element: <WritingPage />, showlinks: true, showInNav: true },
   { path: "/modelup1", label: "upload to model", element: <ModelUploadPage />, showlinks: true, showInNav: true },
   { path: "/testarea", label: "nonsense", element: <NonsensePage />, showlinks: true, showInNav: false },
-  { path: "/about", label: "about", element: <h1>About</h1>, showlinks: false, showInNav: false },
+
   { path: "/contact", label: "contact", element: <h1>Contact</h1>, showlinks: false, showInNav: false },
   { path: "/services", label: "services", element: <h1>Services</h1>, showlinks: false, showInNav: false },
   { path: "/team", label: "team", element: <h1>Team</h1>, showlinks: false, showInNav: false },
