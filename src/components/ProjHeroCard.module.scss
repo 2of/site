@@ -69,7 +69,7 @@
 }
 
 .cta {
-    // padding: 12px 25px;
+    padding: 12px 25px;
    
     
 }
@@ -113,7 +113,7 @@
 }
 
 .footer {
-    margin-top: 20px;
+    margin-top: 48px;
 }
 
 /* Media Queries */
@@ -161,11 +161,19 @@
     }
   
     /* Smaller text and elements for mobile */
-    .title {
-      font-size: 2rem; /* Reduce title size */
-      color: #fff; /* White text for contrast */
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add text shadow for readability */
-    }
+ .title {
+  font-size: 2rem; /* Reduce title size */
+  color: #fff; /* White text for contrast */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add text shadow for readability */
+  position: relative; /* Required for proper alignment of pseudo-elements */
+}
+
+.title::after {
+  content: " ➔"; /* Add a trailing arrow */
+  color: #fff; /* Match arrow color to text */
+  margin-left: 0.5rem; /* Add spacing between text and arrow */
+  font-size: 1.4rem; /* Ensure the arrow matches the font size */
+}
   
     .metaInfo {
       font-size: 0.8rem; /* Smaller font for metadata */
@@ -179,10 +187,10 @@
   
     /* Adjusting CTA for better accessibility on mobile */
     .cta {
-        padding: 12px 20px; /* Increased padding for better click area */
+        // padding: 12px 20px; /* Increased padding for better click area */
         font-size: 1rem; /* Adjust button text size */
         margin-top: auto; /* Pushes the CTA button to the bottom */
-        display: inline-block;
+        // display: inline-block;
         background-color: var(--accent-color);
         width: 100%; /* Make it take full width to make it easier to tap */
         // box-sizing: border-box; /* Prevent overflow */

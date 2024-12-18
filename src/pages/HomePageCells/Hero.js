@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./HeroCell.module.scss";
 
 import { ZuneTextBG } from "../../components/ZuneText";
+import { BouncyArrows } from "../../components/Miscellaneous/BouncyArrows";
 
 const Herocell = () => {
   const [hovered, setHovered] = useState(false);
@@ -59,13 +60,8 @@ const Herocell = () => {
           for more projects!
         </p>
       </div>
-
-      <div className={styles.bouncyArrows} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        <span className={`${styles.arrow} ${hovered ? styles.hovered : ""}`}>↓</span>
-        <span className={`${styles.arrow} ${hovered ? styles.hovered : ""}`}>↓</span>
-        <span className={`${styles.arrow} ${hovered ? styles.hovered : ""}`}>↓</span>
-      </div>
-
+      <BouncyArrows numArrows={3}/>
+     
     </div>
     
   );

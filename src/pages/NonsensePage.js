@@ -4,6 +4,7 @@ import Person from "./PlayGround/Person";
 import { AnimationDull } from "../components/dancers/fun_one";
 import { OverTheTopDarkmodeToggle } from "../components/OverTheTopDarkModeToggleSquare";
 import Crowd from "../components/Miscellaneous/crowd";
+import { BouncyArrows } from "../components/Miscellaneous/BouncyArrows";
 
 
 
@@ -71,7 +72,11 @@ const MorphingGrid = () => {
       <Crowd/>
      </div>
 
+    <div className="ThingieContainer">
 
+test
+      <BouncyArrows/>
+    </div>
    <h1>test</h1>
 
       <AnimationDull anim_number={1}/>

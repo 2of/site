@@ -53,7 +53,12 @@ export const ProjHeroCard = ({ project, layoutFlag, ishighlight = false }) => {
 
           <div className={styles.leftSection}>
             <div className={styles.header}>
-              <h2 className={styles.title}>{title}</h2>
+              <h2 className={styles.title}
+              onClick = {() => {
+                alert("the viewer for projects is not implemented")
+              }}
+              
+              >{title}</h2>
               <div className={styles.metaInfo}>
                 <span className={styles.date}>
                   {new Date(date).toLocaleDateString()}
@@ -80,14 +85,14 @@ export const ProjHeroCard = ({ project, layoutFlag, ishighlight = false }) => {
               <div className={styles.description}>
                 <p>{description}</p>
                 <div className={styles.footer}>
-                  <a
+                  {/* <a
                     href={`/projects/${id}`}
                     className={styles.cta}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     Read More
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>

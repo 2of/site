@@ -3,6 +3,7 @@ import clsx from "clsx";
 import styles from "./GalleryTemplate.module.scss";
 
 import { ZuneTextBG } from "../components/ZuneText";
+import { BouncyArrows } from "../components/Miscellaneous/BouncyArrows";
 
 // Default Large Header layout
 const DefaultLargeHeader = ({
@@ -69,9 +70,16 @@ const GalleryTemplate = ({
             
       <div className={clsx(styles.MobileHeader, styles.FullPageForMobile)}>
         <ZuneTextBG text={header_text} blur={true}>
+         
+          </ZuneTextBG> 
+          <div className={clsx(styles.mobileheropage)}>
 
-          </ZuneTextBG>
-      
+            <h1>{header_text}</h1>
+            
+            <h2>Scroll down!</h2>
+
+            <BouncyArrows/>
+          </div>
        
    
       </div>

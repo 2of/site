@@ -10,7 +10,7 @@
   padding: 0rem 2rem;
   width: 100%;
   margin: 0 auto;
-  // box-sizing: border-box;
+  box-sizing: border-box;
   z-index: 10;
   background-color: var(--nav-color);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -47,6 +47,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  // border: 1px solid white;
+  // background-color: var(--background-color);
   gap: 0.5rem;
 
 
@@ -196,7 +198,7 @@
     overflow: hidden; /* Hide the expanded part when collapsed */
     transition: height 10s ease; /* Smooth transition for height */
     z-index: 19;
-  
+    padding: 0rem 12px;
   .expanded-links-for-mobile{
     display: block;
   }
@@ -218,14 +220,16 @@
     position: absolute;
     right: 1rem; /* Keep it right-aligned */
     top: 1.2rem;
+  
   }
 
   .nav-logo {
+    display: inline
     // background-color: red;
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Vertically center the logo */
-    justify-content: flex-start; /* Horizontally center the logo */
-    width: 100%; /* Ensure it takes up full width of its parent */
+    // display: flex; /* Use flexbox for alignment */
+    // align-items: center; /* Vertically center the logo */
+    // justify-content: flex-start; /* Horizontally center the logo */
+    // width: 100%; /* Ensure it takes up full width of its parent */
   }
   
   .logo {
