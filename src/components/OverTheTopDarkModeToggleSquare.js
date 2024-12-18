@@ -4,6 +4,7 @@ import styles from "./OverTheTopDarkModeToggleSquare.module.scss";
 import { useGlobalContext } from "../contexts/globalcontext";
 import Light from "./Miscellaneous/spotlight";
 import Crowd from "./Miscellaneous/crowd";
+import { FaExchangeAlt, FaMoon, FaSun } from "react-icons/fa";
 
 export const OverTheTopDarkmodeToggle = () => {
   const { isDarkMode, toggleTheme } = useGlobalContext();
@@ -60,8 +61,10 @@ export const OverTheTopDarkmodeToggle = () => {
         <div
           className={clsx(styles.prompt, { [styles.showPrompt]: isMouseOver })}
         >
-          <h2> Enable {isDarkMode ? "Light " : " Dark "} Mode </h2>
+          <h2> <FaMoon/> <FaExchangeAlt/> <FaSun/> </h2>
         </div>
+
+     
 
         <div className={clsx(styles.sky, { [styles.animateSky]: isAnimating })}>
           <div
@@ -80,6 +83,7 @@ export const OverTheTopDarkmodeToggle = () => {
           >
             t
           </div>
+          
           <div
             className={clsx(styles.moon, {
               [styles.animateMoonEnter]: animdir === "ltod",
@@ -88,7 +92,9 @@ export const OverTheTopDarkmodeToggle = () => {
             })}
           ></div>
         </div>
+
         <div className={styles.land}>
+            
           <div
             className={clsx(styles.CrowdContainer, {
               [styles.animateStandardEnter]: animdir === "ltod",
@@ -98,6 +104,7 @@ export const OverTheTopDarkmodeToggle = () => {
           >
             {/* <Crowd/> */}
           </div>
+          
           <div
             className={clsx(styles.spotlights, {
               [styles.animateStandardEnter]: animdir === "ltod",

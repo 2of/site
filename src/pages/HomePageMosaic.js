@@ -12,10 +12,22 @@ import {
 
 import projects from "../dummy_data/dummy_projects.json";
 import { OverTheTopDarkmodeToggle } from "../components/OverTheTopDarkModeToggleSquare";
+import { ZuneTextBG } from "../components/ZuneText";
+import useScreenSize from "../tools/screensize";
 
 export const HomePage2 = () => {
+  const screenSize = useScreenSize()
   return (
-    <div className={styles.gridContainer}>
+
+    <>
+
+    {screenSize === 'sm' && ( 
+
+<ZuneTextBG blur={true} color="coralReef"/>
+    )}
+
+     <div className={styles.gridContainer}>
+      
       <div
         className={`${styles.gridItem} ${styles.full_screen_sm}  ${styles.threextwo_md} ${styles.twoxtwo_lg} `}
       >
@@ -23,7 +35,7 @@ export const HomePage2 = () => {
       </div>
 
       <div
-        className={`${styles.gridItem} ${styles.halfscreen_sm} ${styles.onextwo_xs} ${styles.onextwo_sm} ${styles.onextwo_md} ${styles.onexthree_lg} `}
+        className={`${styles.gridItem} ${styles.halfscreen_sm} ${styles.onextwo_xs} ${styles.onextwo_sm} ${styles.onextwo_md} ${styles.onextwo_lg} `}
       >
         <ContainerNav />
       </div>
@@ -44,7 +56,7 @@ export const HomePage2 = () => {
 
 
       <div
-        className={`${styles.gridItem}  ${styles.onexone_md} ${styles.onexone_lg}`}
+        className={`${styles.gridItem}  ${styles.onexone_md} ${styles.twoxone_lg}`}
       >
         {/* <ProjectCard project={projects[0]} /> */}
         <FillerCard />
@@ -52,14 +64,16 @@ export const HomePage2 = () => {
 
 
     
-     
+      
 
-     
+      
       <div
         className={`${styles.gridItem} ${styles.halfscreen_sm} ${styles.threexone_md} ${styles.twoxone_lg}`}
       >
         <FooterCard />
       </div>
-    </div>
+   </div>
+    </>
+
   );
 };

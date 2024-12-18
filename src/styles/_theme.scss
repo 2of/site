@@ -1,14 +1,14 @@
 :root {
     font-family: 'Montserrat';
     --border-color: #363639;
-    --background-color: #F1F0E8;
+    --background-color: #e1e1dc;
     --primary-color: #89A8B2;
     --secondary-color: #B3C8CF;
     --accent-color: #FF6F61;
     --text-color: #333333;
     --muted-text-color: #777777;
     --font-family: 'Montserrat';
-    --nav-color: rgba(241, 240, 232, 0.9);
+    --nav-color: rgba(241, 240, 232, 0.708);
 }
 
 [data-theme="dark"] {
@@ -19,6 +19,6 @@
     --text-color: #E4E4E4;
     --muted-text-color: #A9A9A9;
     --border-color: #575757;
-    --nav-color: rgba(30, 30, 30, 0.6);
+    --nav-color: rgba(30, 30, 30, 0.829);
     font-family: 'Montserrat';
 }

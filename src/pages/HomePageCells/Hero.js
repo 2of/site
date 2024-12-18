@@ -3,19 +3,21 @@ import styles from "./HeroCell.module.scss";
 
 import { ZuneTextBG } from "../../components/ZuneText";
 import { BouncyArrows } from "../../components/Miscellaneous/BouncyArrows";
+import useScreenSize from "../../tools/screensize";
 
 const Herocell = () => {
-  const [hovered, setHovered] = useState(false);
-
-  // Handle mouse over and mouse out
-  const handleMouseEnter = () => setHovered(true);
-  const handleMouseLeave = () => setHovered(false);
+  const screenSize = useScreenSize()
 
   return (
+
+
     <div className={styles.heroCell}>
 
+{screenSize != 'sm' && ( 
 
-      {/* <ZuneTextBG text={"Howdy"} blur={true}/> */}
+<ZuneTextBG text={"Howdy"} color={"coralReef"} blur={true}/>
+)}
+
 
 
       <div className={styles.greeting}>
@@ -60,10 +62,10 @@ const Herocell = () => {
           for more projects!
         </p>
       </div>
-      <div className={styles.arrowContainer}>
-      <BouncyArrows numArrows={3}/>
-      </div>
-    
+      {screenSize === 'sm' && ( 
+
+<BouncyArrows numArrows={3}/>
+)}
      
     </div>
     

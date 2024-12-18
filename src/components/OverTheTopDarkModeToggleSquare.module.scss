@@ -9,10 +9,22 @@ $animation-duration: 0.5s; // Set the desired animation duration
   padding: 0;
   overflow: hidden;
   
-  
+  .instructionText {
+    position: absolute;
+    bottom: 28px;
+    left: 0;
+    height: 25%;
+    width: 100%;
+    padding: 12px;
+    color: var(--muted-text-color);
+    // background: linear-gradient(135deg, #f7d79e, #e9a97e);
+    
+    z-index: 11;
+  }
+
   // Day mode styles
   &.day {
-    background-color: #121212; // Optional if you want a specific background for the day mode
+    // background-color: #121212; // Optional if you want a specific background for the day mode
 
     .sky {
       position: absolute;
@@ -20,7 +32,10 @@ $animation-duration: 0.5s; // Set the desired animation duration
       left: 0;
       height: 75%;
       width: 100%;
-      background: linear-gradient(135deg, #A9C9E5, #D5E6F2); 
+    //   background: linear-gradient(135deg, #A9C9E5, #D5E6F2); 
+      background: radial-gradient(ellipse 100% 80% at center bottom, #d5e6f2 0%, #bbd6ea 35%, rgba(172, 196, 216, 0) 100%);
+
+
       z-index: 1;
       transition: background-color $animation-duration ease; // Smooth transition for sky color change
     }
@@ -29,9 +44,10 @@ $animation-duration: 0.5s; // Set the desired animation duration
       position: absolute;
       bottom: 0;
       left: 0;
-      height: 25%;
+      height: 35%;
       width: 100%;
       background: linear-gradient(135deg, #f7d79e, #e9a97e);
+      border-top: 1px solid #b4ac9dcb;
       z-index: 10;
       transition: background-color $animation-duration ease; // Smooth transition for land color change
    
@@ -48,7 +64,7 @@ $animation-duration: 0.5s; // Set the desired animation duration
 
   // Night mode styles
   &.night {
-    background-color: #121212; // Dark background for night mode
+    // background-color: #121212; // Dark background for night mode
 
     .sky {
       position: absolute;
@@ -56,7 +72,11 @@ $animation-duration: 0.5s; // Set the desired animation duration
       left: 0;
       height: 75%;
       width: 100%;
-      background: linear-gradient(135deg, #2c3e50, #34495e); 
+    //   background: linear-gradient(135deg, #2c3e50, #34495e); 
+      background: linear-gradient(135deg, rgba(44, 62, 80, 0) 0%, #2c3e50 50%, #34495e 100%);
+      background: radial-gradient(ellipse 100% 80% at center bottom, #34495e 0%, #2c3e50a4 40%, rgba(44, 62, 80, 0) 90%);
+
+
       z-index: 1;
       transition: background-color $animation-duration ease; // Smooth transition for sky color change
     
@@ -67,7 +87,7 @@ $animation-duration: 0.5s; // Set the desired animation duration
       position: absolute;
       bottom: 0;
       left: 0;
-      height: 25%;
+      height: 35%;
       width: 100%;
       background: linear-gradient(135deg, #4f4a59, #3b2e2c); 
       border-top: 1px solid #3f5367;
@@ -83,7 +103,9 @@ $animation-duration: 0.5s; // Set the desired animation duration
   }
 }
 .prompt {
-    background-color: rgba(39, 37, 37, 0.452);
+    background: linear-gradient(to top, rgba(39, 37, 37, 0.452) 0%, rgba(39, 37, 37, 0) 100%);
+
+
     height: 100%;
     width: 100%;
     position: absolute;
@@ -162,7 +184,7 @@ $animation-duration: 0.5s; // Set the desired animation duration
   left: 25%;
   top: 40%;
   border-radius: 50%;
-  background: radial-gradient(circle, #f5ed0c67, #ffeda5); 
+  background: radial-gradient(circle, #f5ed0c, #ffeda5); 
   box-shadow: 0 0 20px rgba(255, 223, 89, 0.7), 0 0 40px rgba(255, 223, 89, 0.5), 0 0 60px rgba(255, 223, 89, 0.3);
  z-index: 9;
   opacity: 1; // Default to hidden, but allow animation to fade in/out

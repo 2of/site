@@ -20,11 +20,11 @@ export const FillerCard = ({text = "placeholder"}) => {
 export const ExplainerCard = () => {
   return (
     <div className={` ${styles.explainer}`}> {/* Combine 'card' and 'styles.explainer' */}
-          <ZuneTextBG text={"Howdy"} blur={false} color="brown"/>
+          {/* <ZuneTextBG text={"Howdy"} blur={false} color="brown"/> */}
       
 
 
-      <div className={styles.content}>
+      {/* <div className={styles.content}> */}
 
 
       <div className={styles.card_title}>
@@ -53,7 +53,7 @@ export const ExplainerCard = () => {
           </p>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 export const ProjectCard = ({ project }) => {
