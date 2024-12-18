@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './BouncyArrows.module.scss'
 
-export const BouncyArrows = ({numArrows = 5}) => { 
+export const BouncyArrows = ({numArrows = 3}) => { 
 
   return ( 
     <div className={styles.bouncyArrows}>

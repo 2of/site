@@ -155,6 +155,9 @@
     scroll-snap-type: y mandatory; /* Snap in vertical direction */
     overflow-y: scroll; /* Enable vertical scrolling */
     height: 100vh; /* Full viewport height to limit visible area */
+    width: 100vw;
+    // height: 100vh;
+    margin: 0;
 
   }
   .hideinMini { 
