@@ -157,6 +157,7 @@
     height: 100vh; /* Full viewport height to limit visible area */
     width: 100vw;
     // height: 100vh;
+    gap: 0px;
     margin: 0;
 
   }
@@ -167,6 +168,8 @@
     /* Optional: Add styles for grid items if needed */
     aspect-ratio: 1;
     width: 100%;
+    border: none;
+    outline: none;
     scroll-snap-align: start; 
     // min-height: 50vh;
     height: 100%;
