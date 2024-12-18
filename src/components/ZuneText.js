@@ -4,7 +4,7 @@ import styles from "./ZuneTextBg.module.scss"; // Assuming your SCSS is here
 import clsx from "clsx";
 
 export const ZuneTextBG = ({ text = "hello!" , blur = false}) => (
-  <div className={clsx(styles.floatingTextBackgroundWrapper, !blur ? styles.legibilityfilter : "" )}>
+  <div className={clsx(styles.floatingTextBackgroundWrapper, blur ? styles.legibilityfilter : "" )}>
     <div className={styles.floatingTextBackground}>
       <div className={styles.floatingTextContent}>
         {/* Row 1 */}

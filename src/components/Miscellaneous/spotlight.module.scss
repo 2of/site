@@ -1,0 +1,59 @@
+
+// Additional styles for animations
+// Additional styles for animations
+.spotlightContainer {
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .base {
+    position: absolute;
+    bottom: 0%;
+    left: 18px;
+    width: 8px;
+    height: 10px;
+    background: #0808089e;
+    border-radius: 8px 8px 0px 0px;
+    z-index: 10;
+  }
+  
+  .spotlightLight {
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    width: 4px;
+    border-radius: 12px;
+    height: 20rem;
+    background: linear-gradient(180deg, rgba(255, 255, 0, 0) 0%, rgba(255, 255, 0, 0.335) 80%);
+    filter: blur(4px);
+    transform-origin: bottom center;
+    pointer-events: none;
+    // animation: rotateLight infinite 10s linear;
+    /* Removed transition property to avoid conflicts with animation */
+  }
+  
+  // Define keyframes for rotating the spotlight light
+  @keyframes rotateLight {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-60deg);
+      }
+    //   50% {
+    //     transform: rotate(0deg);
+    //   }
+
+    75% {
+      transform: rotate(60deg);
+    }
+    100% {
+        transform: rotate(0deg);
+      }
+  }
+  
+  // Apply the rotation animation to the spotlight when `animate` prop is true
+  .animateSpotlight {
+    animation: rotateLight infinite 10s linear;
+  }

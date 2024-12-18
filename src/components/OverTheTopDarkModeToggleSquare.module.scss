@@ -1,0 +1,300 @@
+// Define the global animation duration variable
+$animation-duration: 0.5s; // Set the desired animation duration
+
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+  
+  // Day mode styles
+  &.day {
+    background-color: #121212; // Optional if you want a specific background for the day mode
+
+    .sky {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 75%;
+      width: 100%;
+      background: linear-gradient(135deg, #A9C9E5, #D5E6F2); 
+      z-index: 1;
+      transition: background-color $animation-duration ease; // Smooth transition for sky color change
+    }
+
+    .land {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 25%;
+      width: 100%;
+      background: linear-gradient(135deg, #f7d79e, #e9a97e);
+      z-index: 10;
+      transition: background-color $animation-duration ease; // Smooth transition for land color change
+   
+   
+   
+    }
+    .water { 
+        background: linear-gradient(to left, rgb(30, 178, 212), rgba(30, 178, 212, 0.5), rgba(29, 188, 220, 0.5));
+  
+    }
+  }
+
+
+
+  // Night mode styles
+  &.night {
+    background-color: #121212; // Dark background for night mode
+
+    .sky {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 75%;
+      width: 100%;
+      background: linear-gradient(135deg, #2c3e50, #34495e); 
+      z-index: 1;
+      transition: background-color $animation-duration ease; // Smooth transition for sky color change
+    
+
+    }
+
+    .land {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 25%;
+      width: 100%;
+      background: linear-gradient(135deg, #4f4a59, #3b2e2c); 
+      border-top: 1px solid #3f5367;
+      z-index: 10;
+      transition: background-color $animation-duration ease; // Smooth transition for land color change
+    }
+
+    .water { 
+        margin-left: 20%;
+        background: linear-gradient(to left, rgb(12, 28, 41), rgba(12, 28, 41, 0.7), rgba(8, 45, 60, 0.6));  // Deep blues with teal undertones
+
+    }
+  }
+}
+.prompt {
+    background-color: rgba(39, 37, 37, 0.452);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 21;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+  }
+  
+  /* When showPrompt is added, opacity will transition to 1 */
+  .showPrompt {
+    opacity: 1;
+  }
+.water {
+    width: 100%;
+     height: 100%;
+     position: absolute;
+     bottom: 0;
+     transition: all $animation-duration ease; 
+     clip-path: polygon(72% 0%, 100% 0%, 100% 100%, 0% 100%,  9% 69%, 31% 42%, 49% 18%);
+  }
+// Moon (Initially hidden in the day, shown at night)
+.moon {
+  position: absolute;
+  height: 6rem;
+  width: 6rem;
+  left: 55%;
+  top: 40%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f0e68c, #f9d769); 
+  box-shadow: 0 0 30px rgba(240, 230, 140, 0.6), 0 0 60px rgba(240, 230, 140, 0.4), 0 0 90px rgba(240, 230, 140, 0.2);
+    
+  opacity: 1; // Default to hidden, but allow animation to fade in/out
+
+  &.animateMoonEnter {
+    animation: moonEnter $animation-duration forwards;
+    opacity: 1; // Fade in the moon when entering
+  }
+
+  &.animateMoonExit {
+    animation: moonExit $animation-duration forwards;
+  }
+
+  /* Keyframes for moon entering and exiting */
+  @keyframes moonEnter {
+    0% {
+      opacity: 0;
+      transform: translateY(10rem) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes moonExit {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(10rem) scale(0.5);
+    }
+  }
+}
+
+.sun {
+  position: absolute;
+  height: 6rem;
+  width: 6rem;
+  left: 25%;
+  top: 40%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f5ed0c67, #ffeda5); 
+  box-shadow: 0 0 20px rgba(255, 223, 89, 0.7), 0 0 40px rgba(255, 223, 89, 0.5), 0 0 60px rgba(255, 223, 89, 0.3);
+ z-index: 9;
+  opacity: 1; // Default to hidden, but allow animation to fade in/out
+
+  &.animateSunEnter {
+    animation: SunEnter $animation-duration forwards;
+    opacity: 1; // Fade in the sun when entering
+  }
+
+  &.animateSunExit {
+    animation: SunExit $animation-duration forwards;
+  }
+
+  /* Keyframes for sun entering and exiting */
+  @keyframes SunEnter {
+    0% {
+      opacity: 0;
+      transform: translateY(10rem) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes SunExit {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(30vh) scale(3);
+    }
+  }
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+    background-size: 30px 30px; /* Controls the size of the individual stars */
+
+    opacity: 0.3;
+    filter: brightness(0.7);
+  
+    /* Apply clip-path to create a circular shape */
+    clip-path: circle(50% at 50% 50%);
+  
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+
+  .CrowdContainer{
+    position: absolute;
+    width: 50%;
+    height: 70%;
+    margin-left: 1rem;
+    // border: 1px solid orange;
+  }
+
+  .spotlights {
+    display: flex;
+    flex-direction: row; 
+    margin-left: 1rem;
+    
+    & > div:nth-child(1) {
+        margin-right: 10px;  /* Horizontal spacing */
+      padding-bottom: 20px; /* Vertical spacing */
+    }
+  
+    & > div:nth-child(2) {
+        margin-right: 20px;  /* Horizontal spacing */
+      padding-bottom: 30px; /* Vertical spacing */
+    }
+  
+    & > div:nth-child(3) {
+        margin-right: 30px;  /* Horizontal spacing */
+      padding-bottom: 40px; /* Vertical spacing */
+    }
+  
+
+  }
+  
+
+
+
+  .animateStandardEnter {
+    animation: StandardEnter $animation-duration forwards;
+    opacity: 1; // Fade in the sun when entering
+  }
+
+  .animateStandardExit {
+    animation: StandardExit $animation-duration forwards;
+  }
+
+  //* STANDARD ANIMATIONS *//
+
+  @keyframes StandardEnter {
+    0% {
+      opacity: 0;
+    //   transform:  scale(0.5);
+    }
+    100% {
+      opacity: 1;
+    //   transform:scale(1);
+    }
+  }
+
+  @keyframes StandardExit {
+    0% {
+      opacity: 1;
+      
+    }
+    100% {
+      opacity: 0;
+    
+    }
+  }
+
+
+
+
+
+  .hidden {
+    display: none;
+  }
+  
+  

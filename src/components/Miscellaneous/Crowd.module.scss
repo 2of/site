@@ -1,0 +1,35 @@
+.crowd {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .person {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #2c2c2c;  // Default dark gray silhouette
+    // opacity: 0.8;  // Slight opacity for blending into the background
+    transition: background-color 0.5s ease;  // Smooth transition for light change
+  }
+  
+  .red {
+    width: 4px;
+    height: 4px;
+    background-color: #ff4c4c;  // Red light (cellphone color)
+    animation: pulse 2s infinite;  // Pulsing effect for the red light
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

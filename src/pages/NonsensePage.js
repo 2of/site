@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./MorphingGrid.scss";
 import Person from "./PlayGround/Person";
 import { AnimationDull } from "../components/dancers/fun_one";
+import { OverTheTopDarkmodeToggle } from "../components/OverTheTopDarkModeToggleSquare";
+import Crowd from "../components/Miscellaneous/crowd";
 
 
 
@@ -58,7 +60,18 @@ const MorphingGrid = () => {
   };
 
   return (
-    <div>
+ 
+        <div className="StandardPageContainer">
+          <h2>space</h2>
+<div className="ThingieContainer">
+  <OverTheTopDarkmodeToggle/>
+</div>
+     
+     <div className="lilcontainer">
+      <Crowd/>
+     </div>
+
+
    <h1>test</h1>
 
       <AnimationDull anim_number={1}/>
@@ -68,14 +81,14 @@ const MorphingGrid = () => {
       <AnimationDull anim_number={5}/>
 
 
-     
+
+
+
+
+
+
 
     </div>
-
-
-
-
-
 
 
   );

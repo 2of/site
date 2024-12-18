@@ -3,6 +3,7 @@ import React from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import styles from './MiscCells.module.scss'; 
+import { ZuneTextBG } from "../../components/ZuneText";
 
 export const FillerCard = ({text = "placeholder"}) => { 
 
@@ -19,11 +20,17 @@ export const FillerCard = ({text = "placeholder"}) => {
 export const ExplainerCard = () => {
   return (
     <div className={` ${styles.explainer}`}> {/* Combine 'card' and 'styles.explainer' */}
+          <ZuneTextBG text={"Howdy"} blur={true}/>
+      
+
+
+      <div className={styles.content}>
+
+
       <div className={styles.card_title}>
         <h2>Hey, I'm Noah! 👋 </h2>
       </div>
-
-      <div className="card_content">
+      {/* <div class={styles.dotDivider}></div> */}
         {/* <p className={styles.firstp}>
           Welcome to my corner of the internet! 🌍 I'm currently a Master of AI student at the University of Canterbury, Christchurch, New Zealand 🇳🇿. Alongside my academic pursuits, I have a strong background in IT, with experience as an IT administrator, network engineer, and general IT specialist 🖥️.
         </p> */}
@@ -39,7 +46,7 @@ export const ExplainerCard = () => {
           <li>📊 Strong in <span className={styles.highlight}>R, regression analysis, and data processing</span></li>
           <li>📚 A big fan of creating thorough documentation</li>
         </ul>
-
+        <div class={styles.dotDivider}></div>
         <div className="card_content">
           <p className={styles.secondp}>
             Want to see what I've been working on? Check out my work on <a className={styles.highlight} href="https://github.com/2of" target="_blank" rel="noopener noreferrer">GitHub</a> 💼. More projects will be added here soon! ✨

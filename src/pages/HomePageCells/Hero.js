@@ -14,7 +14,7 @@ const Herocell = () => {
     <div className={styles.heroCell}>
 
 
-      <ZuneTextBG text={"Howdy"} blur={false}/>
+      {/* <ZuneTextBG text={"Howdy"} blur={true}/> */}
 
 
       <div className={styles.greeting}>

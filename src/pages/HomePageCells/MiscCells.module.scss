@@ -6,35 +6,44 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Ensure content starts at the top */
+    justify-content: center; /* Ensure content starts at the top */
     align-items: center;
     // transition: transform 0.3s ease, box-shadow 0.3s ease;
   
+
+    .content { 
+      padding: 12px;
+        background-color: var(--background-color);
+        outline: 1px solid var(--muted-text-color);
+        
+    }
+
+    .dotDivider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px; /* Adjust height to fit the design */
+    }
+    
+    .dotDivider::before {
+      content: "\2022"; /* Unicode character for the dot (•) */
+      font-size: 4rem; /* Adjust the size of the dot */
+      color: var(--text-color); /* Choose the color for the dot */
+    }
     .highlight {
       color: var(--primary-color);
     }
   
     /* Title */
     .card_title {
-      margin-bottom: 20px;
+      // margin-bottom: 20px;
       h2 {
         text-align: center;
       }
     }
   
     /* Avatar container */
-    .avatarContainer {
-      text-align: center;
-      margin-bottom: 10px;
-  
-      .avatar {
-        border-radius: 50%;
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-        border: 1px solid var(--text-color);
-      }
-    }
+   
   
     /* First paragraph */
     .firstp {

@@ -185,7 +185,7 @@
         display: inline-block;
         background-color: var(--accent-color);
         width: 100%; /* Make it take full width to make it easier to tap */
-        box-sizing: border-box; /* Prevent overflow */
+        // box-sizing: border-box; /* Prevent overflow */
       }
   
     .cta:hover {
