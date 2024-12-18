@@ -22,6 +22,9 @@
   .expanded-links-for-mobile {
     display: none;
   }
+  .path-text { 
+    display: none;
+  }
   &.mini {
     position: fixed;
     top: 20px;
@@ -199,6 +202,21 @@
     transition: height 10s ease; /* Smooth transition for height */
     z-index: 19;
     padding: 0rem 12px;
+
+
+    .path-text { 
+      display: inline;
+      font-size: 1.5rem;
+      right: 1rem; /* Keep it right-aligned */
+      top: 1.2rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      position: absolute;
+      left: 72px; /* Keep it right-aligned */
+      top: 1.2rem;
+    }
+
+
   .expanded-links-for-mobile{
     display: block;
   }
@@ -224,12 +242,19 @@
   }
 
   .nav-logo {
-    display: inline
+    display: inline;
+    // width: 100%;
+    // display: flex;
+    // max-width: 50%;
+    // align-items: start;
+    // justify-items: center;
     // background-color: red;
     // display: flex; /* Use flexbox for alignment */
     // align-items: center; /* Vertically center the logo */
     // justify-content: flex-start; /* Horizontally center the logo */
     // width: 100%; /* Ensure it takes up full width of its parent */
+
+   
   }
   
   .logo {
@@ -250,5 +275,6 @@
     overflow: hidden; /* Hide content */
     transition: max-height 0.5s ease, opacity 0.3s ease;
   }
+
  
 } 

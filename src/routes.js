@@ -14,7 +14,7 @@ const routes = [
   { path: "/about", label: "about", element: <h1>About</h1>, showlinks: true, showInNav: true },
   { path: "/projects", label: "projects", element: <ProjPage/>, showlinks: true, showInNav: true },
   // { path: "/home2", label: "home2", element: <HomePage2/>, showlinks: false, showInNav: true },
-  { path: "/words", label: "articles", element: <WritingPage />, showlinks: true, showInNav: true },
+  { path: "/words", label: "words", element: <WritingPage />, showlinks: true, showInNav: true },
   { path: "/modelup1", label: "upload to model", element: <ModelUploadPage />, showlinks: true, showInNav: true },
   { path: "/testarea", label: "nonsense", element: <NonsensePage />, showlinks: true, showInNav: false },
 

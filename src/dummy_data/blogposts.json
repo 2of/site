@@ -1,38 +1,46 @@
 [
-    {
-      "title": "The Rise of AI in Everyday Life",
-      "date": "2024-11-30",
-      "tags": ["AI", "Technology", "Future", "Innovation"],
-      "author": "Jane Doe",
-      "length": "1200",
-      "image": "https://picsum.photos/800/400?random=1",
-      "content": "Artificial intelligence (AI) has evolved at an astonishing rate over the past few years. From self-driving cars to personalized recommendations, AI is now an integral part of our daily lives. In this article, we'll explore the rise of AI, how it is being integrated into various industries, and what the future holds for this transformative technology.\n\nThe potential applications of AI are endless, but there are significant challenges to address. Ethical concerns, job displacement, and privacy issues are just a few of the obstacles that need to be overcome. As AI becomes more advanced, it is crucial that we ensure it is used responsibly.\n\nIn the next few years, AI will continue to reshape industries like healthcare, education, and entertainment, offering both opportunities and challenges that we must navigate carefully. "
-    },
-    {
-      "title": "How to Create a Successful Digital Marketing Strategy",
-      "date": "2024-10-15",
-      "tags": ["Marketing", "Digital", "Business", "Strategy"],
-      "author": "John Smith",
-      "length": "850",
-      "image": "https://picsum.photos/800/400?random=2",
-      "content": "Digital marketing has become a cornerstone for businesses looking to reach new customers and grow their brands. With the rise of social media, search engines, and online platforms, the digital landscape is constantly evolving. To succeed in this fast-paced environment, businesses need a solid digital marketing strategy.\n\nA successful digital marketing strategy involves understanding your audience, choosing the right channels, and creating content that resonates with your target demographic. Additionally, leveraging tools like analytics can help measure the effectiveness of your efforts and make adjustments along the way.\n\nIn this blog post, we’ll cover the key elements of a digital marketing strategy that can help your business thrive in the digital world. "
-    },
-    {
-      "title": "Exploring the Future of Remote Work",
-      "date": "2024-09-22",
-      "tags": ["Remote Work", "Workplace", "Productivity", "Future"],
-      "author": "Emily Brown",
-      "length": "1100",
-      "image": "https://picsum.photos/800/400?random=3",
-      "content": "The COVID-19 pandemic fundamentally changed the way we work, with remote work becoming the norm for millions of employees worldwide. As we move into the post-pandemic era, the future of remote work remains uncertain, with many organizations rethinking their approach.\n\nThe flexibility of remote work offers numerous advantages, including improved work-life balance and reduced overhead costs. However, challenges such as maintaining team collaboration, ensuring productivity, and fostering company culture have also surfaced. In this article, we explore the current state of remote work and how businesses are adapting to this new landscape.\n\nThe future of work is likely to be a hybrid model, combining the best elements of in-office and remote environments. This balance will allow employees to enjoy greater flexibility while maintaining the benefits of in-person interactions."
-    },
-    {
-      "title": "Sustainable Fashion: The Path to a Greener Future",
-      "date": "2024-08-05",
-      "tags": ["Fashion", "Sustainability", "Environment", "Trends"],
-      "author": "Sophie Clark",
-      "length": "950",
-      "image": "https://picsum.photos/800/400?random=4",
-      "content": "Sustainability has become one of the most important topics in the fashion industry. As consumers become more aware of the environmental impact of their purchasing decisions, fashion brands are increasingly adopting sustainable practices to meet this demand.\n\nSustainable fashion refers to clothing and accessories that are produced with minimal environmental impact, using eco-friendly materials and ethical production processes. This includes practices like upcycling, using organic fabrics, and reducing waste in the manufacturing process.\n\nAs the demand for sustainable fashion grows, the industry is beginning to shift toward more responsible practices. In this post, we explore how sustainable fashion is shaping the future and what consumers can do to support eco-friendly brands."
-    }
-  ]
+  {
+    "id": 1,
+    "title": "The Rise of AI in Everyday Life",
+    "tags": ["AI", "Technology", "Future", "Innovation"],
+    "description": "Artificial intelligence (AI) has evolved at an astonishing rate over the past few years. From self-driving cars to personalized recommendations, AI is now an integral part of our daily lives. In this article, we'll explore the rise of AI, how it is being integrated into various industries, and what the future holds for this transformative technology.",
+    "timeTaken": null,
+    "date": "2024-11-30",
+    "author": "Jane Doe",
+    "images": ["https://picsum.photos/800/400?random=1"],
+    "importantLinks": null
+  },
+  {
+    "id": 2,
+    "title": "How to Create a Successful Digital Marketing Strategy",
+    "tags": ["Marketing", "Digital", "Business", "Strategy"],
+    "description": "Digital marketing has become a cornerstone for businesses looking to reach new customers and grow their brands. With the rise of social media, search engines, and online platforms, the digital landscape is constantly evolving. To succeed in this fast-paced environment, businesses need a solid digital marketing strategy.",
+    "timeTaken": null,
+    "date": "2024-10-15",
+    "author": "John Smith",
+    "images": ["https://picsum.photos/800/400?random=2"],
+    "importantLinks": null
+  },
+  {
+    "id": 3,
+    "title": "Exploring the Future of Remote Work",
+    "tags": ["Remote Work", "Workplace", "Productivity", "Future"],
+    "description": "The COVID-19 pandemic fundamentally changed the way we work, with remote work becoming the norm for millions of employees worldwide. As we move into the post-pandemic era, the future of remote work remains uncertain, with many organizations rethinking their approach.",
+    "timeTaken": null,
+    "date": "2024-09-22",
+    "author": "Emily Brown",
+    "images": ["https://picsum.photos/800/400?random=3"],
+    "importantLinks": null
+  },
+  {
+    "id": 4,
+    "title": "Sustainable Fashion: The Path to a Greener Future",
+    "tags": ["Fashion", "Sustainability", "Environment", "Trends"],
+    "description": "Sustainability has become one of the most important topics in the fashion industry. As consumers become more aware of the environmental impact of their purchasing decisions, fashion brands are increasingly adopting sustainable practices to meet this demand.",
+    "timeTaken": null,
+    "date": "2024-08-05",
+    "author": "Sophie Clark",
+    "images": ["https://picsum.photos/800/400?random=4"],
+    "importantLinks": null
+  }
+]

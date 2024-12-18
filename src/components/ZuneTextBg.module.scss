@@ -16,7 +16,7 @@
   
 
   .floatingTextBackground {
-    background-color: var(--accent-color);
+    background-color: var(--zune-text-bg-color, var(--accent-color));
     position: absolute;
     top: 0;
     left: 0;

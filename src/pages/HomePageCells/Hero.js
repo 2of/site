@@ -60,7 +60,10 @@ const Herocell = () => {
           for more projects!
         </p>
       </div>
+      <div className={styles.arrowContainer}>
       <BouncyArrows numArrows={3}/>
+      </div>
+    
      
     </div>
     

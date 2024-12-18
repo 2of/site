@@ -42,5 +42,5 @@ export const ProjPage = () => {
     <ProjHeroCard project={post} key={index} />
   ));
 
-  return <GalleryTemplate header_text={"Projects"} header_desc={desc} posts={postComponents} featured_post={FeaturedPost} featured_index={0} />;
+  return <GalleryTemplate header_text={"Projects"} header_desc={desc} mini_header_desc={"Links Coming Soon!"} posts={postComponents} featured_post={FeaturedPost} featured_index={0} />;
 };

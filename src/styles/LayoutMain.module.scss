@@ -19,7 +19,10 @@
 .pageContainer {
   flex: 1;
   position: relative;
+  display: flex;
+  flex-direction: column;
   transition: all 0.2s;
+  // background-color: magenta;
 
   &.withPadding {
     padding-top: 64px; /* Matches the height of navArea */

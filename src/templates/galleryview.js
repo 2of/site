@@ -36,15 +36,15 @@ const DefaultLargeHeader = ({
   </header>
 );
 
-
-
 const GalleryTemplate = ({
   posts,
   featured_post = null,
   featured_index = -1,
   header_text,
+  mini_header_desc,
   header_desc,
   header_comp = {},
+  colortheme = 'default'
 }) => {
   return (
     <>
@@ -62,29 +62,21 @@ const GalleryTemplate = ({
       </div>
 
       {/* Mobile Header */}
-  
 
       {/* Main Post List */}
       <div className={styles.CellContainer}>
-      <span className={styles.MainAreaTitle}>All Posts</span>
-            
-      <div className={clsx(styles.MobileHeader, styles.FullPageForMobile)}>
-        <ZuneTextBG text={header_text} blur={true}>
-         
-          </ZuneTextBG> 
+        <span className={styles.MainAreaTitle}>All Posts</span>
+
+        <div className={clsx(styles.MobileHeader, styles.FullPageForMobile)}>
+          <ZuneTextBG text={header_text}  color= {colortheme} blur={true}></ZuneTextBG>
           <div className={clsx(styles.mobileheropage)}>
-
             <h1>{header_text}</h1>
-            
+            <h2>{mini_header_desc}</h2>
             <h2>Scroll down!</h2>
-
-            <BouncyArrows/>
+            <BouncyArrows />
           </div>
-       
-   
-      </div>
+        </div>
 
-    
         {posts.map((PostComponent, index) => (
           <div
             key={index}

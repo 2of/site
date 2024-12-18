@@ -43,13 +43,24 @@ const Nav = () => {
         showLinks ? "" : "mini"
       }`}
     >
+
+
+
       <NavLink to="/" className="nav-logo" onClick={handleHomeClick}>
+      
+     
+
           <img src={logo} alt="Logo" className="logo" />
           <h1 className="nav-title">2of.io</h1>
+        
+      
         </NavLink>
 
 
-     
+     <span className="path-text">
+    . {currentRoute.path}
+
+     </span>
 
 
 
@@ -76,7 +87,7 @@ const Nav = () => {
           )}
         </ul>
       )}
-
+  
       <div className="nav-right-container">
         {/* Social Links */}
         <div className="nav-socials">

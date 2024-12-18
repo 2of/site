@@ -50,3 +50,13 @@
     border-bottom: 2px solid var(--primary-color);
   }
 }
+
+.arrowContainer { 
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .arrowContainer { 
+    display: none;
+  }
+}

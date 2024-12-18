@@ -21,16 +21,13 @@ export const HomePage2 = () => {
       >
         <Herocell />
       </div>
+
       <div
-        className={`${styles.gridItem}  ${styles.twoxthree_md} ${styles.twoxthree_lg}`}
-      >
-        <ExplainerCard />
-      </div>
-      <div
-        className={`${styles.gridItem} ${styles.halfscreen_sm} ${styles.onextwo_xs} ${styles.onextwo_sm} ${styles.onextwo_md} ${styles.onextwo_lg} `}
+        className={`${styles.gridItem} ${styles.halfscreen_sm} ${styles.onextwo_xs} ${styles.onextwo_sm} ${styles.onextwo_md} ${styles.onexthree_lg} `}
       >
         <ContainerNav />
       </div>
+
       <div
         className={`${styles.gridItem} ${styles.NoScrollSnap} ${styles.halfscreen_sm} ${styles.onextwo_md} ${styles.onextwo_lg} `}
       >
@@ -38,16 +35,24 @@ export const HomePage2 = () => {
         {/* <DarkModeToggleCell /> */}
       </div>
       <div
-        className={`${styles.gridItem}  ${styles.onexone_md} ${styles.onexone_lg}`}
+        className={`${styles.gridItem}  ${styles.twoxthree_md} ${styles.twoxthree_lg}`}
       >
-        <ProjectCard project={projects[2]} />
+        <ExplainerCard />
       </div>
+
+
+
 
       <div
         className={`${styles.gridItem}  ${styles.onexone_md} ${styles.onexone_lg}`}
       >
-        <ProjectCard project={projects[0]} />
+        {/* <ProjectCard project={projects[0]} /> */}
+        <FillerCard />
       </div>
+
+
+    
+     
 
      
       <div

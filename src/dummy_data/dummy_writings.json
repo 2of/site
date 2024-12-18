@@ -1,24 +1,46 @@
 [
-    
-    {
-      "id": 2,
-      "title": "React Best Practices: Building Apps Faster Than a Pizza Delivery",
-      "description": "Building a React app should be as fun as building a Lego set—except you don’t have to step on any pieces! Learn how to make your React apps so smooth that even your cat will be impressed (and probably try to sit on your keyboard).",
-      "date": "2024-06-10",
-      "image": "https://picsum.photos/300/200?6"
-    },
-    {
-      "id": 3,
-      "title": "Debugging with Ease: It’s Like Finding Hidden Objects",
-      "description": "Debugging is like a treasure hunt, but with fewer pirates and more syntax errors. Ready to find that pesky bug? Grab your magnifying glass and join me in making your code flawless (or at least close enough to fool everyone).",
-      "date": "2024-07-20",
-      "image": "https://picsum.photos/300/200?7"
-    },
-    {
-      "id": -1,
-      "title": "See More →: The Quest Continues",
-      "description": "The adventure doesn’t stop here! There’s more fun, more projects, and more nerdy goodness waiting for you. Click to continue the journey—no treasure map required.",
-      "date": "2024-12-09",
-      "image": "https://picsum.photos/300/200?8"
-    }
-  ]
+  {
+    "id": 1,
+    "title": "The Rise of AI in Everyday Life",
+    "tags": ["AI", "Technology", "Future", "Innovation"],
+    "description": "Artificial intelligence (AI) has evolved at an astonishing rate over the past few years. From self-driving cars to personalized recommendations, AI is now an integral part of our daily lives. In this article, we'll explore the rise of AI, how it is being integrated into various industries, and what the future holds for this transformative technology.",
+    "timeTaken": null,
+    "date": "2024-11-30",
+    "author": "Jane Doe",
+    "images": ["https://picsum.photos/800/400?random=1"],
+    "importantLinks": null
+  },
+  {
+    "id": 2,
+    "title": "How to Create a Successful Digital Marketing Strategy",
+    "tags": ["Marketing", "Digital", "Business", "Strategy"],
+    "description": "Digital marketing has become a cornerstone for businesses looking to reach new customers and grow their brands. With the rise of social media, search engines, and online platforms, the digital landscape is constantly evolving. To succeed in this fast-paced environment, businesses need a solid digital marketing strategy.",
+    "timeTaken": null,
+    "date": "2024-10-15",
+    "author": "John Smith",
+    "images": ["https://picsum.photos/800/400?random=2"],
+    "importantLinks": null
+  },
+  {
+    "id": 3,
+    "title": "Exploring the Future of Remote Work",
+    "tags": ["Remote Work", "Workplace", "Productivity", "Future"],
+    "description": "The COVID-19 pandemic fundamentally changed the way we work, with remote work becoming the norm for millions of employees worldwide. As we move into the post-pandemic era, the future of remote work remains uncertain, with many organizations rethinking their approach.",
+    "timeTaken": null,
+    "date": "2024-09-22",
+    "author": "Emily Brown",
+    "images": ["https://picsum.photos/800/400?random=3"],
+    "importantLinks": null
+  },
+  {
+    "id": 4,
+    "title": "Sustainable Fashion: The Path to a Greener Future",
+    "tags": ["Fashion", "Sustainability", "Environment", "Trends"],
+    "description": "Sustainability has become one of the most important topics in the fashion industry. As consumers become more aware of the environmental impact of their purchasing decisions, fashion brands are increasingly adopting sustainable practices to meet this demand.",
+    "timeTaken": null,
+    "date": "2024-08-05",
+    "author": "Sophie Clark",
+    "images": ["https://picsum.photos/800/400?random=4"],
+    "importantLinks": null
+  }
+]
