@@ -25,7 +25,7 @@ const AppContent = () => {
 
   return (
     <Router basename={basename}>  {/* Use the basename from context */}
-      <BackgroundPattern /> 
+      {/* <BackgroundPattern />  */}
       <Routes>
         {/* Define the main layout route */}
         <Route element={<LayoutMain />}>

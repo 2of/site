@@ -32,7 +32,7 @@ export const HomePage2 = () => {
         <ContainerNav />
       </div>
       <div
-        className={`${styles.gridItem} ${styles.halfscreen_sm} ${styles.onextwo_md} ${styles.onextwo_lg} `}
+        className={`${styles.gridItem} ${styles.NoScrollSnap} ${styles.halfscreen_sm} ${styles.onextwo_md} ${styles.onextwo_lg} `}
       >
         <OverTheTopDarkmodeToggle />
         {/* <DarkModeToggleCell /> */}

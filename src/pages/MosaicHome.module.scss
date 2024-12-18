@@ -147,6 +147,10 @@
     height: 100%;
     grid-row: span 2;
     // background-color: magenta;
+
+    &.NoScrollSnap { 
+      scroll-snap-align: unset;
+    }
   }
 
   .fullscreen_sm { 

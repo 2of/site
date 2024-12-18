@@ -20,7 +20,7 @@ export const FillerCard = ({text = "placeholder"}) => {
 export const ExplainerCard = () => {
   return (
     <div className={` ${styles.explainer}`}> {/* Combine 'card' and 'styles.explainer' */}
-          <ZuneTextBG text={"Howdy"} blur={true}/>
+          <ZuneTextBG text={"Howdy"} blur={false}/>
       
 
 
