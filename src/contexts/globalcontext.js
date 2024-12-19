@@ -9,7 +9,7 @@ export const useGlobalContext = () => {
 
 // Provider component
 export const GlobalProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const [basename, setBasename] = useState(""); // Store basename in state
   const [isBlurPage, setBlurPage] = useState(true);
 

@@ -1,6 +1,7 @@
 .links {
   color: var(--text-color); /* Use your text color variable for consistency */
-
+  background: var(--nav-color);
+  width: 100%;
   padding: 15px;
   overflow: hidden;
   // background-color: var(--background-color);

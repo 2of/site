@@ -60,20 +60,20 @@
 }
 
 .footer {
-  background-color: #333;
-  color: #fff;
+  // background-color: #333;
+  // color: #fff;
   // padding: 20px;
   text-align: center;
   width: 100%;
   position: relative;
   bottom: 0;
-  margin-top: auto; /* Pushes the footer to the bottom */
+  margin-top: 0; /* Pushes the footer to the bottom */
   flex-shrink: 0; /* Prevents the footer from shrinking */
 }
 
 @media (max-width: 768px) { 
   .navArea { 
-    position: absolute
+    // position: absolute
   }
 
   .pageContainer {
@@ -82,7 +82,7 @@
     transition: all 0.2s;
   
     &.withPadding {
-      padding-top: 0px; /* Matches the height of navArea */
+      margin-top: 64spx; /* Matches the height of navArea */
     }
   }
 }

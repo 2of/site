@@ -4,6 +4,7 @@ import styles from "./HeroCell.module.scss";
 import { ZuneTextBG } from "../../components/ZuneText";
 import { BouncyArrows } from "../../components/Miscellaneous/BouncyArrows";
 import useScreenSize from "../../tools/screensize";
+import { PageTransitionViewforTikTokPage } from "../../components/PageTransitionMaskTikTokView";
 
 const Herocell = () => {
   const screenSize = useScreenSize()
@@ -13,11 +14,20 @@ const Herocell = () => {
 
     <div className={styles.heroCell}>
 
-{screenSize != 'sm' && ( 
 
+{screenSize != 'sm' && ( 
+  <>
+  {/* <PageTransitionViewforTikTokPage where="bottom"/> */}
 <ZuneTextBG text={"Howdy"} color={"coralReef"} blur={true}/>
+</>
 )}
 
+{screenSize === 'sm' && ( 
+  <>
+  <PageTransitionViewforTikTokPage where="bottom" kind="tonav"/>
+
+</>
+)}
 
 
       <div className={styles.greeting}>
@@ -67,6 +77,7 @@ const Herocell = () => {
 <BouncyArrows numArrows={3}/>
 )}
      
+
     </div>
     
   );

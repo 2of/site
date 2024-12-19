@@ -30,7 +30,37 @@
     overflow: hidden; /* Hide overflow */
     z-index: -1; /* Place behind the content */
   }
+
+  .item { 
+    height: 200px;
+    width: 200px;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px;
+    transition: all 0.3s ease;
   
+    // If the content height exceeds the screen height, allow horizontal scrolling
+    @media (max-height: 500px) {
+      background-color: magenta;
+      grid-template-columns: repeat(16, 1fr); // Make it a horizontal scroll
+      grid-template-rows: none;
+    }
+  }
+  
+  .grid-item {
+    background-color: #c91a1a;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    height: 500px;
+  }
   .content {
     position: relative;
     z-index: 1; /* Ensure it's on top of the floating text */
@@ -45,10 +75,57 @@
     height: 500px;
     width: 500px;
     border: 1px solid black;
+    position: relative;
+    background-color: rgb(154, 130, 154);
 }
 
 .lilcontainer { 
     height: 100px;
     width: 150px;
     border: 1px solid black;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); // 2 columns by default
+  grid-template-rows: repeat(2, 1fr);    // 2 rows by default
+  gap: 10px;
+  padding: 10px;
+  transition: all 0.3s ease;
+  max-height: 100vh;  // Adjust to the height of the viewport
+
+  // Responsive styles for medium screens
+  @media (max-width: 768px) {
+    background-color: rebeccapurple;
+    grid-template-columns: repeat(2, 1fr);  // 2 columns on medium screens
+    grid-template-rows: repeat(2, 1fr);     // 2 rows
+  }
+
+  // When the container height is small, switch to horizontal scrolling
+  &.short {
+    grid-template-columns: repeat(8, 1fr);  // More columns when container is short
+    grid-template-rows: none;               // No rows, just columns
+    overflow-x: auto;                        // Enable horizontal scrolling
+    overflow-y: hidden;                      // Disable vertical scrolling
+  }
+
+  // Handle larger screen sizes and adjust grid layout
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);  // Default to 4 columns on large screens
+    grid-template-rows: repeat(2, 1fr);     // Default to 2 rows
+  }
+}
+
+.grid-item {
+  background-color: #c91a1a;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  height: 200px; /* Fixed height for grid items */
+}
+.BIGThingieContainer{
+  height: 1200px;
+  width: 1000px;
+  background-color: orange;
 }

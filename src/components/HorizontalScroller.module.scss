@@ -1,0 +1,20 @@
+.scrollerContainer {
+ // Ensure it takes up the full width
+  overflow-x: auto; // Enable horizontal scrolling when content overflows
+  -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
+  overflow-y: hidden;
+
+}
+
+.scrollerContent {
+  display: flex; // Align the items in a row
+  gap: 15px; // Space between each item
+  flex-shrink: 0; // Prevent the items from shrinking
+}
+
+.scrollerItem {
+  flex: 0 0 auto; // Prevent the items from stretching, they retain their natural size
+  width: auto; // Allow the item to take up its natural width
+  height: 100%; // Optional: to maintain consistent height if needed
+//   min-width: 120px; // Optional: Minimum width for items (adjust as needed)
+}

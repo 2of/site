@@ -5,6 +5,7 @@ import { useGlobalContext } from "../contexts/globalcontext";
 import Light from "./Miscellaneous/spotlight";
 import Crowd from "./Miscellaneous/crowd";
 import { FaExchangeAlt, FaMoon, FaSun } from "react-icons/fa";
+import useDeviceType from "../tools/DeviceType";
 
 export const OverTheTopDarkmodeToggle = () => {
   const { isDarkMode, toggleTheme } = useGlobalContext();
@@ -45,6 +46,53 @@ export const OverTheTopDarkmodeToggle = () => {
 
   const handleMouseEnter = () => setIsMouseOver(true); // Mouse enters the container
   const handleMouseLeave = () => setIsMouseOver(false); // Mouse leaves the container
+  const devicetype = useDeviceType()
+
+
+  const [clouds, setClouds] = useState([]);
+
+
+  useEffect(() => {
+    // Create 5 initial clouds with random delays, speeds, heights, and top positions
+    const initialClouds = Array.from({ length: 5 }, () => {
+      const randomSpeed = Math.random() * 5 + 5; // Random speed between 5s and 10s
+      const randomHeight = Math.random() * 30 + 150; // Random height between 30px and 60px
+      const randomTop = Math.random() * 50; // Random top position between 0% and 50%
+      const randomDelay = Math.random() * 2; // Random delay between 0s and 2s
+
+      return {
+        id: Date.now() + Math.random(), // Unique id for each cloud (ensures uniqueness even on re-render)
+        speed: randomSpeed,
+        height: randomHeight,
+        top: randomTop,
+        delay: randomDelay, // Random delay for each cloud
+      };
+    });
+
+    setClouds(initialClouds);
+
+    // Add new clouds every 2 seconds (this part remains as before)
+    const intervalId = setInterval(() => {
+      const randomSpeed = Math.random() * 5 + 5;
+      const randomHeight = Math.random() * 30 + 30;
+      const randomTop = Math.random() * 50;
+      const randomDelay = Math.random() * 2;
+
+      setClouds((prevClouds) => [
+        ...prevClouds,
+        {
+          id: Date.now() + Math.random(),
+          speed: randomSpeed,
+          height: randomHeight,
+          top: randomTop,
+          delay: randomDelay,
+        },
+      ]);
+    }, 5000); // Add new cloud every 2 seconds
+
+    return () => clearInterval(intervalId); // Clean up on component unmount
+  }, []);
+
 
   return (
     <>
@@ -58,15 +106,45 @@ export const OverTheTopDarkmodeToggle = () => {
           { [styles.night]: isDarkMode }
         )}
       >
+
+{devicetype === "mobile" && (
+        <div
+          className={clsx(styles.prompt_mobile)}
+        >
+          <h2> <FaMoon/> <FaExchangeAlt/> <FaSun/> </h2>
+        </div>)}
+
+        {devicetype === "desktop" && (
         <div
           className={clsx(styles.prompt, { [styles.showPrompt]: isMouseOver })}
         >
           <h2> <FaMoon/> <FaExchangeAlt/> <FaSun/> </h2>
-        </div>
-
-     
+        </div>)}
 
         <div className={clsx(styles.sky, { [styles.animateSky]: isAnimating })}>
+
+
+        <div
+            className={clsx(styles.clouds, {
+              [styles.animateStandardEnter]: animdir === "dtol", // Apply enter animation for sun when ltod
+              [styles.animateStandardExit]: animdir === "ltod", // Apply exit animation for sun when dtol
+              [styles.hidden]: animdir === "none" && localstate === true,
+            })}
+          >
+         {clouds.map((cloud) => (
+        <div
+          key={cloud.id}
+          className={clsx(styles.cloud, styles.move)}
+          style={{
+            animationDuration: `${cloud.speed}s`, // Set random speed for each cloud
+            height: `${cloud.height}px`, // Set random height for each cloud
+            top: `${cloud.top}%`, // Set random top position for each cloud
+          }}
+        />
+      ))}
+        
+          </div>
+          
           <div
             className={clsx(styles.sun, {
               [styles.animateSunEnter]: animdir === "dtol", // Apply enter animation for sun when ltod

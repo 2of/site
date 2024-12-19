@@ -41,11 +41,11 @@
   .floatingTextRow {
     display: flex;
     white-space: nowrap;
-    font-size: 10rem;
+    font-size: 20rem;
     font-weight: bold;
     text-transform: uppercase;
     color: #ffffff36; /* Make the text visible */
-    animation: scrollText 20s linear infinite;
+    animation: scrollText 30s linear infinite;
   }
   
   .floatingTextRow:nth-child(odd) {

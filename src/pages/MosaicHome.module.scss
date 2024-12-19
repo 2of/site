@@ -18,7 +18,8 @@
   border: 1px solid var(--muted-text-color);
   // background-color: rgb(1, 1, 1);
   // backdrop-filter: blur(16px);
-  margin-right: 3vw;
+  margin-right: 3vw;  
+  gap: 1px;
   
   // box-sizing: border-box;
   // padding: 12px;\
@@ -31,13 +32,14 @@
   // background-color: var(--background-color);
 
   outline: 1px solid var(--muted-text-color);
+
   display: flex;
   align-items: center;
   justify-content: center;
   transition: opacity 0.3s ease-in-out;
   overflow: hidden;
   opacity: 0;
-  
+  // box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); /* Softer shadow */
   
   animation: fadeInSlideUp 0.3s forwards;
 }

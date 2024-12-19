@@ -1,0 +1,76 @@
+.scrollerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ensure container takes full height */
+    width: 100%;  /* Ensure container takes full width */
+    position: relative;
+    overflow: hidden; /* Ensure no overflow outside the container */
+    // background-color: green;
+    position: relative;
+    overflow-y: hidden;
+  }
+  
+  .scrollWrapper {
+    display: flex;
+    width: 100%;
+    height: 100%; /* Ensure wrapper takes full height of parent */
+    overflow-x: auto; /* Enable horizontal scroll */
+    scroll-snap-type: x mandatory; /* Enable snap scrolling horizontally */
+    position: relative;
+    -webkit-overflow-scrolling: touch; /* Ensures smooth scrolling on iOS */
+    scroll-padding: 0; /* Remove any default scroll padding */
+    // background-color: rgb(144, 179, 144);
+    overflow-y: hidden;
+  }
+  
+  .scrollContent {
+    display: flex;
+    height: 100%;
+    width: 100%; /* Ensure scrollable content takes full width of wrapper */
+    margin: 0;  /* Remove any default margin */
+    // background-color: red;
+    padding: 0; /* Remove any default padding */
+  }
+  
+  .component {
+    display: none;
+    min-width: 100%;  /* Ensure each component takes up the full width of the container */
+    height: 100%;  /* Ensure each component fills the height of the wrapper */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background-color: green;
+    scroll-snap-align: start; /* Snap the components to the start of the container */
+    margin: 0;  /* Ensure no margin between components */
+    padding: 0;  /* Ensure no padding between components */
+    // display: none;
+  }
+  .scrollButton {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+  }
+  
+  .scrollButton:disabled {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .scrollArrow {
+    font-size: 2rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  
+  .scrollButton:first-child {
+    right: 10px;
+  }
+  
+  

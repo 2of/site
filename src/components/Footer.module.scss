@@ -1,9 +1,10 @@
 // footer.module.scss
 
 .footer {
-    background-color: #333;
+    background-color: var(--background-color);
     color: #fff;
-    padding: 20px;
+    height: 100%;
+    // padding: 20px;
     text-align: center;
     // width: 100%;
     position: relative;

@@ -1,5 +1,6 @@
 // /routes.js
 import { NotFoundPage } from "./pages/404";
+import { AboutPage } from "./pages/AboutPage";
 import { DirPage } from "./pages/DirPage";
 
 import { HomePage2 } from "./pages/HomePageMosaic";
@@ -11,7 +12,7 @@ const routes = [
   { path: "/", label: "home", element: <HomePage2 />, showlinks: false, showInNav: false },
   
   { path: "/dir", label: "dir", element: <DirPage />, showlinks: true, showInNav: true },
-  { path: "/about", label: "about", element: <h1>About</h1>, showlinks: true, showInNav: true },
+  { path: "/about", label: "about", element: <AboutPage/>, showlinks: true, showInNav: true },
   { path: "/projects", label: "projects", element: <ProjPage/>, showlinks: true, showInNav: true },
   // { path: "/home2", label: "home2", element: <HomePage2/>, showlinks: false, showInNav: true },
   { path: "/words", label: "words", element: <WritingPage />, showlinks: true, showInNav: true },

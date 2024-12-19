@@ -57,11 +57,7 @@ const Nav = () => {
         </NavLink>
 
 
-     <span className="path-text">
-    . {currentRoute.path}
-
-     </span>
-
+ 
 
 
       {true && (

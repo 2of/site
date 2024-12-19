@@ -193,6 +193,7 @@
   .nav-container {
     width: 100%;
     font-size: 2rem;
+ 
     display: block; /* Block layout */
     align-items: center;
     min-height: 100%;
@@ -202,6 +203,8 @@
     transition: height 10s ease; /* Smooth transition for height */
     z-index: 19;
     padding: 0rem 12px;
+    position: absolute;
+    top: 0;
 
 
     .path-text { 

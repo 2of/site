@@ -4,12 +4,22 @@ import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import styles from './MiscCells.module.scss'; 
 import { ZuneTextBG } from "../../components/ZuneText";
+import useScreenSize from "../../tools/screensize";
+import { PageTransitionViewforTikTokPage } from "../../components/PageTransitionMaskTikTokView";
+import HorizontalScroller from "../../components/HorizontalScroller";
+import clsx from "clsx";
 
 export const FillerCard = ({text = "placeholder"}) => { 
 
+  const size = useScreenSize()
+
 
     return (
-    <div className=" card ">
+    <div className={styles.filler}>
+
+      {size === "sm" && ( 
+        <PageTransitionViewforTikTokPage/>
+      )}
     <h2>{text}</h2>
  
   
@@ -18,42 +28,107 @@ export const FillerCard = ({text = "placeholder"}) => {
 }
 
 export const ExplainerCard = () => {
-  return (
-    <div className={` ${styles.explainer}`}> {/* Combine 'card' and 'styles.explainer' */}
-          {/* <ZuneTextBG text={"Howdy"} blur={false} color="brown"/> */}
-      
-
-
-      {/* <div className={styles.content}> */}
-
-
-      <div className={styles.card_title}>
-        <h2>Hey, I'm Noah! 👋 </h2>
+  const size = useScreenSize();
+  const QualsCells = () => {
+    const qualCells = [
+      {
+        title: "🎓 Master's in AI",
+        description: (
+          <>
+            <span className={styles.highlight}>UC</span> (In progress)
+          </>
+        ),
+      },
+      {
+        title: "🎓 Bachelor of Science",
+        description: (
+          <>
+            <span className={styles.highlight}>Computer Science</span>
+          </>
+        ),
+      },
+      {
+        title: "🛠️ 5+ Years as IT Administrator",
+        description: "Specialized in enterprise environments",
+      },
+      {
+        title: "🛠️ Expertise in IT Tools",
+        description: "M365, Entra, Intune, Google Admin",
+      },
+    ];
+  
+    return qualCells.map((cell, index) => (
+      <div key={index} className={styles.qualcell}>
+        <h4>{cell.title}</h4>
+        <p>{cell.description}</p>
       </div>
-      {/* <div class={styles.dotDivider}></div> */}
-        {/* <p className={styles.firstp}>
-          Welcome to my corner of the internet! 🌍 I'm currently a Master of AI student at the University of Canterbury, Christchurch, New Zealand 🇳🇿. Alongside my academic pursuits, I have a strong background in IT, with experience as an IT administrator, network engineer, and general IT specialist 🖥️.
-        </p> */}
+    ));
+  };
+  
+  return (
+    <div className={`${styles.explainer} ${styles.card}`}>
+      <div className={styles.card_title}>
+        <h2>Hey, I'm Noah! 👋</h2>
+      </div>
 
-        <ul className={styles.qualifications}>
-          <li>🎓 <span className={styles.highlight}>Master's in Artificial Intelligence</span> @ UC (In progress)</li>
-          <li>🎓 Bachelor of Science in <span className={styles.highlight}>Computer Science</span> @ UC</li>
-          <li>🛠️ 5+ years of experience as an <span className={styles.highlight}>IT Administrator</span></li>
-          <li>🛠️ Expertise with <span className={styles.highlight}>M365, Entra, Intune, MDM, Google Admin</span></li>
-          <li>🛠️ <span className={styles.highlight}>Network Engineering expertise</span> (design & troubleshooting)</li>
-          <li>💻 Langs & Frameworks: <span className={styles.highlight}>Python, Java, JavaScript, C#, React, CSS, C, C++, R</span></li>
-          <li>💻 More specific Langs & Tools: <span className={styles.highlight}>TensorFlow, Pandas, SQL, Spark, PyTorch</span> for <span className={styles.highlight}>Machine Learning and Neural Network Architecture</span></li>
-          <li>📊 Strong in <span className={styles.highlight}>R, regression analysis, and data processing</span></li>
-          <li>📚 A big fan of creating thorough documentation</li>
-        </ul>
-        <div class={styles.dotDivider}></div>
-        <div className="card_content">
-          <p className={styles.secondp}>
-            Want to see what I've been working on? Check out my work on <a className={styles.highlight} href="https://github.com/2of" target="_blank" rel="noopener noreferrer">GitHub</a> 💼. More projects will be added here soon! ✨
-          </p>
+      <div className={styles.dotDivider}></div>
+      <h3>Main</h3>
+      <div className={clsx(styles.qualsContainer, size != "sm" ? styles.long : styles.compact)}>
+   
+        {QualsCells()}
+        
+  {/* <HorizontalScroller items={QualsCells()}/> */}
+  </div>
+  <br/>
+  <div className={styles.dotDivider}></div>
+    {/* <HorizontalScroller items={QualsCells()}/> */}
+      <div className={styles.tagsSection}>
+        <h3>Languages & Frameworks</h3>
+        <div className={styles.tags}>
+          <span className={styles.tag}>Python</span>
+          <span className={styles.tag}>Java</span>
+          <span className={styles.tag}>JavaScript</span>
+          <span className={styles.tag}>C#</span>
+          <span className={styles.tag}>React</span>
+          <span className={styles.tag}>CSS</span>
+          <span className={styles.tag}>C</span>
+          <span className={styles.tag}>C++</span>
+          <span className={styles.tag}>R</span>
+        </div>
+
+        <h3>Tools & Libraries</h3>
+        <div className={styles.tags}>
+          <span className={styles.tag}>TensorFlow</span>
+          <span className={styles.tag}>Pandas</span>
+          <span className={styles.tag}>SQL</span>
+          <span className={styles.tag}>Spark</span>
+          <span className={styles.tag}>PyTorch</span>
+        </div>
+
+        <h3>Cloud & IT Tools</h3>
+        <div className={styles.tags}>
+          <span className={styles.tag}>M365</span>
+          <span className={styles.tag}>Entra</span>
+          <span className={styles.tag}>Intune</span>
+          <span className={styles.tag}>Google Admin</span>
+          <span className={styles.tag}>Azure</span>
+          <span className={styles.tag}>Windows Server</span>
         </div>
       </div>
-    // </div>
+
+      <div className={styles.dotDivider}></div>
+
+      {/* GitHub Link Section */}
+      <div className={styles.card_content}>
+        <p>
+          Want to see what I've been working on? Check out my work on{" "}
+          <a className={styles.highlight} href="https://github.com/2of" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>{" "}
+          💼. More projects will be added here soon! ✨
+        </p>
+      </div>
+    </div>
   );
 };
 export const ProjectCard = ({ project }) => {
@@ -118,3 +193,32 @@ export const ProjectCard = ({ project }) => {
       </div>
     );
   };
+
+
+  export const BriefAboutCard = () => {
+    return (
+      <div className={styles.briefaboutcell}>
+        <div className={styles.avatarWrapper}>
+          <img
+            src="https://picsum.photos/150"
+            alt="Avatar"
+            className={styles.avatar}
+          />
+          <div className={styles.content}>
+            <h3>Noah's Site</h3>
+            <p>
+              Hiya, this is just my personal website. There's a bunch of odds and ends in /dir. 
+              The site iteself is all hand done (no handy REACT libs for us!)
+              It's a WIP but go ahead and have a looksie.
+
+              Also /nonsense has all of the random widgets on one page... for fun!
+
+            
+            </p>
+           
+          </div>
+        </div>
+      </div>
+    );
+  };
+  

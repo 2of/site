@@ -8,7 +8,7 @@ $animation-duration: 0.5s; // Set the desired animation duration
   margin: 0;
   padding: 0;
   overflow: hidden;
-  
+  background-color: var(--nav-color);
   .instructionText {
     position: absolute;
     bottom: 28px;
@@ -60,7 +60,15 @@ $animation-duration: 0.5s; // Set the desired animation duration
     }
   }
 
-
+.prompt_mobile{ 
+    // background-color: red;
+    position: absolute;
+    color: var(--muted-text-color);
+    top: 48%;
+    opacity: 0.5;
+    z-index: 10;
+    // bottom: 0;
+}
 
   // Night mode styles
   &.night {
@@ -221,7 +229,34 @@ $animation-duration: 0.5s; // Set the desired animation duration
     }
   }
 }
+.clouds {
+  position: relative;
+  width: 100%;
+  height: 90%; /* Adjust this to control the cloud container's height */
+  overflow: hidden;
 
+  .cloud {
+    position: absolute;
+    width: 150px; /* Width of cloud */
+    background-color: rgba(255, 255, 255, 0.166);
+    border-radius: 50%;
+
+    /* Make cloud move across the screen */
+    &.move {
+      animation: moveCloud linear infinite;
+    }
+  }
+
+  /* Keyframes for moving clouds */
+  @keyframes moveCloud {
+    0% {
+      left: -150px; /* Start off-screen on the left */
+    }
+    100% {
+      left: 100%; /* Move to the right side of the screen */
+    }
+  }
+}
 .stars {
     position: absolute;
     top: 0;

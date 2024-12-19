@@ -4,6 +4,7 @@ import { ContainerNav } from "../nav/containernav";
 import { DarkModeToggleCell } from "./HomePageCells/DarkModeCell";
 import Herocell from "./HomePageCells/Hero";
 import {
+  BriefAboutCard,
   ExplainerCard,
   FillerCard,
   FooterCard,
@@ -14,6 +15,9 @@ import projects from "../dummy_data/dummy_projects.json";
 import { OverTheTopDarkmodeToggle } from "../components/OverTheTopDarkModeToggleSquare";
 import { ZuneTextBG } from "../components/ZuneText";
 import useScreenSize from "../tools/screensize";
+import Overview from "./HomePageCells/Overview";
+import SkillsDrillDown from "./HomePageCells/SkillsDrillDownCell";
+import LeftyRighty from "../components/LeftyRighty";
 
 export const HomePage2 = () => {
   const screenSize = useScreenSize()
@@ -23,7 +27,7 @@ export const HomePage2 = () => {
 
     {screenSize === 'sm' && ( 
 
-<ZuneTextBG blur={true} color="coralReef"/>
+<ZuneTextBG blur={true} color="palmShade"/>
     )}
 
      <div className={styles.gridContainer}>
@@ -46,20 +50,32 @@ export const HomePage2 = () => {
         <OverTheTopDarkmodeToggle />
         {/* <DarkModeToggleCell /> */}
       </div>
+
+
+      {screenSize === 'sm' && ( 
       <div
-        className={`${styles.gridItem}  ${styles.twoxthree_md} ${styles.twoxthree_lg}`}
+        className={`${styles.gridItem} ${styles.halfscreen_sm}  ${styles.onexone_md} ${styles.onexone_lg}`}
       >
-        <ExplainerCard />
+        <BriefAboutCard/>
+
+      </div>
+      )}
+
+      
+      <div
+        className={`${styles.gridItem}  ${styles.twoxthree_md} ${styles.threextwo_lg}`}
+      >
+
+  <LeftyRighty leftComponent={<Overview/>} rightComponent={<SkillsDrillDown/>}/>
+               {/* <Overview /> */}
       </div>
 
-
-
-
+   
       <div
-        className={`${styles.gridItem}  ${styles.onexone_md} ${styles.twoxone_lg}`}
+        className={`${styles.gridItem}  ${styles.onexone_md} ${styles.onexone_lg}`}
       >
-        {/* <ProjectCard project={projects[0]} /> */}
-        <FillerCard />
+        <FillerCard/>
+
       </div>
 
 
@@ -68,7 +84,7 @@ export const HomePage2 = () => {
 
       
       <div
-        className={`${styles.gridItem} ${styles.halfscreen_sm} ${styles.threexone_md} ${styles.twoxone_lg}`}
+        className={`${styles.gridItem} ${styles.halfscreen_sm} ${styles.threexone_md} ${styles.onexone_lg}`}
       >
         <FooterCard />
       </div>
