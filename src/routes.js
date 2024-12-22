@@ -15,7 +15,7 @@ const routes = [
   { path: "/about", label: "about", element: <AboutPage />, showlinks: true, showInNav: true, transparentNav: false },
   { path: "/projects", label: "projects", element: <ProjPage />, showlinks: true, showInNav: true, transparentNav: true },
   // { path: "/funkyhome", label: "homefunky", element: <FunkyHome />, showlinks: true, showInNav: true, transparentNav: false },
-  { path: "/words", label: "words", element: <WritingPage />, showlinks: true, showInNav: true, transparentNav: false },
+  { path: "/words", label: "words", element: <WritingPage />, showlinks: true, showInNav: true, transparentNav: true },
   // { path: "/modelup1", label: "upload to model", element: <ModelUploadPage />, showlinks: true, showInNav: true, transparentNav: false }, // transparent nav for this page
   { path: "/testarea", label: "nonsense", element: <NonsensePage />, showlinks: true, showInNav: false, transparentNav: false },
   { path: "/contact", label: "contact", element: <h1>Contact</h1>, showlinks: false, showInNav: false, transparentNav: false },

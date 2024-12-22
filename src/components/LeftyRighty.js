@@ -1,12 +1,13 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styles from './LeftyRighty.module.scss';
+import useScreenSize from '../tools/screensize';
 
 const LeftyRighty = ({ leftComponent, rightComponent }) => {
   const containerRef = useRef(null);
   const [currentPosition, setCurrentPosition] = useState(1); // Track the current position (1 or 2)
   const [ignoreScrollPos, setIgnoreScrollPos] = useState(false); // Flag to ignore scroll position
   const scrollTimer = useRef(null); // Timer ref to clear when necessary
-
+  const screenSize = useScreenSize()
   const handleButtonClick = () => {
     if (ignoreScrollPos) return; // If we're ignoring scroll, do nothing on button click
 
@@ -58,13 +59,26 @@ const LeftyRighty = ({ leftComponent, rightComponent }) => {
       <div
         className={`${styles.scrollButton} ${
           currentPosition === 1 ? styles.to : styles.from
-        }`}
+        }
+        
+        
+            ${
+            screenSize === 'sm' ? styles.bottomRight : styles.topRight 
+          }`}
+
+
+
         onClick={handleButtonClick}
       >
+
+        
         <span
           className={`${styles.arrow} ${
             currentPosition === 1 ? styles.arrowLeft : styles.arrowRight
-          }`}
+          }
+      
+          
+          `}
         >
           <i className="fa-solid fa-arrow-left"></i>
         </span>

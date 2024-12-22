@@ -1,6 +1,7 @@
 @media (max-width: 769px){
   /* PHONE */
   .CellContainer { 
+    width: 1;
   // background-color: yellow;
   grid-template-columns: 1fr; /* 1 column on very small screens */
       grid-auto-rows: minmax(50vh, auto); /* Ensures rows adjust dynamically */
@@ -11,6 +12,7 @@
       scroll-snap-type: y mandatory; /* Snap in vertical direction */
       overflow-y: scroll;
       height: 100vh; 
+      width: 100vw;
 
   }
 
@@ -108,6 +110,8 @@
     text-align: center;
     background-color: var(--primary-color);
     color: var(--background-color);
+    // background-color: red;
+    width: 100vw;
     // width: 100%;
     // padding: 48px;
     // padding: 40px 20px;
