@@ -65,7 +65,7 @@ const GalleryTemplate = ({
 
       {/* Main Post List */}
       <div className={styles.CellContainer}>
-        <span className={styles.MainAreaTitle}>All Posts</span>
+        {/* <span className={styles.MainAreaTitle}>All Posts</span> */}
 
         <div className={clsx(styles.MobileHeader, styles.FullPageForMobile)}>
           <ZuneTextBG text={header_text}  color= {colortheme} blur={true}></ZuneTextBG>

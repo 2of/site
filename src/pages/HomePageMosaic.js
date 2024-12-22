@@ -43,7 +43,7 @@ export const HomePage2 = () => {
 >
       
       <div
-        className={`${styles.gridItem} ${styles.full_screen_sm}  ${styles.threextwo_md} ${styles.threextwo_lg} `}
+        className={`${styles.gridItem} ${styles.full_screen_sm}  ${styles.twoxtwo_md} ${styles.threextwo_lg} `}
       >
         <Herocell />
       </div>
@@ -56,7 +56,7 @@ export const HomePage2 = () => {
       )}
 
       <div
-        className={`${styles.gridItem} ${styles.NoScrollSnap} ${styles.halfscreen_sm} ${styles.twoxtwo_md} ${styles.onextwo_lg} `}
+        className={`${styles.gridItem} ${styles.NoScrollSnap} ${styles.halfscreen_sm} ${styles.onextwo_md} ${styles.onextwo_lg} `}
       >
         <OverTheTopDarkmodeToggle />
         {/* <DarkModeToggleCell /> */}
