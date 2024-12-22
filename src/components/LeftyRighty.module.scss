@@ -1,76 +1,102 @@
 .scrollerContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%; /* Ensure container takes full height */
-    width: 100%;  /* Ensure container takes full width */
-    position: relative;
-    overflow: hidden; /* Ensure no overflow outside the container */
-    // background-color: green;
-    position: relative;
-    overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Ensure container takes full height */
+  width: 100%; /* Ensure container takes full width */
+  position: relative;
+  overflow: hidden; /* Ensure no overflow outside the container */
+  overflow-y: hidden;
+  // background-color: green;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.scrollWrapper {
+  display: flex;
+  width: 100%;
+  height: 100%; /* Ensure wrapper takes full height of parent */
+  overflow-x: auto; /* Enable horizontal scroll */
+  scroll-snap-type: x mandatory; /* Enable snap scrolling horizontally */
+  position: relative;
+  -webkit-overflow-scrolling: touch; /* Ensures smooth scrolling on iOS */
+  scroll-padding: 0; /* Remove any default scroll padding */
+  // background-color: rgb(144, 179, 144);
+  overflow-y: hidden;
+}
+
+.scrollContent {
+  display: flex;
+  height: 100%;
+  width: 100%; /* Ensure scrollable content takes full width of wrapper */
+  margin: 0; /* Remove any default margin */
+  // background-color: red;
+  // margin: 2px; /* Remove any default padding */
+}
+
+.component {
+  display: none;
+  min-width: 100%; /* Ensure each component takes up the full width of the container */
+  height: 99%; /* Ensure each component fills the height of the wrapper */
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  // background-color: green;
+  scroll-snap-align: start; /* Snap the components to the start of the container */
+  margin: 0; /* Ensure no margin between components */
+  padding: 0; /* Ensure no padding between components */
+  // display: none;
+}
+.scrollButton {
+  display: flex;
+  // flex-direction: row-reverse;
+  padding: 4px 4px 4px 8px;
+  // gap: 4px;
+  border-radius: 6px;
+  top: 12px;
+  right: 12px;
+  // background-color: red;
+  width: 36px;
+  cursor: pointer;
+  background-color: rgba(31, 30, 30, 0.447);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--accent-color);
+  position: absolute;
+  z-index: 30;
+  font-size: 0.8rem;
+  color: white;
+
+  .arrow {
+    transition: transform 0.3s ease; /* Animate transform (rotate, translateX) */
   }
-  
-  .scrollWrapper {
-    display: flex;
-    width: 100%;
-    height: 100%; /* Ensure wrapper takes full height of parent */
-    overflow-x: auto; /* Enable horizontal scroll */
-    scroll-snap-type: x mandatory; /* Enable snap scrolling horizontally */
-    position: relative;
-    -webkit-overflow-scrolling: touch; /* Ensures smooth scrolling on iOS */
-    scroll-padding: 0; /* Remove any default scroll padding */
-    // background-color: rgb(144, 179, 144);
-    overflow-y: hidden;
+  .text {
+    transition: transform 0.3s ease; /* Animate transform (rotate, translateX) */
   }
-  
-  .scrollContent {
-    display: flex;
-    height: 100%;
-    width: 100%; /* Ensure scrollable content takes full width of wrapper */
-    margin: 0;  /* Remove any default margin */
-    // background-color: red;
-    padding: 0; /* Remove any default padding */
+  &.to {
+    // background-color: orange;
+    .text{ 
+
+      transform: translateX(-12px);
+    }
+    .arrow {
+
+
+      transform: rotate(180deg) translateX(-20px); 
+    }
   }
-  
-  .component {
-    display: none;
-    min-width: 100%;  /* Ensure each component takes up the full width of the container */
-    height: 100%;  /* Ensure each component fills the height of the wrapper */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // background-color: green;
-    scroll-snap-align: start; /* Snap the components to the start of the container */
-    margin: 0;  /* Ensure no margin between components */
-    padding: 0;  /* Ensure no padding between components */
-    // display: none;
+
+  &.from {
+    // background-color: blueviolet;
+
+    .arrow {
+
+      transform: translateX(-2px);
+    }
+
+    .text {
+
+      transform: translateX(2px); 
+    }
   }
-  .scrollButton {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-  }
-  
-  .scrollButton:disabled {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-  
-  .scrollArrow {
-    font-size: 2rem;
-    display: inline-block;
-    transition: transform 0.3s ease;
-  }
-  
-  .scrollButton:first-child {
-    right: 10px;
-  }
-  
-  
+}

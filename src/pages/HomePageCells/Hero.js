@@ -5,6 +5,7 @@ import { ZuneTextBG } from "../../components/ZuneText";
 import { BouncyArrows } from "../../components/Miscellaneous/BouncyArrows";
 import useScreenSize from "../../tools/screensize";
 import { PageTransitionViewforTikTokPage } from "../../components/PageTransitionMaskTikTokView";
+import clsx from "clsx";
 
 const Herocell = () => {
   const screenSize = useScreenSize()
@@ -12,17 +13,17 @@ const Herocell = () => {
   return (
 
 
-    <div className={styles.heroCell}>
+    <div className={clsx( styles.heroCell, screenSize !== 'sm' ? styles.withBackground : "" )}>
 
 
-{screenSize != 'sm' && ( 
+{screenSize != 'sm' || false && ( 
   <>
   {/* <PageTransitionViewforTikTokPage where="bottom"/> */}
 <ZuneTextBG text={"Howdy"} color={"coralReef"} blur={true}/>
 </>
 )}
-
-{screenSize === 'sm' && ( 
+ {/* <PageTransitionViewforTikTokPage where="top"/> */}
+{screenSize === 'sm'  && ( 
   <>
   <PageTransitionViewforTikTokPage where="bottom" kind="tonav"/>
 
@@ -35,6 +36,7 @@ const Herocell = () => {
           Howdy{" "}
           <span role="img" aria-label="wave">
             👋
+            {/* {screenSize} */}
           </span>
         </h1>
         <p className={styles.introText}>

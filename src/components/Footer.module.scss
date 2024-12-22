@@ -1,8 +1,8 @@
 // footer.module.scss
 
 .footer {
-    background-color: var(--background-color);
-    color: #fff;
+    // background-color: var(--background-color);
+    // color: #fff;
     height: 100%;
     // padding: 20px;
     text-align: center;
@@ -24,7 +24,7 @@
   }
   
   .contactLink {
-    color: #fff;
+    color:var(--accent-color);
     text-decoration: none;
     &:hover {
       text-decoration: underline;

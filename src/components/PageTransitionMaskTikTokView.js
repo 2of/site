@@ -20,7 +20,7 @@ export const PageTransitionViewforTikTokPage = ({
             )}
           />
         )}
-    {kind === "tonav" && <div className={styles.tonavTopGradient} />}
+        {kind === "tonav" && <div className={styles.tonavTopGradient} />}
         {kind === "afterland" && isDarkMode && (
           <div
             className={clsx(

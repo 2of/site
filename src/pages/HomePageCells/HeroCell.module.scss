@@ -10,6 +10,10 @@
   position: relative; /* Set the positioning context */
   overflow: hidden; /* Optionally prevent overflow */
   padding: 1rem;
+
+  &.withBackground { 
+    background-color: var(--accent-color);
+  }
 }
 .greeting {
   margin-bottom: 30px;

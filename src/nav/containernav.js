@@ -13,7 +13,7 @@ export const ContainerNav = ({ cardtype = "", clickhandler, animateappear = true
   const size = useScreenSize()
   return (
 <div className={clsx(styles.links, size === "sm" ? styles.small : styles.large)}>
-
+<PageTransitionViewforTikTokPage where="top" kind="black"/>
 
       <ul>
         {routes.map(

@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import '@fortawesome/fontawesome-free/css/all.min.css';  
-import Nav from "./nav/nav";
 import routes from "./routes";
-import LayoutMain from "./layouts/layout_main"; 
+// import LayoutMain from "./layouts/layout_main"; 
 import { GlobalProvider, useGlobalContext } from "./contexts/globalcontext"; // Import GlobalProvider and useGlobalContext
 import "./styles/main.scss";  // Import the main global SCSS file
 import "./styles/_theme.scss";  
 import { BackgroundPattern } from "./components/background";
 import "./styles/card.scss";
+import ResponsiveLayout from "./layouts/layout_new";
 
 function App() {
   return (
@@ -28,7 +28,7 @@ const AppContent = () => {
       {/* <BackgroundPattern />  */}
       <Routes>
         {/* Define the main layout route */}
-        <Route element={<LayoutMain />}>
+        <Route element={<ResponsiveLayout />}>
           {/* Dynamically render routes from the routes array */}
           {routes.map((route) => (
             <Route 

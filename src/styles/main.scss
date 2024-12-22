@@ -341,3 +341,10 @@ h2{
 
 
 
+
+
+
+.navBG { 
+  background-color: var(--nav-color);
+  backdrop-filter: blur(12px);
+}

@@ -12,7 +12,7 @@ export const GlobalProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [basename, setBasename] = useState(""); // Store basename in state
   const [isBlurPage, setBlurPage] = useState(true);
-
+  const [isMenuOpenforNav, setisMenuOpenforNav] = useState(false);
   const toggleTheme = () => {
     setIsDarkMode((prevMode) => !prevMode);
   };
@@ -34,6 +34,8 @@ export const GlobalProvider = ({ children }) => {
         basename,
         isBlurPage,
         setBlurPage, // Include setBlurPage in the context
+        isMenuOpenforNav,
+        setisMenuOpenforNav
       }}
     >
       {children}

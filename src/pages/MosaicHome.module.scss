@@ -1,47 +1,21 @@
 
-/* Base Grid Styles */
 .gridContainer {
+  height: 100%;
   display: grid;
-  width: 94vw;
-  height: 94vh;
-  // margin: 120px;
-  // gap: 1px;
-  
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Softer shadow */
-  // margin: 10px;
-  margin-top: 3vh;
-  margin-bottom: 3vh;
   box-sizing: border-box;
-  margin-left: 3vw;
   overflow: hidden;
-  border-radius: 12px;
-  border: 1px solid var(--muted-text-color);
-  // background-color: rgb(1, 1, 1);
-  // backdrop-filter: blur(16px);
-  margin-right: 3vw;  
-  gap: 1px;
-  
-  // box-sizing: border-box;
-  // padding: 12px;\
-  
-  
+  opacity: 0;
+  animation: fadeInSlideUp 0.3s forwards;
 }
 
-/* Grid Item Base Styles */
 .gridItem {
-  // background-color: var(--background-color);
-
-  outline: 1px solid var(--muted-text-color);
 
   display: flex;
   align-items: center;
   justify-content: center;
   transition: opacity 0.3s ease-in-out;
   overflow: hidden;
-  opacity: 0;
-  // box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); /* Softer shadow */
-  
-  animation: fadeInSlideUp 0.3s forwards;
+  opacity: 1;
 }
 
 /* Fade-in and Slide-up Animation */
@@ -61,15 +35,26 @@
 /* =========================== */
 
 /* Large Screens (lg) */
-@media (min-width: 1220px) {
-  .gridContainer {
+
+  .gridContainer.lg {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4,1fr);
+    gap: 8px;
+    max-width: 1800px;
+    padding: 16px;
+    backdrop-filter: blur(10px);
 
-    // max-width: 80%;
-    // max-height: 80%;
+    .gridItem { 
+      // display: none;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Softer shadow */
+      border: 1px solid var(--secondary-color);
+      border-radius: 8px;
+
+
   //  background-color: red;
-  }
+}
+  
 
   .onextwo_lg {
     grid-column: span 1;
@@ -105,8 +90,8 @@
 }
 
 /* Medium Screens (md) */
-@media (min-width: 768px) and (max-width: 1220px) {
-  .gridContainer {
+
+  .gridContainer.md {
     padding: 0;
     max-width: 100%;
     width: 100vw;
@@ -114,48 +99,60 @@
     margin: 0;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(7,1fr);
+
+    .onextwo_md {
+      grid-column: span 1;
+      grid-row: span 2;
+    }
+  
+    .onexthree_md { 
+      grid-column: span 1;
+      grid-row: span 3;
+    }
+    .twoxthree_md {
+      grid-column: span 2;
+      grid-row: span 3;
+    }
+  
+  
+  
+    .twoxone_md {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+  
+    .threextwo_md {
+      grid-column: span 3;
+      grid-row: span 2;
+    }
+    .twoxthree_md {
+      grid-column: span 2;
+      grid-row: span 3;
+    }
+    .threexone_md { 
+      grid-column: span 3;
+      grid-row: span 1;
+    }
+    .threexthree_md { 
+      grid-column: span 3;
+      grid-row: span 3;
+    }
+  
+    .twoxtwo_md {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
   }
 
-  .onextwo_md {
-    grid-column: span 1;
-    grid-row: span 2;
-  }
-
-
-  .twoxthree_md {
-    grid-column: span 2;
-    grid-row: span 3;
-  }
+ 
 
 
 
-  .twoxone_md {
-    grid-column: span 2;
-    grid-row: span 1;
-  }
 
-  .threextwo_md {
-    grid-column: span 3;
-    grid-row: span 2;
-  }
-  .twoxthree_md {
-    grid-column: span 2;
-    grid-row: span 3;
-  }
-  .threexone_md { 
-    grid-column: span 3;
-    grid-row: span 1;
-  }
 
-  .twoxtwo_md {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-}
 
-/* Small Screens (sm) */
-@media (max-width: 768px) {
-  .gridContainer {
+  .gridContainer.sm {
     grid-template-columns: 1fr; /* 1 column on very small screens */
     grid-auto-rows: minmax(50vh, auto); /* Ensures rows adjust dynamically */
     padding: 0px;
@@ -170,35 +167,31 @@
     border-radius: 0px;
     border: none;
     margin: 0;
-
-  }
-  .hideinMini { 
-    display: none;
-  }
-  .gridItem {
-    /* Optional: Add styles for grid items if needed */
-    aspect-ratio: 1;
-    width: 100%;
-    border: none;
-    outline: none;
-    scroll-snap-align: start; 
-    // min-height: 50vh;
-    height: 100%;
-    grid-row: span 2;
-    // background-color: magenta;
-
-    &.NoScrollSnap { 
-      scroll-snap-align: unset;
+    .hideinMini { 
+      display: none;
+    }
+    .gridItem {
+      /* Optional: Add styles for grid items if needed */
+      aspect-ratio: 1;
+      width: 100%;
+      border: none;
+      outline: none;
+      scroll-snap-align: start; 
+      // min-height: 50vh;
+      height: 100%;
+      grid-row: span 2;
+      // background-color: magenta;
+  
+      &.NoScrollSnap { 
+        scroll-snap-align: unset;
+      }
+    }
+  
+    .fullscreen_sm { 
+  
+    }
+  
+    .halfscreen_sm { 
+      grid-row: span 1;
     }
   }
-
-  .fullscreen_sm { 
-
-  }
-
-  .halfscreen_sm { 
-    grid-row: span 1;
-  }
-
- 
-}

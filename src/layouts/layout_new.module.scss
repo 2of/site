@@ -1,0 +1,56 @@
+.navArea{
+    // background-color: red;
+    position: fixed; /* Keeps the navigation fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    z-index: 100;
+
+    &.nopad{
+        // background-color: magenta;
+        height: 0px;
+
+    }
+
+    &.reserve{
+        // background-color: gold;
+        height: var(--nav-height)
+    }
+
+
+}
+
+.pageContainer {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s;
+    // background-color: rgb(47, 145, 152);
+
+    overflow: hidden;
+    align-items: center;
+    // background-color: magenta;
+
+
+    &.nopad{
+        height: 100vh;
+        padding-top: 0px;
+        margin-top: 0px;
+
+    }
+    &.reserve{
+        height: calc(100vh - var(--nav-height));
+        padding-top: 0px;
+        margin-top: var(--nav-height);
+    }
+
+  }
+
+.blurAll {
+    filter: blur(12px); /* Add appropriate blur value */
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  

@@ -9,6 +9,11 @@
     --muted-text-color: #777777;
     --font-family: 'Montserrat';
     --nav-color: rgba(241, 240, 232, 0.9);
+
+
+
+
+    --nav-height: 72px;
 }
 
 [data-theme="dark"] {
@@ -19,6 +24,12 @@
     --text-color: #E4E4E4;
     --muted-text-color: #A9A9A9;
     --border-color: #575757;
-    --nav-color: rgba(30, 30, 30, 0.829);
+    --nav-color: rgba(30, 30, 30, 0.693);
     font-family: 'Montserrat';
+
+
+
+    --nav-height: 72px;
+
+
 }

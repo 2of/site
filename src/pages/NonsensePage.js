@@ -12,6 +12,9 @@ import HorizontalScroller from "../components/HorizontalScroller";
 import LeftyRighty from "../components/LeftyRighty";
 import Overview from "./HomePageCells/Overview";
 import SkillsDrillDown from "./HomePageCells/SkillsDrillDownCell";
+import Nav2 from "../nav/nav";
+import DarkModeToggle from "../components/darkmodetoggle";
+import { OverlayNav } from "../nav/overlayNav";
 
 
 
@@ -82,6 +85,17 @@ const MorphingGrid = () => {
   return (
  
         <div className="StandardPageContainer">
+          <br/>
+<br/>
+
+<br/>
+<br/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
           <h2>space</h2>
 <div className="ThingieContainer">
   <OverTheTopDarkmodeToggle/>
@@ -89,6 +103,23 @@ const MorphingGrid = () => {
 <div className="ThingieContainer">
   <PageTransitionViewforTikTokPage where="top" kind="afterland"/>
 </div>
+
+<DarkModeToggle/>
+
+
+<div className="BigWideContainer">
+ {/* <Nav2/> */}
+</div>
+HERE
+<div className="ThingieContainer">
+
+
+</div>
+
+
+
+
+
      
      <div className="lilcontainer">
       <Crowd/>
