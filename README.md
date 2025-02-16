@@ -24,9 +24,9 @@ There are still a bunch of padding issues, so it's a work in progress. 🚧
 
 This route is packed with random test components, just for fun and experimentation. 🤪
 
-## Dark Mode Toggle 🌙
+## Also
 
-The dark mode toggle graphic (with lights and moon 🌙 or sun ☀️ and clouds) was added as a fun feature.
+The dark mode toggle graphic (with lights and moon 🌙 or sun ☀️ and clouds and silly animations) is over the top. Thank you.
 
 Feel free to poke around!
 
