@@ -2,7 +2,9 @@
 
 ## What's here and why is it structured like that? 🤔
 
-This is my portfolio site, hosted on GitHub Pages. We *could* query for project and writing information from elsewhere, but for now, it's easy enough to let React handle the asset load and bake it all into one. There aren't enough assets or text to really warrant complex setups just yet. 📦
+This is my portfolio site... it's hosted on GitHub Pages...
+
+We *could* query for project and writing information from elsewhere, but for now, it's easy enough to let React handle the asset load and bake it all into one. There aren't enough assets or text to really warrant complex setups just yet. 📦
 
 In a lot of honesty, this site also serves as a 'playground' for myself. 
 
