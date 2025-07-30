@@ -1,5 +1,5 @@
 {
-  "homepage": "https://2of.io",
+"homepage": "https://2of.github.io/site",
   "name": "2of_gh_pages",
   "version": "0.1.0",
   "private": true,
@@ -47,5 +47,16 @@
   },
   "devDependencies": {
     "gh-pages": "^6.2.0"
+  },
+  "description": "## What's here and why is it structured like that? 🤔",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2of/site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2of/site/issues"
   }
 }
