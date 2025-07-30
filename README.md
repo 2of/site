@@ -1,4 +1,6 @@
-# Noah's Portfolio Site ✨
+# Noah's *old* Portfolio Site ✨
+
+### It's old :) the new one is up on github.com/2of
 
 ## What's here and why is it structured like that? 🤔
 

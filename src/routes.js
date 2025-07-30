@@ -11,6 +11,7 @@ import { ProjPage } from "./pages/ProjPage";
 import WritingPage from "./pages/WritingsPage";
 const routes = [
   { path: "/", label: "home", element: <HomePage2 />, showlinks: true, showInNav: true, transparentNav: true },
+    { path: "/site", label: "home", element: <HomePage2 />, showlinks: true, showInNav: true, transparentNav: true },
   { path: "/dir", label: "dir", element: <DirPage />, showlinks: true, showInNav: true, transparentNav: false },
   { path: "/about", label: "about", element: <AboutPage />, showlinks: true, showInNav: true, transparentNav: false },
   { path: "/projects", label: "projects", element: <ProjPage />, showlinks: true, showInNav: true, transparentNav: true },
