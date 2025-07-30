@@ -12,7 +12,7 @@ import clsx from "clsx";
 const ResponsiveLayout = () => {
   const location = useLocation();
   const currentRoute = routes.find((route) => route.path === location.pathname);
-  const reserveNav = !currentRoute.transparentNav;
+const reserveNav = !(currentRoute?.transparentNav ?? false);
   const { isBlurPage } = useGlobalContext();
   const screenSize = useScreenSize();
 
